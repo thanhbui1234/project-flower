@@ -1,11 +1,11 @@
 <?php
-include '/xampp/htdocs/shop_xx/login/model/connect.php';
+include '/xampp/htdocs/project-flower/login/model/connect.php';
 
 function register()
 {
     if (isset($_POST['register'])) {
         global $conn;
-        
+
         $fullName = htmlspecialchars($_POST['name']);
         $email = htmlspecialchars($_POST['email']);
         $phone = htmlspecialchars($_POST['phone']);
