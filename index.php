@@ -17,6 +17,13 @@ switch ($url) {
         include './view/search/search.php';
         break;
 
+        case 'profile';
+        include './view/profile/profile.php';   
+        break;
+
+        case 'changepassword';
+        include './view/profile/changepassword.php';   
+        break;
     default:
         include './view/products/product.php';
         break;
