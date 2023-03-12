@@ -12,6 +12,10 @@ switch ($url) {
         echo "hi";
         break;
 
+        case 'profile';
+        include './view/profile/profile.php';   
+        break;
+
     default:
         include './view/products/product.php';
         break;
