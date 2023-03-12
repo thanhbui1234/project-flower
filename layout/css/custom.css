@@ -10,23 +10,7 @@
 #search {
   position: relative;
 }
-#search input {
-  margin-top: 6px;
-  background-color: none !important;
-  border: 1px solid white;
-  outline-style: none;
-  width: 180px;
-  height: 23px;
-}
 
-#search button {
-  position: absolute;
-  top: 6px;
-  right: 0;
-  border: 1px solid white;
-  background-color: white !important;
-  height: 23px;
-}
 #price_about {
   color: #ffd028;
 }
@@ -66,4 +50,15 @@
 
 .pageation {
   list-style-type: none;
+}
+#searchSumit {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  border: none;
+  color: darkslategrey;
+}
+#search:first-child {
+  overflow: hidden;
+  outline: none;
 }
