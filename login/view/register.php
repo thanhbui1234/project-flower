@@ -60,7 +60,7 @@
 
                 </div>
                 <div id="notregister" class="">
-                    <P class="text-white"> Bạn đã có tài khoản <a href="/shop_xx/login/login.php?act=false">Đăng
+                    <P class="text-white"> Bạn đã có tài khoản <a href="/project-flower/login/login.php?act=false">Đăng
                             nhập</a>
                     </P>
                 </div>

@@ -1,5 +1,5 @@
 <?php
-include '/xampp/htdocs/shop_xx/login/model/connect.php';
+include '/xampp/htdocs/project-flower/login/model/connect.php';
 
 function register()
 {
@@ -162,3 +162,10 @@ function login()
     }
 
 }
+
+?>
+
+
+<!-- <script>
+alert('ok');
+</script> -->

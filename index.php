@@ -1,12 +1,10 @@
-
-
 <?php include './layout/header.php'?>
 
 <body id="page-top">
-<?php include './layout/nav.php'?>
+    <?php include './layout/nav.php'?>
 
 
-<?php isset($_GET['act']) ? $url = $_GET['act'] : $url = false;
+    <?php isset($_GET['act']) ? $url = $_GET['act'] : $url = false;
 
 switch ($url) {
 
@@ -23,4 +21,4 @@ switch ($url) {
 
 
 
-<?php include './layout/footer.php'?>
+    <?php include './layout/footer.php'?>
