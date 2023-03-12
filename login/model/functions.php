@@ -5,7 +5,7 @@ function register()
 {
     if (isset($_POST['register'])) {
         global $conn;
-
+        
         $fullName = htmlspecialchars($_POST['name']);
         $email = htmlspecialchars($_POST['email']);
         $phone = htmlspecialchars($_POST['phone']);
@@ -162,3 +162,10 @@ function login()
     }
 
 }
+
+?>
+
+
+<!-- <script>
+alert('ok');
+</script> -->
