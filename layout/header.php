@@ -32,6 +32,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="/../project-flower/layout/css/styles.css" rel="stylesheet" />
+    <link href="/../project-flower/layout/css/custom.css" rel="stylesheet" />
 
     <!-- slide show -->
 
