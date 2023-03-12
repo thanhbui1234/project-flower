@@ -11,6 +11,11 @@ switch ($url) {
     case 'he';
         echo "hi";
         break;
+    case 'search';
+
+        echo " tim kiem san pham";
+        include './view/search/search.php';
+        break;
 
     default:
         include './view/products/product.php';
