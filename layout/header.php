@@ -30,6 +30,13 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="/../project-flower/layout/css/styles.css" rel="stylesheet" />
+
+    <!-- slide show -->
+
+    <link rel="stylesheet" href="/../project-flower/layout/owlcarousel/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/../project-flower/layout/owlcarousel/assets/owl.theme.default.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="/../project-flower/layout/owlcarousel/owl.carousel.min.js"></script>
 </head>
 <?php date_default_timezone_set('Asia/Ho_Chi_Minh');?>
 <!-- <h3>ok</h3> -->
