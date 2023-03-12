@@ -102,7 +102,7 @@
                 <div class="portfolio-item">
                     <a class="portfolio-link" href="#">
 
-                        <img class="img-fluid bg-white " src="/../project-flower/layout/assets/img/productDemo/a1.png"
+                        <img class="img-fluid bg-white " src="/../project-flower/assets/img/productDemo/a1.png"
                             alt="" />
                     </a>
                     <div class="portfolio-caption">
@@ -122,7 +122,7 @@
                 <div class="portfolio-item">
                     <a class="portfolio-link" href="#">
 
-                        <img class="img-fluid bg-white " src="/../project-flower/layout/assets/img/productDemo/a1.png"
+                        <img class="img-fluid bg-white " src="/../project-flower/assets/img/productDemo/a1.png"
                             alt="" />
                     </a>
                     <div class="portfolio-caption">
@@ -142,7 +142,7 @@
                 <div class="portfolio-item">
                     <a class="portfolio-link" href="#">
 
-                        <img class="img-fluid bg-white " src="/../project-flower/layout/assets/img/productDemo/a1.png"
+                        <img class="img-fluid bg-white " src="/../project-flower/assets/img/productDemo/a1.png"
                             alt="" />
                     </a>
                     <div class="portfolio-caption">
@@ -162,7 +162,7 @@
                 <div class="portfolio-item">
                     <a class="portfolio-link" href="#">
 
-                        <img class="img-fluid bg-white " src="/../project-flower/layout/assets/img/productDemo/a1.png"
+                        <img class="img-fluid bg-white " src="/../project-flower/assets/img/productDemo/a1.png"
                             alt="" />
                     </a>
                     <div class="portfolio-caption">
@@ -182,7 +182,7 @@
                 <div class="portfolio-item">
                     <a class="portfolio-link" href="#">
 
-                        <img class="img-fluid bg-white " src="/../project-flower/layout/assets/img/productDemo/a1.png"
+                        <img class="img-fluid bg-white " src="/../project-flower/assets/img/productDemo/a1.png"
                             alt="" />
                     </a>
                     <div class="portfolio-caption">
@@ -202,7 +202,7 @@
                 <div class="portfolio-item">
                     <a class="portfolio-link" href="#">
 
-                        <img class="img-fluid bg-white " src="/../project-flower/layout/assets/img/productDemo/a1.png"
+                        <img class="img-fluid bg-white " src="/../project-flower/assets/img/productDemo/a1.png"
                             alt="" />
                     </a>
                     <div class="portfolio-caption">
