@@ -1,10 +1,97 @@
 <section class="page-section bg-light" id="portfolio">
     <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase"></h2>
+        <h3 class="text-danger">Top 10 sản phẩm hot pro</h3>
+
+        <script>
+        $(document).ready(function() {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
+                }
+            })
+        });
+        </script>
+        <div class="owl-carousel owl-theme mt-5">
+
+            <div class="item">
+                <a href="">
+                    <img width="25" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt="">
+                    <p>
+                        nuoc hoa
+                    </p>
+
+
+                </a>
+
+            </div>
+            <div class="item">
+                <a href="">
+                    <img width="25" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt="">
+                    <p>
+                        nuoc hoa
+                    </p>
+
+
+                </a>
+
+            </div>
+            <div class="item">
+                <a href="">
+                    <img width="25" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt="">
+                    <p>
+                        nuoc hoa
+                    </p>
+
+
+                </a>
+
+            </div>
+            <div class="item">
+                <a href="">
+                    <img width="25" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt="">
+                    <p>
+                        nuoc hoa
+                    </p>
+
+
+                </a>
+
+            </div>
+            <div class="item">
+                <a href="">
+                    <img width="25" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt="">
+                    <p>
+                        nuoc hoa
+                    </p>
+
+
+                </a>
+
+            </div>
+            <div class="item">
+                <a href="">
+                    <img width="25" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt="">
+                    <p>
+                        nuoc hoa
+                    </p>
+
+
+                </a>
+
+            </div>
 
         </div>
-
 
 
         <div class="row mt-5">
