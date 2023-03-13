@@ -11,7 +11,7 @@ switch ($url) {
     case 'he';
         echo "hi";
         break;
-    case 'spct';
+    case 'aboutproduct';
         include './view/products/aboutproduct.php';
         break;
     case 'search';
@@ -20,6 +20,13 @@ switch ($url) {
         include './view/search/search.php';
         break;
 
+        case 'profile';
+        include './view/profile/profile.php';   
+        break;
+
+        case 'changepassword';
+        include './view/profile/changepassword.php';   
+        break;
     default:
         include './view/products/product.php';
         break;
