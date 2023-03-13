@@ -1,32 +1,28 @@
 </div>
-        <!-- End of Content Wrapper -->
+<!-- End of Main Content -->
+</div>
+<!-- End of Content Wrapper -->
+</div>
+<!-- End of Page Wrapper -->
 
-    </div>
-    <!-- End of Page Wrapper -->
+<script src="/js//checkbox.js"></script>
 
-    <!-- Scroll to Top Button-->
-    
+<!-- Bootstrap core JavaScript-->
+<script src="./layout//vendor/jquery/jquery.min.js"></script>
+<script src="./layout//vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Logout Modal-->
-    
+<!-- Core plugin JavaScript-->
+<script src="./layout//vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Custom scripts for all pages-->
+<script src="./layout//js/sb-admin-2.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Page level plugins -->
+<script src="./layout//vendor/chart.js/Chart.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-
+<!-- Page level custom scripts -->
+<script src="./layout//js/demo/chart-area-demo.js"></script>
+<script src="./layout//js/demo/chart-pie-demo.js"></script>
 </body>
 
 </html>
