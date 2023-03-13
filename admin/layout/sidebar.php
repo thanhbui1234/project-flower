@@ -47,18 +47,17 @@
                 <a class="nav-link collapsed" href="index.php?act=categories" data-toggle=""
                     data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Loại sản phẩm</span>
+                    <span>Danh mục</span>
                 </a>
-
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider" />
+            <!-- <hr class="sidebar-divider" /> -->
 
             <!-- Heading -->
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <?php if ($_SESSION['user_role'] == 2) {?>
+            <!--  -->
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
@@ -74,19 +73,22 @@
                     </div>
                 </div>
             </li>
-            <hr class="sidebar-divider" />
-            <?php }?>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="index.php?act=categories" data-toggle=""
+                    data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Khách hàng</span>
+                </a>
+            </li>
 
-
-
-
+            <!-- <hr class="sidebar-divider" /> -->
 
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="index.php?act=comments" data-toggle=""
                     data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
+                    <i class="fa-regular fa-comment"></i>
                     <span>Bình luận</span>
                 </a>
 

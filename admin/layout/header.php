@@ -2,15 +2,15 @@
 
 <?php session_start()?>
 
-<?php
+<!-- <?php
 
-if (!isset($_SESSION['userId'])) {
+// if (!isset($_SESSION['userId'])) {
 
-    header('Location: /shop_xx/index.php');
+//     header('Location: /shop_xx/index.php');
 
-}
+// }
 
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
