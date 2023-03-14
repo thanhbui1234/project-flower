@@ -26,7 +26,8 @@
 
             <div class="item">
                 <a href="">
-                    <a href="index.php?act=aboutproduct"><img width="25" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt=""></a>
+                    <a href="index.php?act=aboutproduct"><img width="25"
+                            src="/../project-flower/layout/assets/img/productDemo/a2.png" alt=""></a>
                     <p style="text-align:center">
                         nuoc hoa
                     </p>
@@ -37,7 +38,8 @@
             </div>
             <div class="item">
                 <a href="">
-                    <a href="index.php?act=aboutproduct"><img width="25" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt=""></a>
+                    <a href="index.php?act=aboutproduct"><img width="25"
+                            src="/../project-flower/layout/assets/img/productDemo/a2.png" alt=""></a>
                     <p style="text-align:center">
                         nuoc hoa
                     </p>
@@ -48,7 +50,8 @@
             </div>
             <div class="item">
                 <a href="">
-                    <a href="index.php?act=aboutproduct"><img width="25" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt=""></a>
+                    <a href="index.php?act=aboutproduct"><img width="25"
+                            src="/../project-flower/layout/assets/img/productDemo/a2.png" alt=""></a>
                     <p style="text-align:center">
                         nuoc hoa
                     </p>
@@ -59,7 +62,8 @@
             </div>
             <div class="item">
                 <a href="">
-                    <a href="index.php?act=aboutproduct"><img width="25" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt=""></a>
+                    <a href="index.php?act=aboutproduct"><img width="25"
+                            src="/../project-flower/layout/assets/img/productDemo/a2.png" alt=""></a>
                     <p style="text-align:center">
                         nuoc hoa
                     </p>
@@ -70,7 +74,8 @@
             </div>
             <div class="item">
                 <a href="">
-                    <a href="index.php?act=spct"><img width="25" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt=""></a>
+                    <a href="index.php?act=spct"><img width="25"
+                            src="/../project-flower/layout/assets/img/productDemo/a2.png" alt=""></a>
                     <p style="text-align:center">
                         nuoc hoa
                     </p>
@@ -81,7 +86,8 @@
             </div>
             <div class="item">
                 <a href="">
-                    <a href="index.php?act=spct"><img width="25" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt=""></a>
+                    <a href="index.php?act=spct"><img width="25"
+                            src="/../project-flower/layout/assets/img/productDemo/a2.png" alt=""></a>
                     <p style="text-align:center">
                         nuoc hoa
                     </p>
