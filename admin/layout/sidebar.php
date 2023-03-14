@@ -81,7 +81,7 @@
                 </div>
             </li>
             <hr class="sidebar-divider" />
-            <?php }?>
+
 
 
 
