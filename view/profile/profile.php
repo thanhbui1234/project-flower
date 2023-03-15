@@ -1,5 +1,5 @@
 <section class="bg-light container  mt-5 p-lg-3  bg-body" id="">
-    <div class="rounded shadow p-lg-4" id="formbg"> 
+    <div class="rounded shadow p-lg-4" id="formbg">
     <h2 class="h2">Hồ sơ của tôi</h2><br>
 <p class="p">Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
 <hr>
@@ -36,7 +36,7 @@
     <label class="pick" for="pickanh">Chọn ảnh</label>
     <input type="file" hidden name="" id="pickanh">
    </div>
-   
+
 </div>
     </div>
 

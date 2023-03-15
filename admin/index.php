@@ -15,12 +15,19 @@
 
 switch ($act) {
     case 'addProd':
+        include '../admin/view/products/addProd.php';
+        break;
+    case 'listProd':
+        include '../admin/view/products/listProd.php';
+        break;
 
+    case 'categories':
+        include '../admin/view/categories/categories.php';
         break;
 
     default:
 
-        // include './view/home/home.php';
+        include './view/home/home.php';
         break;
 }
 
