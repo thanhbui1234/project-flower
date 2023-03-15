@@ -22,7 +22,7 @@ switch ($act) {
         break;
 
     case 'categories':
-        include '../admin/view/categories/addCategories.php';
+        include '../admin/view/categories/categories.php';
         break;
 
     default:
