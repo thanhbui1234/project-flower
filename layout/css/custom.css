@@ -74,36 +74,34 @@ margin-top: 100px;
   border-radius: 100%;
   width: 200px;
   height: 200px;
-  margin-left:210px;
-
+  margin-left: 210px;
 }
 
 
 #abcchange{
   width: 1000px;
   margin-left: auto;
- margin-right: auto;
- padding-left:50px ;
- padding-right:50px ;
- padding-bottom:150px ;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 150px;
 }
-.bcschange{
+.bcschange {
   margin-left: 27%;
   margin-top: 100px;
 }
-.onechange{
+.onechange {
   margin-right: 37px;
   margin-bottom: 25px;
   color: rgb(143, 130, 130);
 }
-.twochange{
+.twochange {
   margin-right: 20px;
   margin-bottom: 25px;
   color: rgb(143, 130, 130);
 }
-.threechange  {
+.threechange {
   margin-right: 31px;
   margin-bottom: 25px;
   color: rgb(143, 130, 130);
 }
-
