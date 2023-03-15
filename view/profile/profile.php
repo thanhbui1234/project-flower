@@ -1,24 +1,43 @@
-<section class="bg-light" id="abcprofile">
-    <h2>Hồ sơ của tôi</h2><br>
-    <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
-    <hr>
-    <div class="bcsprofile">
-        <div>
-            <label class="one">Tên đăng Nhập</label>
-            <input type="text" value="thanh-dan"><br>
-            <label class="two">Họ và tên</label>
-            <input type="text" value="Bùi Chí Thanh"><br>
-            <label class="three">Email</label>
-            <input type="email" value="thanhbidan@gmail.com"><br>
-            <label class="four">Số điện thoại</label>
-            <input type="number" value="0333562718"><br>
-            <button class="buttonsave">SAVE</button>
-        </div>
-        <div>
-            <img class="imgprofile" src="/../project-flower/layout/assets/img/productDemo/avatar.jpeg" alt=""><br>
-            <label class="pickanh" for="pickanh">Chọn ảnh</label>
-            <input type="file" hidden name="" id="pickanh">
-        </div>
+<section class="bg-light container  mt-5 p-lg-3  bg-body" id="">
+    <div class="rounded shadow p-lg-4" id="formbg"> 
+    <h2 class="h2">Hồ sơ của tôi</h2><br>
+<p class="p">Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+<hr>
+<div class="bcsprofile">
+    <div>
+    <form action="/action_page.php" style="max-width:500px;margin:auto">
 
+<div class="input-container">
+  <i class="fa fa-user icon"></i>
+  <input class="input-field" type="text" placeholder="Username" name="user_profie">
+</div>
+
+<div class="input-container">
+  <i class="fa fa-envelope icon"></i>
+  <input class="input-field" type="text" placeholder="Email" name="email_profile">
+</div>
+
+<div class="input-container">
+  <i class="fa fa-key icon"></i>
+  <input class="input-field" type="password" placeholder="Password" name="password_profile">
+</div>
+
+<div class="input-container">
+<i class="fa fa-phone icon"></i>
+  <input class="input-field" type="text" placeholder="PhoneNumber" name="phone_profile">
+</div>
+
+<button type="submit" class="saveupdate">SAVE UPDATE</button>
+</form>
     </div>
+
+   <div>
+   <img class="imgprofile" src="/../project-flower/layout/assets/img/productDemo/avatar.jpeg" alt=""><br>
+    <label class="pick" for="pickanh">Chọn ảnh</label>
+    <input type="file" hidden name="" id="pickanh">
+   </div>
+   
+</div>
+    </div>
+
 </section>
