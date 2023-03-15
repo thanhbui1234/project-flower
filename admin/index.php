@@ -1,14 +1,12 @@
 <!-- <?php ob_start()?> -->
 <?php include './layout/header.php'?>
 
-
 <?php include './layout/sidebar.php'?>
-
 
 <?php include './layout/nav.php'?>
 
-
-
+<!-- models -->
+<?php require_once 'models/categories.php'?>
 
 
 <?php isset($_GET['act']) ? $act = $_GET['act'] : $act = false;
@@ -22,6 +20,7 @@ switch ($act) {
         break;
 
     case 'categories':
+        addCategories();
         include '../admin/view/categories/categories.php';
         break;
 
