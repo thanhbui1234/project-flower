@@ -9,22 +9,22 @@
 
 <div class="input-container">
   <i class="fa fa-user icon"></i>
-  <input class="input-field" type="text" placeholder="Username" name="usrnm">
+  <input class="input-field" type="text" placeholder="Username" name="user_profie">
 </div>
 
 <div class="input-container">
   <i class="fa fa-envelope icon"></i>
-  <input class="input-field" type="text" placeholder="Email" name="email">
+  <input class="input-field" type="text" placeholder="Email" name="email_profile">
 </div>
 
 <div class="input-container">
   <i class="fa fa-key icon"></i>
-  <input class="input-field" type="password" placeholder="Password" name="psw">
+  <input class="input-field" type="password" placeholder="Password" name="password_profile">
 </div>
 
 <div class="input-container">
 <i class="fa fa-phone icon"></i>
-  <input class="input-field" type="text" placeholder="PhoneNumber" name="number">
+  <input class="input-field" type="text" placeholder="PhoneNumber" name="phone_profile">
 </div>
 
 <button type="submit" class="saveupdate">SAVE UPDATE</button>
