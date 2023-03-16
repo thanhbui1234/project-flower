@@ -1,3 +1,16 @@
+<?php
+if (isset($_GET['successUpdate'])) {
+    echo "<script>Swal.fire(
+  'Cap nhat thanh cong',
+  '',
+  'success'
+)</script>";
+}
+
+?>
+
+
+
 <div class="row mx-5 ">
 
     <div class="col">
@@ -5,7 +18,7 @@
 
             <div class="form-group">
                 <label for="exampleInputEmail1"></label>
-                <input type="text" class="form-control" name="category" placeholder="">
+                <input type="text" class="form-control" name="category" placeholder="Category...">
 
 
             </div>

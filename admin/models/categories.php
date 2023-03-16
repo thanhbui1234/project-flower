@@ -60,12 +60,7 @@ function updateCate()
         $sql = "update categories set name = '$name' where id = $id ";
         $statement = $conn->prepare($sql);
         if ($statement->execute()) {
-            echo "<script>Swal.fire(
-    'Thanh cong!',
-    '',
-    'success'
-    )</script>
-    ";
+            header('location: index.php?act=categories&successUpdate');
 
         }
 
