@@ -16,7 +16,6 @@ include './model/product.php';
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
                 $spct = sohwspct($id);
-                extract($spct);
                 $showhome = showhome();
                 include './view/products/aboutproduct.php';
             }

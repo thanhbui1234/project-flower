@@ -9,7 +9,7 @@
 
                 <h1 class="display-5 fw-bolder"><?php echo $spct['name'] ?></h1>
                 <div class="fs-5 mb">
-                    <span style="margin-right: 4px;"><?php echo "Giá:" . "$giamgia" ?></span> <span><del><?php echo $spct['price'] ?></del>
+                    <span style="margin-right: 4px;"><?php echo "Giá:" . "$giamgia" ."$" ?></span> <span><del><?php echo $spct['price'] ?></del>
                 </div>
                 <div class="fs-5 mb-5">
                     <span style="color: red"><?php echo "Khuyến mãi:". $spct['deal']."%" ?></span> <span>
@@ -58,8 +58,8 @@
                             </div>
                             <!-- Product price-->
 
-                            <p><?php echo $show['price'] ?> </p>
-                            <p><?php echo $show['price'] ?> </p>
+                            <p><del><?php echo $show['price'] ?> </del></p>
+                            <p><?php echo $giamgia . "$"?> </p>
                             <p style="color: red;"><?php echo "Khuyến mãi:". $show['deal']."%" ?> </p>
                         </div>
                     </div>
