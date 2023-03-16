@@ -16,16 +16,15 @@ switch ($url) {
         break;
     case 'search';
 
-        echo " tim kiem san pham";
         include './view/search/search.php';
         break;
 
-        case 'profile';
-        include './view/profile/profile.php';   
+    case 'profile';
+        include './view/profile/profile.php';
         break;
 
-        case 'changepassword';
-        include './view/profile/changepassword.php';   
+    case 'changepassword';
+        include './view/profile/changepassword.php';
         break;
     default:
         include './view/products/product.php';
