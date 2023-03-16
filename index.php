@@ -1,10 +1,13 @@
-<?php include './layout/header.php'?>
+   <?php session_start()?>
+   <?php include './layout/header.php'?>
 
-<body id="page-top">
-    <?php include './layout/nav.php'?>
+   <body id="page-top">
+       <?php include './layout/nav.php'?>
 
 
-    <?php isset($_GET['act']) ? $url = $_GET['act'] : $url = false;
+
+
+       <?php isset($_GET['act']) ? $url = $_GET['act'] : $url = false;
 
 switch ($url) {
 
@@ -18,6 +21,10 @@ switch ($url) {
 
         include './view/search/search.php';
         break;
+    // case 'logout';
+    //     include './view/logout/logout.php';
+
+    //     break;
 
     case 'profile';
         include './view/profile/profile.php';
@@ -35,4 +42,4 @@ switch ($url) {
 
 
 
-    <?php include './layout/footer.php'?>
+       <?php include './layout/footer.php'?>
