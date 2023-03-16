@@ -1,8 +1,3 @@
-<!-- click hủy xóa form update -->
-<?php if (isset($_POST['cancelUpdate'])) {
-    header('location: /project-flower/admin/index.php?act=categories');
-}?>
-
 <div class="row mx-5 ">
 
     <div class="col">
@@ -21,15 +16,21 @@
         </form>
 
         <?php if (isset($_GET['update'])) {?>
+        <?php showDataUpdate()?>
+
+
         <form method="post" class="mt-5" action="#">
 
             <div class="form-group">
                 <label for="exampleInputEmail1"></label>
-                <input type="text" value="n uoc hoa" class="form-control" name="category22" aria-describedby="emailHelp"
-                    placeholder="">
-
+                <?php foreach ($dataUpdateCate as $updateCate) {?>
+                <input type="text" value="<?php echo $updateCate['name'] ?>" class="form-control" name="category2"
+                    aria-describedby="emailHelp" placeholder="">
+                <?php }?>
 
             </div>
+            <?php updateCate()?>
+
 
             <div class="d-flex justify-content-between">
                 <button type="submit" name="updateCategory" id="add_category" class="btn btn-primary">Chỉnh
@@ -68,7 +69,7 @@
                 <tr>
                     <td> <?php echo $id ?></td>
                     <td><?php echo $name ?></td>
-                    <td><a class="btn btn-success" href="index.php?act=categories&&update=1">UPDATE</a>
+                    <td><a class="btn btn-success" href="index.php?act=categories&update=<?php echo $id ?>">UPDATE</a>
                         <a class="delete_categories" data-id="<?php echo $id ?>"><button
                                 class="btn btn-danger">DELETE</button></a>
                     </td>

@@ -19,7 +19,7 @@ deleteCategories.forEach((btn) => {
   var idDelete = btn.getAttribute("data-id");
   console.log(idDelete);
   btn.addEventListener("click", (e) => {
-    return Swal.fire({
+    Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
       icon: "warning",
@@ -27,9 +27,9 @@ deleteCategories.forEach((btn) => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText:
-        "<a class='text-white' href='index.php?act=categories&delete=" +
+        '<a class="text-white" href="index.php?act=categories&delete=' +
         idDelete +
-        "'>Xóa</a>",
+        '">Xoas</a>',
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
@@ -37,3 +37,4 @@ deleteCategories.forEach((btn) => {
     });
   });
 });
+x

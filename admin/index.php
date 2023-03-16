@@ -20,6 +20,7 @@ switch ($act) {
         break;
 
     case 'categories':
+        deleteCategories();
         addCategories();
         include '../admin/view/categories/categories.php';
         break;

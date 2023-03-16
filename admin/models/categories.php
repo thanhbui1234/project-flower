@@ -24,3 +24,51 @@ function showCategories()
     $dataCategories = $statement->fetchAll();
     // print_r($dataCategories);
 }
+function deleteCategories()
+{
+    if (isset($_GET['delete'])) {
+        global $conn;
+        $id = $_GET['delete'];
+        $sql = "delete from categories where id = $id";
+        $statement = $conn->prepare($sql);
+        $statement->execute();
+    }
+}
+function showDataUpdate()
+{
+    if (isset($_GET['update'])) {
+        global $conn;
+        $id = $_GET['update'];
+        $sql = " select name from categories where id = $id";
+        $statement = $conn->prepare($sql);
+        $statement->execute();
+        global $dataUpdateCate;
+        $dataUpdateCate = $statement->fetchAll();
+
+    }if (isset($_POST['cancelUpdate'])) {
+        header('location: /project-flower/admin/index.php?act=categories');
+    }
+
+}
+function updateCate()
+{
+    if (isset($_POST['updateCategory'])) {
+        global $conn;
+        $id = $_GET['update'];
+        $name = $_POST['category2'];
+
+        $sql = "update categories set name = '$name' where id = $id ";
+        $statement = $conn->prepare($sql);
+        if ($statement->execute()) {
+            echo "<script>Swal.fire(
+    'Thanh cong!',
+    '',
+    'success'
+    )</script>
+    ";
+
+        }
+
+    }
+
+}
