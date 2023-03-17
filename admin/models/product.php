@@ -34,8 +34,7 @@ function addProducts()
         $tag = $_POST['prod_tag'];
 
 
-        $sql = "INSERT INTO products (name, image, price, deal, category, date, description, status, tag) VALUES ('$name', '$image', '$price', '$deal', '1
-        ', '$date', '$description', '$status', '$tag')";
+        $sql = "INSERT INTO products (name, image, price, deal, category, date, description, status, tag) VALUES ('$name', '$image', '$price', '$deal', '$category', '$date', '$description', '$status', '$tag')";
 
 
         $statement = $conn->prepare($sql);
@@ -74,10 +73,15 @@ function addProducts()
 
 }
 
-// function addProducts()
-// {
+function showProducts(){
+    global $conn;
+    $sql = "SELECT * FROM products";
+    $statement = $conn -> prepare($sql);
+    $statement -> execute();
+    global $dataProducts;
+    $dataProducts = $statement -> fetchAll();
+}
 
-//     if (isset($_POST['addProd'])) {
-//         echo 'ok';
-//     }
-// }
+function updateProduct(){
+    
+}

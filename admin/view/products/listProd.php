@@ -49,7 +49,8 @@
                     <td> ten san pham </td>
                     <td>loai san pham </td>
                     <td> gia </td>
-                    <td><img width="50" src="/../shop_xx/uploads/<?php echo $img ?>" alt=""></td>
+                    <td class="d-flex justify-content-center pb-2"><img width="55"
+                            src="/../project-flower/layout/assets/img/productDemo/a1.png" alt=""></td>
 
                     <td class="content"> Noi dung san pham</td>
                     <td></td>

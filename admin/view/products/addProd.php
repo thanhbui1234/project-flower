@@ -34,6 +34,9 @@
         <select name="prod_category" id="select" class="form-select" aria-label="Default select example">
             <option value="default" selected>Loại sản phẩm</option>
 
+            <?php foreach ($dataCategories as $category) {extract($category)?>
+                <option value="<?php echo $id?>"><?php echo $name?></option>
+            <?php }?>
 
 
         </select>

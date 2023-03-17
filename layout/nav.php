@@ -49,7 +49,31 @@
                    </li>
                    <li class="nav-item"><a class="nav-link" href="#team">Ceo và leader</a></li>
 
+                   <!-- <li class="nav-item"><a class="nav-link" href="/project-flower/login/login.php">Đăng nhập</a></li> -->
+                   <?php if (isset($_SESSION['userName'])) {?>
+                   <li class="nav-item">
+                       <div class="dropdown">
+                           <span class=" nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                               <img class="mr-lg-5 rounded-circle" width="25"
+                                   src="/../project-flower/layout/assets/img/avtDefault.jpg" alt="">
+                               <?php echo $_SESSION['userName'] ?>
+                           </span>
+                           <ul class="dropdown-menu">
+                               <li><a class="dropdown-item" href="/project-flower/index.php?act=profile">Profile</a>
+                               </li>
+                               <?php echo $_SESSION['role'] == 2 ? '<li><a class="dropdown-item" href="/project-flower/admin">Admin</a>' : ''; ?>
+                               <li><a class="dropdown-item" href="index.php?act=category&id=id">Gio hang</a>
+                               </li>
+                               <li><a class="dropdown-item" href="/project-flower/view/logout/logout.php">Dang
+                                       xuat</a>
+                               </li>
+                           </ul>
+                       </div>
+                   </li>
+                   <?php } else {?>
                    <li class="nav-item"><a class="nav-link" href="/project-flower/login/login.php">Đăng nhập</a></li>
+                   <?php }?>
                </ul>
            </div>
        </div>

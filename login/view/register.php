@@ -79,13 +79,14 @@
 
 
 <script>
-var form_register = document.querySelector('#contactForm');
-var hoten = document.querySelector('input[name=name]');
-var email = document.querySelector('input[name=email]');
-var phone = document.querySelector('input[name=phone]');
-var userName = document.querySelector('input[name=userName]');
-var password = document.querySelector('input[name=password]');
-var password2 = document.querySelector('input[name=password2]');
+const $ = document.querySelector.bind(document);
+var form_register = $('#contactForm');
+var hoten = $('input[name=name]');
+var email = $('input[name=email]');
+var phone = $('input[name=phone]');
+var userName = $('input[name=userName]');
+var password = $('input[name=password]');
+var password2 = $('input[name=password2]');
 
 
 form_register.addEventListener('submit', (e) => {

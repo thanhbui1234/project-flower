@@ -1,9 +1,7 @@
 <!-- <?php ob_start() ?> -->
 <?php include './layout/header.php' ?>
 
-
 <?php include './layout/sidebar.php' ?>
-
 
 <?php include './layout/nav.php' ?>
 
@@ -23,6 +21,8 @@ switch ($act) {
         break;
 
     case 'categories':
+        deleteCategories();
+        addCategories();
         include '../admin/view/categories/categories.php';
         break;
 
