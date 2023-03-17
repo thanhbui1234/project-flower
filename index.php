@@ -1,27 +1,37 @@
 <?php include './layout/header.php';
-include './model/pdo.php';
 include './model/product.php';
+include './model/category.php';
 ?>
 
 <body id="page-top">
-    <?php include './layout/nav.php' ?>
-
+    <?php
+    load_name_category();
+    include './layout/nav.php';
+    ?>
 
     <?php
-    $showhome = showhome();
-    isset($_GET['act']) ? $url = $_GET['act'] : $url = false;
+
+    showproduct();
+    ?>
+    <?php isset($_GET['act']) ? $url = $_GET['act'] : $url = false;
 
     switch ($url) {
+
+
         case 'aboutproducts';
-            if (isset($_GET['id'])) {
-                $id = $_GET['id'];
-                $spct = sohwspct($id);
-                $showhome = showhome();
-                include './view/products/aboutproduct.php';
-            }
+            showaboutproducts();
+            showproduct();
+            include './view/products/aboutproduct.php';
+            break;
+
+
+        case 'loadcategory';
+            loadcategory();
+            include './view/category/category.php';
+
+            break;
             break;
         case 'search';
-
             echo " tim kiem san pham";
             include './view/search/search.php';
             break;

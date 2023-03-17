@@ -47,7 +47,7 @@
                 <a class="nav-link collapsed" href="index.php?act=categories" data-toggle=""
                     data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Đơn hàng</span>
+                    <span>Loai hàng</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
