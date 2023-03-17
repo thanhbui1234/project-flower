@@ -1,3 +1,5 @@
+
+
 <section class="page-section bg-light" id="portfolio">
     <div class="container">
         <h3 class="text-danger">Top 10 sản phẩm hot pro</h3>
@@ -34,31 +36,32 @@
                 </a>
 
             </div> -->
-
+            
         </div>
 
 
         <div class="row mt-5">
+            <?php if(empty($showproduct)){}?>
             <?php
-            foreach ($showhome as $show) {
-                $show['id'];
-                $giamgia=$show['price']-($show['price']/100*$show['deal']);
+            foreach ($showproduct as $products) {
+                $giamgia=$products['price']-($products['price']/100*$products['deal']);
                 ?>
                 <div class="col-lg-4 col-sm-6 mb-4">
+                    
                 <!-- Portfolio item 1-->
                 <div class="portfolio-item">
-                    <a class="portfolio-link" href="index.php?act=aboutproducts&id=<?php echo $show['id']?>" >
+                    <a class="portfolio-link" href="index.php?act=aboutproducts&id=<?php echo $products['id']?>" >
 
                         <img class="img-fluid bg-white " src="/../project-flower/layout/assets/img/productDemo/a1.png" alt="" />
                     </a>
                     <div class="portfolio-caption">
 
                         <a class="text-decoration-none" href="#">
-                            <div class="portfolio-caption-heading"><?php echo $show['name'] ?>
+                            <div class="portfolio-caption-heading"><?php echo $products['name'] ?>
                             </div>
                         </a>
                         <div class="portfolio-caption-subheading text-muted">
-                        <del><?php echo $show['price'] ."$" ?></del>
+                        <del><?php echo $products['price'] ."$" ?></del>
                         </div>
                         <div class="portfolio-caption-subheading text-muted">
                         <?php echo $giamgia . "$"
@@ -69,7 +72,7 @@
                         
                         </div>
                         <div class="portfolio-caption-subheading text-muted">
-                        <p  style="color: red;" ><?php echo "Khuyến mãi:". $show['deal']."%" ?></p>
+                        <p  style="color: red;" ><?php echo "Khuyến mãi:". $products['deal']."%" ?></p>
                         
                         </div>
 
@@ -173,3 +176,4 @@
         </div>
     </div>
 </section>
+
