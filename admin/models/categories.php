@@ -45,8 +45,6 @@ function showDataUpdate()
         global $dataUpdateCate;
         $dataUpdateCate = $statement->fetchAll();
 
-    }if (isset($_POST['cancelUpdate'])) {
-        header('location: /project-flower/admin/index.php?act=categories');
     }
 
 }
