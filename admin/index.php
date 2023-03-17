@@ -14,9 +14,11 @@
 switch ($act) {
     case 'addProd':
         addProducts();
+        selectOptionCategory();
         include '../admin/view/products/addProd.php';
         break;
     case 'listProd':
+        showProducts();
         include '../admin/view/products/listProd.php';
         break;
 

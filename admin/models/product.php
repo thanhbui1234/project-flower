@@ -30,7 +30,6 @@ function addProducts()
         $date = date("Y-m-d H:i a ");
         $description = $_POST['prod_desc'];
         $status = $_POST['prod_status'];
-
         $tag = $_POST['prod_tag'];
 
 
@@ -82,6 +81,12 @@ function showProducts(){
     $dataProducts = $statement -> fetchAll();
 }
 
-function updateProduct(){
-    
+function selectOptionCategory(){
+    global $conn;
+    $sql = "SELECT * FROM categories";
+    $statement = $conn -> prepare($sql);
+    $statement -> execute();
+    global $dataCategories;
+    $dataCategories = $statement -> fetchAll();
 }
+
