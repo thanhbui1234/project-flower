@@ -1,25 +1,18 @@
-<form class="container" enctype="multipart/form-data" method="POST">
+<form class="container" action="#" enctype="multipart/form-data" method="POST">
     <div class="form-group">
         <label for="exampleInputEmail1">Tên sản phẩm</label>
-        <input type="text" name="prod_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="">
+        <input type="text" name="prod_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
     </div>
     <h3 class="text-danger"> <?php echo isset($errProduct['name']) ? $errProduct['name'] : ''; ?>
     </h3>
 
-
-    <br>
     <div class="form-group">
-        <select name="prod_category" id="select" class="form-select" aria-label="Default select example">
-            <option value="default" selected>Loại sản phẩm</option>
-
-
-
-        </select>
+        <label class="border btn btn-success" for="img"> Thêm hình ảnh</label>
+        <input hidden name="prod_img" type="file" id="img">
     </div>
-    <h3 class="text-danger"> <?php echo isset($errProduct['category']) ? $errProduct['category'] : ''; ?></h3>
-
+    <h3 class="text-danger"> <?php echo isset($errProduct['img']) ? $errProduct['img'] : ''; ?></h3>
     <br>
+
     <div class="form-group">
         <label for="exampleInputPassword1">Giá</label>
         <input name="prod_price" type="text" class="form-control" id="exampleInputPassword1">
@@ -30,11 +23,31 @@
     <br>
 
     <div class="form-group">
-        <input hidden name="prod_img" type="file" id="img">
-        <label class="border btn btn-success" for="img"> Thêm hình ảnh</label>
+        <label for="exampleInputPassword1">Giảm giá</label>
+        <input name="prod_deal" type="number" min="0" max="100" step="5" value="0" class="form-control" id="exampleInputPassword1">
+
+
     </div>
-    <h3 class="text-danger"> <?php echo isset($errProduct['img']) ? $errProduct['img'] : ''; ?></h3>
     <br>
+
+    <div class="form-group">
+        <select name="prod_category" id="select" class="form-select" aria-label="Default select example">
+            <option value="default" selected>Loại sản phẩm</option>
+
+
+
+        </select>
+    </div>
+    <h3 class="text-danger"> <?php echo isset($errProduct['category']) ? $errProduct['category'] : ''; ?></h3>
+    <br>
+
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Mô tả</label>
+        <textarea class="form-control" name="prod_desc" id="" cols="30" rows="10"></textarea>
+    </div>
+    <br>
+
 
     <div class="form-group">
         <label for="exampleInputPassword1">Trạng thái</label> <br>
@@ -45,28 +58,11 @@
     </div>
     <br>
 
-
-    <div class="form-group">
-        <label for="exampleInputPassword1">Giảm giá</label>
-        <input name="prod_sale" type="number" min="0" max="100" step="5" value="0" class="form-control"
-            id="exampleInputPassword1">
-
-
-    </div>
-
     <div class="form-group">
         <label for="exampleInputEmail1">Tag sản phẩm ( tìm kiếm )</label>
-        <input type="text" name="prod_tag" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="">
-    </div>
-
-
-    <div class="form-group">
-        <label for="exampleInputPassword1">Nội Dung</label>
-        <textarea class="form-control" name="prod_content" id="" cols="30" rows="10"></textarea>
+        <input type="text" name="prod_tag" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
     </div>
     <br>
-
 
 
 

@@ -1,13 +1,13 @@
-<!-- <?php ob_start()?> -->
-<?php include './layout/header.php'?>
+<!-- <?php ob_start() ?> -->
+<?php include './layout/header.php' ?>
 
 
-<?php include './layout/sidebar.php'?>
+<?php include './layout/sidebar.php' ?>
 
 
-<?php include './layout/nav.php'?>
+<?php include './layout/nav.php' ?>
 
-
+<?php include './models/product.php' ?>
 
 
 
@@ -15,6 +15,7 @@
 
 switch ($act) {
     case 'addProd':
+        addProducts();
         include '../admin/view/products/addProd.php';
         break;
     case 'listProd':
@@ -41,4 +42,4 @@ switch ($act) {
 
 
 
-<?php include './layout/footer.php'?>
+<?php include './layout/footer.php' ?>
