@@ -1,13 +1,11 @@
-<!-- <?php ob_start()?> -->
-<?php include './layout/header.php'?>
+<!-- <?php ob_start() ?> -->
+<?php include './layout/header.php' ?>
 
+<?php include './layout/sidebar.php' ?>
 
-<?php include './layout/sidebar.php'?>
+<?php include './layout/nav.php' ?>
 
-
-<?php include './layout/nav.php'?>
-
-
+<?php include './models/product.php' ?>
 
 
 
@@ -15,13 +13,18 @@
 
 switch ($act) {
     case 'addProd':
+        addProducts();
+        selectOptionCategory();
         include '../admin/view/products/addProd.php';
         break;
     case 'listProd':
+        showProducts();
         include '../admin/view/products/listProd.php';
         break;
 
     case 'categories':
+        deleteCategories();
+        addCategories();
         include '../admin/view/categories/categories.php';
         break;
 
@@ -41,4 +44,4 @@ switch ($act) {
 
 
 
-<?php include './layout/footer.php'?>
+<?php include './layout/footer.php' ?>

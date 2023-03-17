@@ -1,5 +1,7 @@
-   
-   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+<?php 
+    require_once "./model/categories.php";
+?>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
        <div class="container">
            <a class="" href="index.php"><img src="/../project-flower/layout/assets/img/flower.svg" alt="..." />
            </a>
@@ -14,44 +16,39 @@
                        <form id="search" action="index.php?act=search" method="post">
                            <input id="" class="py-1 rounded" type="text">
 
-                           <button id="searchSumit" class="" type="submit">
-                               <i class="fa-solid fa-magnifying-glass"></i>
-                           </button>
+                               <button id="searchSumit" name="btnSubmitSearch" class="" type="submit">
+                                   <i class="fa-solid fa-magnifying-glass"></i>
+                               </button>
 
-                       </form>
-                   </li>
-                   <li class="nav-item">
+                           </form>
+                       </li>
+                       <li class="nav-item">
 
-                       <div class="dropdown">
+                           <div class="dropdown">
+                               <?php showCategories()?>
 
-                           <span class=" nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                               aria-expanded="false">
+                               <span class=" nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
 
-                               Danh mục
-                           </span>
-                           <ul class="dropdown-menu">
-
-                               <li><a class="dropdown-item" href="/shop_xx/index.php?act=category&id=id">tét</a>
-                               </li>
-                               <li><a class="dropdown-item" href="/shop_xx/index.php?act=category&id=id">tét</a>
-                               </li>
-                               <li><a class="dropdown-item" href="/shop_xx/index.php?act=category&id=id">tét</a>
-                               </li>
-
-
-                           </ul>
+                                   Danh mục
+                               </span>
+                               <ul class="dropdown-menu">
+                                   <?Php foreach ($dataCategories as $categories) {?>
+                                   <li><a class="dropdown-item"
+                                           href="/project-flower/index.php?act=category&id=<?Php echo $categories['id'] ?>"><?php echo $categories['name'] ?></a>
+                                   </li>
+                                   <?php }?>
+                               </ul>
 
 
-                       </div>
+                           </div>
 
                    </li>
                    <li class="nav-item">
                        <a class="nav-link" href="#portfolio">Sản phẩm</a>
                    </li>
                    <li class="nav-item"><a class="nav-link" href="#team">Ceo và leader</a></li>
-                   <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16" style="margin-right:8px">
-  <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
-</svg></a></li>
+
                    <li class="nav-item"><a class="nav-link" href="/project-flower/login/login.php">Đăng nhập</a></li>
                </ul>
            </div>

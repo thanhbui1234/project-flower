@@ -1,4 +1,5 @@
 <?php ob_start()?>
+<?php ob_end_clean()?>
 <!DOCTYPE html>
 <html lang="en">
 
