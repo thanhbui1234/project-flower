@@ -1,9 +1,10 @@
-
-
 <section class="page-section bg-light" id="portfolio">
     <div class="container">
-        <h3 class="text-danger">Top 10 sản phẩm hot pro</h3>
+       
+     
 
+ <h3 class="text-danger">Danh mục</h3>
+       
         <script>
             $(document).ready(function() {
                 $('.owl-carousel').owlCarousel({
@@ -25,69 +26,57 @@
             });
         </script>
         <div class="owl-carousel owl-theme mt-5">
-            <!-- <div class="item">
-                <a href="index.php?act=aboutproduct=" .$id>
-                    <img width="25" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt="">
-                    <p style="text-align:center">
-                        nuoc hoa
-                    </p>
-
-
-                </a>
-
-            </div> -->
-            
         </div>
 
 
         <div class="row mt-5">
-            <?php if(empty($showproduct)){}?>
+            <?php if(empty($loadcategory))?>
             <?php
-            foreach ($showproduct as $products) {
-                $upimg = "upload/" . $products['image'];
-                $giamgia=$products['price']-($products['price']/100*$products['deal']);
-                ?>
+            foreach ($loadcategory as $category) {
+                $category['id'];
+                $giamgia = $category['price'] - ($category['price'] / 100 * $category['deal']);
+            ?>
                 <div class="col-lg-4 col-sm-6 mb-4">
-                    
-                <!-- Portfolio item 1-->
-                <div class="portfolio-item">
-                    <a class="portfolio-link" href="index.php?act=aboutproducts&id=<?php echo $products['id']?>" >
 
-                        <img class="img-fluid bg-white " src="/../project-flower/layout/assets/img/productDemo/a1.png" alt="" />
-                    </a>
-                    <div class="portfolio-caption">
+                    <!-- Portfolio item 1-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" href="index.php?act=aboutproducts&id=<?php echo $category['id'] ?>">
 
-                        <a class="text-decoration-none" href="#">
-                            <div class="portfolio-caption-heading"><?php echo $products['name'] ?>
-                            </div>
+                            <img class="img-fluid bg-white " src="/../project-flower/layout/assets/img/productDemo/a1.png" alt="" />
                         </a>
-                        <div class="portfolio-caption-subheading text-muted">
-                        <del><?php echo $products['price'] ."$" ?></del>
-                        </div>
-                        <div class="portfolio-caption-subheading text-muted">
-                        <?php echo $giamgia . "$"
-                        
-                        
-                        
-                        ?>
-                        
-                        </div>
-                        <div class="portfolio-caption-subheading text-muted">
-                        <p  style="color: red;" ><?php echo "Khuyến mãi:". $products['deal']."%" ?></p>
-                        
-                        </div>
+                        <div class="portfolio-caption">
 
-                        
-                        
+                            <a class="text-decoration-none" href="#">
+                                <div class="portfolio-caption-heading"><?php echo $category['name'] ?>
+                                </div>
+                            </a>
+                            <div class="portfolio-caption-subheading text-muted">
+                                <del><?php echo $category['price'] . "$" ?></del>
+                            </div>
+                            <div class="portfolio-caption-subheading text-muted">
+                                <?php echo $giamgia . "$"
+
+
+
+                                ?>
+
+                            </div>
+                            <div class="portfolio-caption-subheading text-muted">
+                                <p style="color: red;"><?php echo "Khuyến mãi:" . $category['deal'] . "%" ?></p>
+
+                            </div>
+
+
+
+                        </div>
                     </div>
                 </div>
-            </div>
             <?php
             }
             ?>
 
-            
-            
+
+
 
 
         </div>
@@ -177,4 +166,3 @@
         </div>
     </div>
 </section>
-
