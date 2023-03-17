@@ -24,46 +24,51 @@
                     <th> <input id="selectAllBoxes" type="checkbox"></th>
                     <th>ID</th>
                     <th>Tên sản phẩm</th>
-                    <th>Loại sản phẩm</th>
+                    <th>Hình ảnh</th>
                     <th>Gía</th>
-                    <th>Hỉnh ảnh</th>
-                    <th>Nội Dung</th>
+                    <th>Giảm giá</th>
+                    <th>Danh mục</th>
+                    <th>Ngày nhập</th>
+                    <th>Mô tả</th>
                     <th>Trạng thái</th>
-                    <th>Giảm giá </th>
-                    <th>Action </th>
-
+                    <th>Lượt xem</th>
+                    <th>Action</th>
                 </tr>
 
             </thead>
             <tbody>
 
+                <?php if(empty($dataProducts)) {?>
+                    <tr>
+                        <td class=" text-xl-center text-warning" colspan="10">EMPTY</td>
+                    </tr>
+                <?php }?>
 
-                <tr>
-
-
-                <tr>
-                    <td><input class="selectAllBoxesChild" name="checkBoxArr[]" value="<?php echo $id ?>"
-                            type="checkbox">
-                    </td>
-                    <td> 1</td>
-                    <td> ten san pham </td>
-                    <td>loai san pham </td>
-                    <td> gia </td>
-                    <td class="d-flex justify-content-center pb-2"><img width="55"
-                            src="/../project-flower/layout/assets/img/productDemo/a1.png" alt=""></td>
-
-                    <td class="content"> Noi dung san pham</td>
-                    <td></td>
-                    <td>10 % </td>
-                    <td class="action_prod"> <a class="btn btn-success"
-                            href="index.php?act=update_prod&&id=10">UPDATE</a>
-                        <a class="deleteProd" data-id="10"><button class="btn btn-danger">Xóa</button></a>
-                    </td>
-
-                </tr>
-
-
-                </tr>
+                
+                    <?php foreach($dataProducts as $product) {extract($product)?>
+                        <tr>
+                            <td><input class="selectAllBoxesChild" name="checkBoxArr[]" value="<?php echo $id ?>"
+                            type="checkbox"></td>
+                            <td><?php echo $id?></td>
+                            <td><?php echo $name?></td>
+                            <td><img width="50" src="/../project-flower/admin/uploads/<?php echo $image?>" alt=""></td>
+                            <td><?php echo $price?>$</td>
+                            <td><?php echo $deal?>%</td>
+                            <td><?php echo $category?></td>
+                            <td><?php echo $date?></td>
+                            <td><?php echo substr($description,0,50)?>...</td>
+                            <td><?php echo $status?></td>
+                            <td><?php echo $view?></td>
+                            <td class="action_prod">
+                                <a class="btn btn-success" href="index.php?act=update_prod&&id=<?php echo $id ?>">UPDATE</a>
+                                <a class="deleteProd" data-id="<?php echo $id ?>">
+                                    <button class="btn btn-danger">Xóa</button>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php }?>
+                
+                
             </tbody>
 
         </table>

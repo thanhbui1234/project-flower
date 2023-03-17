@@ -1,8 +1,9 @@
+
 <?php include './layout/header.php';
 include './model/product.php';
 include './model/category.php';
-?>
 
+?>
 <body id="page-top">
     <?php
     load_name_category();
@@ -18,6 +19,7 @@ include './model/category.php';
     switch ($url) {
 
 
+
         case 'aboutproducts';
             showaboutproducts();
             showproduct();
@@ -25,14 +27,13 @@ include './model/category.php';
             break;
 
 
-        case 'loadcategory';
+        case 'category';
             loadcategory();
             include './view/category/category.php';
 
             break;
-            break;
         case 'search';
-            echo " tim kiem san pham";
+            search();
             include './view/search/search.php';
             break;
 
@@ -53,3 +54,5 @@ include './model/category.php';
 
 
     <?php include './layout/footer.php' ?>
+
+

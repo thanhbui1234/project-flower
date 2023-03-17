@@ -6,14 +6,17 @@
         </div>
 
 
+        <?php if (empty($dataSearch)) {?>
+        <section>
+            <h3 class="text-center text-danger">Không có thông tin về sản phẩm này</h3>
+        </section>
 
-
+        <?php } else {?>
         <div class="row">
-
-
-
             <div class="col-lg-4 col-sm-6 mb-4">
                 <!-- Portfolio item 1-->
+
+                <?php foreach ($dataSearch as $search) {extract($search)?>
                 <div class="portfolio-item">
                     <a class="portfolio-link" href="./index.php?act=about_product&id=id">
 
@@ -30,9 +33,11 @@
                         </div>
                     </div>
                 </div>
+                <?php }?>
             </div>
 
         </div>
+        <?php }?>
     </div>
     <div id="paging" class=" mt-5">
 

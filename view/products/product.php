@@ -44,6 +44,7 @@
             <?php if(empty($showproduct)){}?>
             <?php
             foreach ($showproduct as $products) {
+                $upimg = "upload/" . $products['image'];
                 $giamgia=$products['price']-($products['price']/100*$products['deal']);
                 ?>
                 <div class="col-lg-4 col-sm-6 mb-4">

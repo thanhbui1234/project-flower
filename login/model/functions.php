@@ -72,11 +72,11 @@ function login()
 
         if ((password_verify($password, $userPassword))) {
             session_start();
-            $_SESSION['userId'] = $user['id'];
-            $_SESSION['user_fullName'] = $user['name'];
+            echo $_SESSION['userId'] = $user['id'];
+            echo $_SESSION['user_fullName'] = $user['name'];
 
-            $_SESSION['userName'] = $user['userName'];
-            $_SESSION['user_role'] = $user['role'];
+            echo $_SESSION['userName'] = $user['userName'];
+            echo $_SESSION['role'] = $user['role'];
 
             header('location: /project-flower/index.php');
 
