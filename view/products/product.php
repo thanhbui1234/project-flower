@@ -2,7 +2,7 @@
 
 <section class="page-section bg-light" id="portfolio">
     <div class="container">
-        <h3 class="text-danger">Top 10 sản phẩm hot pro</h3>
+        <h3 class="text-danger">Top 10 sản phẩm bán chạy nhất</h3>
 
         <script>
             $(document).ready(function() {
@@ -25,20 +25,27 @@
             });
         </script>
         <div class="owl-carousel owl-theme mt-5">
-            <!-- <div class="item">
-                <a href="index.php?act=aboutproduct=" .$id>
-                    <img width="25" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt="">
-                    <p style="text-align:center">
-                        nuoc hoa
+        <?php if(empty($showproduct)){}?>
+            <?php 
+            foreach ($showproduct as $products){ ?>
+                <div class="item">
+                <a style="text-decoration:none" href="index.php?act=aboutproducts&id=<?php echo $products['id']?>">
+                    <img width="25" src="./admin/uploads/<?php echo $products['image'] ?>">
+                    <p style="text-align:center; ">
+                        <?php echo $products['name'] ?>
                     </p>
 
 
                 </a>
 
-            </div> -->
+            </div>
+
+            <?php
+            }      
+            ?>
             
         </div>
-
+        <h3 class="text-danger">Danh sách sản phẩm</h3>
 
         <div class="row mt-5">
             <?php if(empty($showproduct)){}?>
@@ -54,7 +61,7 @@
                 <div class="portfolio-item">
                     <a class="portfolio-link" href="index.php?act=aboutproducts&id=<?php echo $products['id']?>" >
 
-                        <img class="img-fluid bg-white " src="./admin/uploads/<?php echo $products['image'] ?>"  alt="" style="width: 400px; text-align:center" />
+                        <img class="img-fluid bg-white " src="./admin/uploads/<?php echo $products['image'] ?>"  alt="" style="width: 450px; text-align:center" />
                     </a>
                     <div class="portfolio-caption">
 

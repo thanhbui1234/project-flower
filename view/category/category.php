@@ -42,7 +42,7 @@
                     <div class="portfolio-item">
                         <a class="portfolio-link" href="index.php?act=aboutproducts&id=<?php echo $category['id'] ?>">
 
-                        <img class="img-fluid bg-white " src="./admin/uploads/<?php echo $category['image'] ?>"  alt="" style="width: 400px; text-align:center" />
+                        <img class="img-fluid bg-white " src="./admin/uploads/<?php echo $category['image'] ?>"  alt="" style="width: 450px; text-align:center" />
                         </a>
                         <div class="portfolio-caption">
 
