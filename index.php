@@ -1,6 +1,7 @@
 <?php include './layout/header.php';
 include './model/product.php';
 include './model/category.php';
+include './model/search.php';
 
 ?>
 
