@@ -5,7 +5,7 @@
 
 
         <div class="row gx-4 gx-lg-5 align-items-center">
-            <div class="col-md-6"><img width="500" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt=""></div>
+            <div class="col-md-6"><img width="500"  src="./admin/uploads/<?php echo $showaboutproducts['image'] ?> "></div>
             <div class="col-md-6">
 
                 <h1 class="display-5 fw-bolder"><?php echo $showaboutproducts['name'] ?></h1>
@@ -22,6 +22,10 @@
                     <button class="btn btn-outline-dark flex-shrink-0" type="button">
                         <i class="bi-cart-fill me-1"></i>
                         Mua ngay
+                    </button>
+                    <button style="margin-left: 8px;" class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <i class="bi-cart-fill me-1"></i>
+                        Thêm vào giỏ hàng
                     </button>
                 </div>
             </div>
@@ -43,7 +47,8 @@
                     <!-- Sale badge-->
                     <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                     <!-- Product image-->
-                    <a href="index.php?act=aboutproducts&id=<?php echo $products['id']?>"><img width="230" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt=""></a>
+                    <a href="index.php?act=aboutproducts&id=<?php echo $products['id']?>"><img width="250px" src="./admin/uploads/<?php echo $products['image'] ?>"></a>
+                    
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">

@@ -44,7 +44,8 @@
             <?php if(empty($showproduct)){}?>
             <?php
             foreach ($showproduct as $products) {
-                $upimg = "upload/" . $products['image'];
+                // $upimg = "uploads/" . $products['image'];
+                
                 $giamgia=$products['price']-($products['price']/100*$products['deal']);
                 ?>
                 <div class="col-lg-4 col-sm-6 mb-4">
@@ -53,11 +54,11 @@
                 <div class="portfolio-item">
                     <a class="portfolio-link" href="index.php?act=aboutproducts&id=<?php echo $products['id']?>" >
 
-                        <img class="img-fluid bg-white " src="/../project-flower/layout/assets/img/productDemo/a1.png" alt="" />
+                        <img class="img-fluid bg-white " src="./admin/uploads/<?php echo $products['image'] ?>"  alt="" style="width: 400px; text-align:center" />
                     </a>
                     <div class="portfolio-caption">
 
-                        <a class="text-decoration-none" href="#">
+                        <a class="text-decoration-none" href="index.php?act=aboutproducts&id=<?php echo $products['id']?>">
                             <div class="portfolio-caption-heading"><?php echo $products['name'] ?>
                             </div>
                         </a>
