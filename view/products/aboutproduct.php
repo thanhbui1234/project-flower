@@ -5,12 +5,14 @@
 
 
         <div class="row gx-4 gx-lg-5 align-items-center">
-            <div class="col-md-6"><img width="500" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt=""></div>
+            <div class="col-md-6"><img width="500" src="./admin/uploads/<?php echo $showaboutproducts['image'] ?> ">
+            </div>
             <div class="col-md-6">
 
                 <h1 class="display-5 fw-bolder"><?php echo $showaboutproducts['name'] ?></h1>
                 <div class="fs-5 mb">
-                    <span style="margin-right: 4px;"><?php echo "Giá:" . "$giamgia" ."$" ?></span> <span><del><?php echo $showaboutproducts['price'] ?></del>
+                    <span style="margin-right: 4px;"><?php echo "Giá:" . "$giamgia" ."$" ?></span>
+                    <span><del><?php echo $showaboutproducts['price'] ?></del>
                 </div>
                 <div class="fs-5 mb-5">
                     <span style="color: red"><?php echo "Khuyến mãi:". $showaboutproducts['deal']."%" ?></span> <span>
@@ -18,10 +20,15 @@
 
                 <p class="lead"><?php echo $showaboutproducts['description'] ?></p>
                 <div class="d-flex">
-                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                    <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1"
+                        style="max-width: 4rem" />
                     <button class="btn btn-outline-dark flex-shrink-0" type="button">
                         <i class="bi-cart-fill me-1"></i>
                         Mua ngay
+                    </button>
+                    <button style="margin-left: 8px;" class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <i class="bi-cart-fill me-1"></i>
+                        Thêm vào giỏ hàng
                     </button>
                 </div>
             </div>
@@ -38,28 +45,34 @@
             foreach ($showproduct as $products) {
                 $giamgia=$products['price']-($products['price']/100*$products['deal']);
             ?>
-<div class="col mb-5">
+            <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Sale badge-->
-                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                    <!-- Product image-->
-                    <a href="index.php?act=aboutproducts&id=<?php echo $products['id']?>"><img width="230" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt=""></a>
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <h5 class="fw-bolder"><?php echo $products['name'] ?></h5>
-                            <p><del><?php echo $products['price'] ?> </del></p>
-                            <p><?php echo $giamgia . "$"?> </p>
-                            <p style="color: red;"><?php echo "Khuyến mãi:". $products['deal']."%" ?> </p>
-                        </div>
+                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
                     </div>
+                    <!-- Product image-->
+                    <a style="text-decoration:none"
+                        href="index.php?act=aboutproducts&id=<?php echo $products['id']?>"><img width="250px"
+                            src="./admin/uploads/<?php echo $products['image'] ?>">
+
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder"><?php echo $products['name'] ?></h5>
+                    </a>
+                    <p><del><?php echo $products['price'] ?> </del></p>
+                    <p><?php echo $giamgia . "$"?> </p>
+                    <p style="color: red;"><?php echo "Khuyến mãi:". $products['deal']."%" ?> </p>
                 </div>
             </div>
-            <?php
+
+        </div>
+    </div>
+    <?php
             }
             ?>
 
-        </div>
+    </div>
     </div>
 </section>
