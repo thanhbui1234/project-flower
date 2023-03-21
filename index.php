@@ -1,6 +1,7 @@
 <?php include './layout/header.php';
 include './model/product.php';
 include './model/category.php';
+include './model/user.php';
 
 ?>
 
@@ -35,6 +36,7 @@ switch ($url) {
         break;
 
     case 'profile';
+    updateProfile();
         include './view/profile/profile.php';
         break;
 
