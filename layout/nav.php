@@ -46,7 +46,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#portfolio">Sản phẩm</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#team">Ceo và leader</a></li>
+
 
                 <!-- <li class="nav-item"><a class="nav-link" href="/project-flower/login/login.php">Đăng nhập</a></li> -->
                 <?php if (isset($_SESSION['userName'])) {?>
@@ -85,4 +85,3 @@
         <div class="masthead-heading">Flower </div>
     </div>
 </header>
-
