@@ -2,12 +2,10 @@
     <div class="container px-4 px-lg-5 my-5">
         <?php if(empty($showaboutproducts)) ?>
         <?php $giamgia = $showaboutproducts['price'] - ($showaboutproducts['price'] / 100 * $showaboutproducts['deal']) ?>
-
-
+    <form action="/project-flower/cart/cart.php" method="POST" >
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="col-md-6"><img width="500" src="/../project-flower/layout/assets/img/productDemo/a2.png" alt=""></div>
             <div class="col-md-6">
-
                 <h1 class="display-5 fw-bolder"><?php echo $showaboutproducts['name'] ?></h1>
                 <div class="fs-5 mb">
                     <span style="margin-right: 4px;"><?php echo "Giá:" . "$giamgia" ."$" ?></span> <span><del><?php echo $showaboutproducts['price'] ?></del>
@@ -15,18 +13,18 @@
                 <div class="fs-5 mb-5">
                     <span style="color: red"><?php echo "Khuyến mãi:". $showaboutproducts['deal']."%" ?></span> <span>
                 </div>
-
                 <p class="lead"><?php echo $showaboutproducts['description'] ?></p>
                 <div class="d-flex">
-                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                    <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                        <i class="bi-cart-fill me-1"></i>
-                        Mua ngay
-                    </button>
+                    <input type="text" name="name" value="<?php echo $showaboutproducts['name'] ?>" hidden>
+                    <input type="text" name="image" value="/../project-flower/layout/assets/img/productDemo/a2.png" hidden>
+                    <input type="text" name="price" value="<?php echo $showaboutproducts['price'] ?>" hidden>
+                    <input type="text" name="deal" value="<?php echo $showaboutproducts['deal'] ?>" hidden>
+                    <input name="amount" class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                    <input type="submit" class="btn btn-outline-dark flex-shrink-0" value="Mua ngay" name="add_cart">
                 </div>
             </div>
         </div>
-
+    </form>
     </div>
 </section>
 <!-- Related items section-->
