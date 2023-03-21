@@ -41,6 +41,7 @@
     function addCart(){
         $bill = createBill();
         global $conn;
+        $check = 0;
         foreach($_SESSION['cart'] as $cart){
             $name = $cart[0];
             $image = $cart[1];
@@ -50,8 +51,16 @@
             $sum = $cart[5];
             $sql = "insert into bill_detail (bill,productName,image,price,deal,amount,sum) values ('$bill','$name','$image','$price','$deal','$amount','$sum')";
             $statement = $conn -> prepare ($sql);
-            $statement -> execute();
+            if($statement -> execute()) $check = 1;
         }
-        unset($_SESSION['cart']);   
+        if($check==1){
+            echo "<script>Swal.fire(
+                'Good job!',
+                'You clicked the button!',
+                'success'
+              )</script>";
+        }
+        unset($_SESSION['cart']); 
+        //header('location: /project-flower/index.php');    
     }
 ?>
