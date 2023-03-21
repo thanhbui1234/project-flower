@@ -15,17 +15,13 @@
             <h3 class='text-center text-danger'>Không có thông tin về sản phẩm này</h3>
         </section>
     ";
-}
-?>
-            <?php
+} else {
 
-foreach ($loadcategory as $category) {
-    $category['id'];
-    $giamgia = $category['price'] - ($category['price'] / 100 * $category['deal']);
-    ?>
+    foreach ($loadcategory as $category) {
+        $category['id'];
+        $giamgia = $category['price'] - ($category['price'] / 100 * $category['deal']);
+        ?>
             <div class="col-lg-4 col-sm-6 mb-4">
-                <h3 class="text-danger">Danh mục</h3>
-                <!-- Portfolio item 1-->
                 <div class="portfolio-item">
                     <a class="portfolio-link" href="index.php?act=aboutproducts&id=<?php echo $category['id'] ?>">
 
@@ -44,7 +40,7 @@ foreach ($loadcategory as $category) {
                         <div class="portfolio-caption-subheading text-muted">
                             <?php echo $giamgia . "$"
 
-    ?>
+        ?>
 
                         </div>
                         <div class="portfolio-caption-subheading text-muted">
@@ -58,8 +54,7 @@ foreach ($loadcategory as $category) {
                 </div>
             </div>
             <?php
-}
-?>
+}}?>
 
 
 
