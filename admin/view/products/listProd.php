@@ -1,11 +1,19 @@
+<!-- <?php if (isset($_GET['message'])) {
+            echo "<script>
+    Swal.fire(
+        'Good job!',
+        'Cập nhật thành công',
+        'success'
+      )
+    </script>";
+        } ?> -->
 <div class="mx-4">
     <form action="#" method="post" class="">
 
 
 
         <div class="d-flex flex-row gap-2  ">
-            <select name="option" class="form-select form-select-sm form-control w-25 mb-4" id="selectAllprod"
-                aria-label="Default select example">
+            <select name="option" class="form-select form-select-sm form-control w-25 mb-4" id="selectAllprod" aria-label="Default select example">
                 <option selected>Chức năng</option>
                 <option value="public">Public</option>
                 <option value="private">Private</option>
@@ -38,40 +46,42 @@
             </thead>
             <tbody>
 
-                <?php if(empty($dataProducts)) {?>
+                <?php if (empty($dataProducts)) { ?>
                     <tr>
                         <td class=" text-xl-center text-warning" colspan="10">EMPTY</td>
                     </tr>
-                <?php }?>
+                <?php } ?>
 
-                
-                    <?php foreach($dataProducts as $product) {extract($product)?>
-                        <tr>
-                            <td><input class="selectAllBoxesChild" name="checkBoxArr[]" value="<?php echo $id ?>"
-                            type="checkbox"></td>
-                            <td><?php echo $id?></td>
-                            <td><?php echo $name?></td>
-                            <td><img width="50" src="/../project-flower/admin/uploads/<?php echo $image?>" alt=""></td>
-                            <td><?php echo $price?>$</td>
-                            <td><?php echo $deal?>%</td>
-                            <td><?php echo $category?></td>
-                            <td><?php echo $date?></td>
-                            <td><?php echo substr($description,0,50)?>...</td>
-                            <td><?php echo $status?></td>
-                            <td><?php echo $view?></td>
-                            <td class="action_prod">
-                                <a class="btn btn-success" href="index.php?act=update_prod&&id=<?php echo $id ?>">UPDATE</a>
-                                <a class="deleteProd" data-id="<?php echo $id ?>">
-                                    <button class="btn btn-danger">Xóa</button>
-                                </a>
-                            </td>
-                        </tr>
-                    <?php }?>
-                
-                
+
+                <?php foreach ($dataProducts as $product) {
+                    extract($product) ?>
+                    <tr>
+                        <td><input class="selectAllBoxesChild" name="checkBoxArr[]" value="<?php echo $id ?>" type="checkbox"></td>
+                        <td><?php echo $id ?></td>
+                        <td><?php echo $name ?></td>
+                        <td><img width="50" src="/../project-flower/admin/uploads/<?php echo $image ?>" alt=""></td>
+                        <td><?php echo $price ?>$</td>
+                        <td><?php echo $deal ?>%</td>
+                        <td><?php echo $category ?></td>
+                        <td><?php echo $date ?></td>
+                        <td><?php echo substr($description, 0, 50) ?>...</td>
+                        <td><?php echo $status ?></td>
+                        <td><?php echo $view ?></td>
+                        <td class="action_prod">
+                            <a class="btn btn-success" href="index.php?act=update_prod&&id=<?php echo $id ?>">UPDATE</a>
+                            <a class="deleteProd" data-id="<?php echo $id ?>">
+                                <button class="btn btn-danger">Xóa</button>
+                            </a>
+                        </td>
+                    </tr>
+                <?php } ?>
+
+
             </tbody>
 
         </table>
     </form>
 
 </div>
+
+<script src="layout/js/products.js"></script>

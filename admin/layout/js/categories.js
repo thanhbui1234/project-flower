@@ -29,7 +29,7 @@ deleteCategories.forEach((btn) => {
       confirmButtonText:
         '<a class="text-white" href="index.php?act=categories&delete=' +
         idDelete +
-        '">Xoas</a>',
+        '">Xóa</a>',
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
