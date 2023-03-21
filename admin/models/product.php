@@ -82,6 +82,17 @@ function showProducts(){
     $dataProducts = $statement -> fetchAll();
 }
 
+function selectNameCategory($category) {
+    if ($category) {
+        global $conn;
+        $sql = "SELECT name FROM categories WHERE id = $category";
+        $statement = $conn ->query($sql);
+        $statement ->execute();
+        global $dataNameCategory;
+        $dataNameCategory = $statement ->fetchAll();
+    }
+}
+
 function selectCategory($category){
     if (isset($category)){
         global $conn;

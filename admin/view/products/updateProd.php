@@ -34,6 +34,7 @@
     <br>
 
     <div class="form-group">
+        <label for="exampleInputPassword1">Danh mục</label><br>
         <select name="prod_category" id="select" class="form-select" aria-label="Default select example">
 
         <?php selectCategory($category)?>

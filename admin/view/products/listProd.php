@@ -62,7 +62,10 @@
                         <td><img width="50" src="/../project-flower/admin/uploads/<?php echo $image ?>" alt=""></td>
                         <td><?php echo $price ?>$</td>
                         <td><?php echo $deal ?>%</td>
-                        <td><?php echo $category ?></td>
+                        <?php selectNameCategory($category)?>
+                        <?php foreach($dataNameCategory as $NameCategory) { ?>
+                            <td><?php echo $NameCategory['name']?></td>
+                        <?php }?>
                         <td><?php echo $date ?></td>
                         <td><?php echo substr($description, 0, 50) ?>...</td>
                         <td><?php echo $status ?></td>

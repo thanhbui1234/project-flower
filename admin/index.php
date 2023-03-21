@@ -38,7 +38,7 @@ switch ($act) {
         break;
 
     default:
-
+        
         include './view/home/home.php';
         break;
 }
