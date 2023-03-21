@@ -1,17 +1,14 @@
 <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
-        <?php if (empty($showaboutproducts)) {
-    ;
-}
-?>
-        <?php $giamgia = $showaboutproducts['price'] - ($showaboutproducts['price'] / 100 * $showaboutproducts['deal'])?>
 
+        <?php if(empty($showaboutproducts)) ?>
+        <?php $giamgia = $showaboutproducts['price'] - ($showaboutproducts['price'] / 100 * $showaboutproducts['deal']) ?>
+    <form action="/project-flower/cart/cart.php" method="POST" >
 
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="col-md-6"><img width="500" src="./admin/uploads/<?php echo $showaboutproducts['image'] ?> ">
             </div>
             <div class="col-md-6">
-
                 <h1 class="display-5 fw-bolder"><?php echo $showaboutproducts['name'] ?></h1>
                 <div class="fs-5 mb">
                     <span style="margin-right: 4px;"><?php echo "Giá:" . "$giamgia" . "$" ?></span>
@@ -21,33 +18,28 @@
                     <span style="color: red"><?php echo "Khuyến mãi:" . $showaboutproducts['deal'] . "%" ?></span>
                     <span>
                 </div>
-
                 <p class="lead"><?php echo $showaboutproducts['description'] ?></p>
-                <div class="">
+
+                <div class="d-flex">
+                    <input type="text" name="name" value="<?php echo $showaboutproducts['name'] ?>" hidden>
+                    <input type="text" name="image" value="/../project-flower/layout/assets/img/productDemo/a2.png" hidden>
+                    <input type="text" name="price" value="<?php echo $showaboutproducts['price'] ?>" hidden>
+                    <input type="text" name="deal" value="<?php echo $showaboutproducts['deal'] ?>" hidden>
+                    <div class="">
                     <div class="d-flex gap-lg-5 mb-lg-4">
                         <h3 class="">Số lượng</h3>
                         <div class="d-flex">
                             <button id="subtract" class="btn border">-</button>
-                            <input class="form-control text-center " id="inputQuantity" type="text" step="none" min='1'
+                            <input name="amount" class="form-control text-center " id="inputQuantity" type="text" step="none" min='1'
                                 value="1" style="max-width: 4rem" />
                             <button id="add" class="btn border ">+</button>
                         </div>
-
                     </div>
-
-
-                    <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                        <i class="bi-cart-fill me-1"></i>
-                        Mua ngay
-                    </button>
-                    <button style="margin-left: 8px;" class="btn btn-outline-dark flex-shrink-0" type="button">
-                        <i class="bi-cart-fill me-1"></i>
-                        Thêm vào giỏ hàng
-                    </button>
+                    <input type="submit" class="btn btn-outline-dark flex-shrink-0" value="Thêm vào giỏ hàng" name="add_cart">
                 </div>
             </div>
         </div>
-
+    </form>
     </div>
 </section>
 <!-- Related items section-->
