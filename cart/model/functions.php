@@ -27,4 +27,31 @@
     }  
     }
 }
+    function createBill(){
+        session_start();
+        global $conn;
+        $customer = $_SESSION['userId'];
+        $dateCreate = date("Y-m-d H:i a ");
+        $sql = "insert into bills (customer,date) values ('$customer','$dateCreate')";
+        $statement = $conn -> prepare ($sql);
+        $statement -> execute();
+        $id = $conn -> lastInsertId();
+        return $id;
+    }
+    function addCart(){
+        $bill = createBill();
+        global $conn;
+        foreach($_SESSION['cart'] as $cart){
+            $name = $cart[0];
+            $image = $cart[1];
+            $price = $cart[2];
+            $deal = $cart[3];
+            $amount = $cart[4];
+            $sum = $cart[5];
+            $sql = "insert into bill_detail (bill,productName,image,price,deal,amount,sum) values ('$bill','$name','$image','$price','$deal','$amount','$sum')";
+            $statement = $conn -> prepare ($sql);
+            $statement -> execute();
+        }
+        unset($_SESSION['cart']);   
+    }
 ?>

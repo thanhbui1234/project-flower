@@ -1,16 +1,11 @@
 <?php
     include "../model/functions.php";
     session_start();
-    if(isset($_GET['del_id'])&&$_GET['del_id']>=0){
-        array_splice($_SESSION['cart'],$_GET['del_id'],1);
-    }
-    getCart();
-    if(isset($_GET['del_cart'])&&$_GET['del_cart']==1) unset($_SESSION['cart']);
 ?>
 <section class="page-section" id="contact">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">Giỏ hàng</h2>
+            <h2 class="section-heading text-uppercase">Xác nhận đơn hàng</h2>
             <h3 class="section-subheading text-muted">
                 Shop X uy tín số 1 thế giới
             </h3>
@@ -26,7 +21,6 @@
                     <th>Giảm giá</th>
                     <th>Số lượng</th>
                     <th>Thành tiền</th>
-                    <th>Action</th>
                 </tr>
             </thead>
             <tbody> 
@@ -41,11 +35,6 @@
                             <td>- <?php echo $cart[3]?>$</td>
                             <td><?php echo $cart[4]?></td>
                             <td><?php echo $cart[5]?>$</td>
-                            <td class="action_prod">
-                                <a class="deleteProd" href="../cart/cart.php?del_id=<?php echo ($id-1)?>">
-                                    <button class="btn btn-danger" type="submit">Xóa</button>
-                                </a>
-                            </td>
                         </tr>
                         <?php $total+=$cart[5];?>
                     <?php endforeach?>
@@ -53,27 +42,17 @@
             <tfoot>
                 <tr>
                     <th colspan="6">Total:</th> 
-                    <th colspan="2"><?php echo $total;?> $</th>
+                    <th colspan="1"><?php echo $total;?> $</th>
                 </tr>
             </tfoot>
             </table>
         </div>
             <div class="text-center">
-            <a href="/project-flower/cart/cart.php?act=createBill">
-                <button class="btn btn-primary btn-xl text-uppercase " id="submitButton" name="" type="">
-                    Xác nhận đặt hàng
+                <form action="/project-flower/cart/cart.php?act=submit" method="POST">
+                <button class="btn btn-primary btn-xl text-uppercase " id="submitButton" name="login" type="submit">
+                    Xác nhận
                 </button>
-                </a>
-                <a href="/project-flower/index.php">
-                <button class="btn btn-primary btn-xl text-uppercase " id="submitButton" name="" type="">
-                    Tiếp tục mua hàng
-                </button>
-                </a>
-                <a href="/project-flower/cart/cart.php?del_cart=1">
-                <button class="btn btn-primary btn-xl text-uppercase " id="submitButton" name="del_cart" type="button">
-                    Hủy đặt hàng
-                </button>
-                </a>
+                </form>
             </div>
         </form>
     </div>
