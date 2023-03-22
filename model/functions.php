@@ -74,11 +74,10 @@ function login()
             session_start();
             echo $_SESSION['userId'] = $user['id'];
             echo $_SESSION['user_fullName'] = $user['name'];
+
             echo $_SESSION['userName'] = $user['userName'];
             echo $_SESSION['role'] = $user['role'];
-            echo $_SESSION['address'] = $user['address'];
-            echo $_SESSION['phone'] = $user['phone'];
-            echo $_SESSION['email'] = $user['email'];
+
             header('location: /project-flower/index.php');
 
         } else {

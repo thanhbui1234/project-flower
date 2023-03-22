@@ -31,7 +31,9 @@ if (isset($_GET['successUpdate'])) {
             <?php showDataUpdate() ?>
 
 
+
             <form method="post" class="mt-5" action="#">
+
 
                 <div class="form-group">
                     <label for="exampleInputEmail1"></label>
@@ -47,8 +49,10 @@ if (isset($_GET['successUpdate'])) {
                     <button type="submit" name="updateCategory" id="add_category" class="btn btn-primary">Chỉnh
                         sửa</button>
 
+
                     <button type="submit" name="cancelUpdate" id="add_category" class="btn btn-primary btn-danger">Hủy
                     </button>
+
 
                 </div>
 
@@ -93,5 +97,16 @@ if (isset($_GET['successUpdate'])) {
         </table>
     </div>
 </div>
+<script>
+const formUpdateCate = document.querySelector('#formUpdateCate');
+formUpdateCate.addEventListener('submit', (e) => {
+    var category2 = document.querySelector('input[name="category2"]');
+    if (category2.value == '') {
+        e.preventDefault();
+    }
 
+
+
+})
+</script>
 <script src="layout/js/categories.js"></script>

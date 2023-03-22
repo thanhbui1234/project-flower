@@ -1,30 +1,40 @@
-   <?php session_start()?>
-   <?php include './layout/header.php'?>
 
-   <body id="page-top">
-       <?php include './layout/nav.php'?>
+<?php include './layout/header.php';
+include './model/product.php';
+include './model/category.php';
+include './model/search.php';
 
+?>
 
+<body id="page-top">
+    <?php
+load_name_category();
+include './layout/nav.php';
+?>
 
+    <?php
 
-       <?php isset($_GET['act']) ? $url = $_GET['act'] : $url = false;
+showproduct();
+?>
+    <?php isset($_GET['act']) ? $url = $_GET['act'] : $url = false;
 
 switch ($url) {
 
-    case 'he';
-        echo "hi";
-        break;
-    case 'aboutproduct';
+    case 'aboutproducts';
+        showaboutproducts();
+        showproduct();
         include './view/products/aboutproduct.php';
         break;
-    case 'search';
 
+    case 'category';
+        loadcategory();
+        include './view/category/category.php';
+
+        break;
+    case 'search';
+        search();
         include './view/search/search.php';
         break;
-    // case 'logout';
-    //     include './view/logout/logout.php';
-
-    //     break;
 
     case 'profile';
         include './view/profile/profile.php';
@@ -42,4 +52,4 @@ switch ($url) {
 
 
 
-       <?php include './layout/footer.php'?>
+    <?php include './layout/footer.php'?>
