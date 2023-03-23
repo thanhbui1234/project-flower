@@ -2,6 +2,7 @@
 <?php include './layout/header.php';
 include './model/product.php';
 include './model/category.php';
+include './model/user.php';
 include './model/search.php';
 
 ?>
@@ -16,6 +17,7 @@ include './layout/nav.php';
 
 showproduct();
 ?>
+
     <?php isset($_GET['act']) ? $url = $_GET['act'] : $url = false;
 
 switch ($url) {
@@ -37,6 +39,7 @@ switch ($url) {
         break;
 
     case 'profile';
+    updateProfile();
         include './view/profile/profile.php';
         break;
 
