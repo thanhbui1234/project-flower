@@ -1,4 +1,3 @@
-
 <?php include './layout/header.php';
 include './model/product.php';
 include './model/category.php';
@@ -9,14 +8,10 @@ include './model/search.php';
 
 <body id="page-top">
     <?php
-load_name_category();
 include './layout/nav.php';
 ?>
 
-    <?php
 
-showproduct();
-?>
 
     <?php isset($_GET['act']) ? $url = $_GET['act'] : $url = false;
 
@@ -39,7 +34,7 @@ switch ($url) {
         break;
 
     case 'profile';
-    updateProfile();
+        updateProfile();
         include './view/profile/profile.php';
         break;
 
@@ -47,6 +42,8 @@ switch ($url) {
         include './view/profile/changepassword.php';
         break;
     default:
+
+        showproduct();
         include './view/products/product.php';
         break;
 }
