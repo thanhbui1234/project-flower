@@ -18,13 +18,11 @@ deleteBtn.forEach((btn) => {
         swalWithBootstrapButtons
             .fire({
                 title: "Bạn có chắc không?",
-                text: "Bạn muốn xóa người dùng này phải không",
+                text: "Bạn muốn xóa sản phẩm này phải không?",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonText:
-                    '<a class="text-white " href="index.php?act=listProd&deleteProduct=' +
-                    dataId +
-                    '">Xóa<a>',
+                    '<a class="text-white" href="index.php?act=listProd&deleteProduct=' + dataId + '">Xóa</a>',
                 cancelButtonText: "No, cancel!",
                 reverseButtons: true,
             })
