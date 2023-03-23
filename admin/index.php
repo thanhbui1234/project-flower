@@ -6,7 +6,6 @@
 <?php include './layout/nav.php'?>
 
 <?php require_once './models/product.php'?>
-<?php require_once './models/categories.php'?>
 
 <?php include './models/categories.php' ?>
 
