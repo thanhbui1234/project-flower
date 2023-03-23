@@ -15,6 +15,7 @@ include './layout/nav.php';
 
 showproduct();
 ?>
+
     <?php isset($_GET['act']) ? $url = $_GET['act'] : $url = false;
 
 switch ($url) {

@@ -14,6 +14,7 @@ $dataUser= $statement->fetchAll();
 
 }
 function updateProfile(){
+    
     if(isset($_POST["saveProfile"])){
         global $conn;
         $id= $_SESSION["userId"];
@@ -29,7 +30,7 @@ function updateProfile(){
     //     $Image =  $_FILES["pickimg"]["name"]; //lấy ra tên ảnh từ file mới chọn và gán cho biến $productImage
     //     move_uploaded_file($_FILES["pickimg"]["tmp_name"],"/../project-flower/admin/uploads/".$_FILES["pickimg"]["name"]);//thực hiện chuyển file từ thư mục tạm vào thư mục image
     // }
-       $img=$_FILES["pickimg"]["name"];
+       $img= $_FILES["pickimg"]["name"];
 
       if (empty($img)) {
         $sqlavt = "select image from users where id = $id "; 
@@ -46,11 +47,11 @@ function updateProfile(){
     }
 
     $avt_image_tmp = $_FILES['pickimg']['tmp_name'];
-    $targe_dir = '../admin/uploads/';
+    $targe_dir = './admin/uploads/';
     $target_file = $targe_dir . $img;
     move_uploaded_file($avt_image_tmp, $target_file);
     
-    $sql = " UPDATE `users` SET `name`='$userName',`address`='$Address',`phone`='$Phone',`email`='$Email' WHERE id=$id ";
+    $sql = " UPDATE `users` SET `name`='$userName',`address`='$Address',`phone`='$Phone',`email`='$Email' , `image`='$img'  WHERE id=$id ";
     global $conn;
     $statement = $conn->prepare($sql);
 $statement->execute();

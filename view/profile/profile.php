@@ -1,4 +1,6 @@
 <?php showDataUser();?>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <section class="bg-light container  mt-5 p-lg-3  bg-body" id="">
     <div class="rounded shadow p-lg-4" id="formbg">
     <h2 class="h2">Hồ sơ của tôi</h2><br>
@@ -6,7 +8,7 @@
 <hr>
 <div class="bcsprofile">
     <div>
-    <form id="formProfile"  enctype="multipart/form-data" action="" style="max-width:500px;margin:auto" method="POST"  >
+    <form id="formProfile"  enctype="multipart/form-data" action="#" style="max-width:500px;margin:auto" method="POST"  >
 <?php foreach($dataUser as $user){?>
 <div class="input-container">
   <i class="fa fa-user icon"></i>
@@ -28,10 +30,11 @@
   <input class="input-field" type="text" placeholder="PhoneNumber" value="<?php echo $user["phone"]?>" name="phone_profile">
 </div>
 
-<button type="submit" class="saveupdate" name="saveProfile">SAVE UPDATE</button>
+
+<button type="submit"  class="saveupdate" name="saveProfile">SAVE UPDATE</button>
 
     </div>
-
+   
    <div>
    <?php echo empty($user['image']) ? "<img class='imgprofile'  src='/../project-flower/layout/assets/img/avtDefault.jpg' alt=''><br>" : "<img class='imgprofile'  src='/../project-flower/admin/uploads/$user[image]' alt=''><br>"; ?>
   
@@ -50,48 +53,43 @@ var user = document.querySelector('input[name="user_profile"]');
 var email = document.querySelector('input[name="email_profile"]');
 var address = document.querySelector('input[name="address_profile"]');
 var phone = document.querySelector('input[name="phone_profile"]');
-// console.log(input);
 
+// function a(){
+//   if(user.value.length<1){
+ 
+//   swal( "Oops" ,  "Something went wrong!" ,  "error" );
+// }else {
+//   swal({
+//   title: "Good job!",
+//   text: "You clicked the button!",
+//   icon: "success",
+//   button: "Aww yiss!",
+// });
+// }
+// }
 form.addEventListener("submit", (e) => {
-  if (user.value.length < 1) {
-    
+  if (user.value.length<1 || email.value.length<1 || address.value.length<1 || phone.value.length<1 ) {
     e.preventDefault();
-    return Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Trường này không được bỏ trống",
-    });
-  }else if(email.value.length < 1) {
+    return swal( "Lỗi rồi" ,  "Bạn không được bỏ trống bất kỳ trường nào!" ,  "error" );
+  }else if(user.value.length<6 ){
     e.preventDefault();
-    return Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Trường này không được bỏ trống",
-    });
+    return swal( "Lỗi UserName" ,  "Bạn không được ghi tên quá ngắn!" ,  "error" );
+  }else if( email.value.length<10 || !email.value.includes("@") || !email.value.includes(".")){
+    e.preventDefault();
+    return swal( "Lỗi Email" ,  "Email không hợp lệ!" ,  "error" );
   }
-  else if(email.value.length < 1) {
+  else if(  address.value.length<6 ){
     e.preventDefault();
-    return Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Trường này không được bỏ trống",
-    });
-  }else if(email.value.notincludes('@') && email.value.notincludes('.')  ) {
+    return swal( "Lỗi Address" ,  "Địa không hợp lệ!" ,  "error" );
+  }else if(phone.value.length!=10 && phone.value.length!=11){
     e.preventDefault();
-    return Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Trường này không được bỏ trống",
-    });
-  }else{
-    swal.fire({
-  title: "Good job!",
-  text: "You clicked the button!",
-  icon: "success",
-  button: "Aww yiss!",
-});
-  }
-  
+    return swal( "Lỗi PhoneNumber" ,  "Số điện thoại không hợp lệ!" ,  "error" );
+  }else if(isNaN(phone.value) || !phone.value.startsWith("0")){
+    e.preventDefault();
+    return swal( "Lỗi PhoneNumber" ,  "Số điện thoại không hợp lệ!" ,  "error" );
+  }else  return alert("submit thanh cong");
+   
   
 });
+
 </script>
