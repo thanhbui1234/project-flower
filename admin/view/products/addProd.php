@@ -3,22 +3,23 @@
         <label for="exampleInputEmail1">Tên sản phẩm</label>
         <input type="text" name="prod_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
     </div>
-    <h3 class="text-danger"> <?php echo isset($errProduct['name']) ? $errProduct['name'] : ''; ?>
+    <h3 class="text-danger text-lg"> <?php echo isset($errProduct['name']) ? $errProduct['name'] : ''; ?>
     </h3>
 
     <div class="form-group">
         <label class="border btn btn-success" for="img"> Thêm hình ảnh</label>
+        <!-- <td><img width="100" src="../../uploads//<?php echo $image ?>" alt=""></td> -->
         <input hidden name="prod_img" type="file" id="img">
     </div>
-    <h3 class="text-danger"> <?php echo isset($errProduct['img']) ? $errProduct['img'] : ''; ?></h3>
+    <h3 class="text-danger text-lg"> <?php echo isset($errProduct['img']) ? $errProduct['img'] : ''; ?></h3>
     <br>
 
     <div class="form-group">
         <label for="exampleInputPassword1">Giá</label>
         <input name="prod_price" type="text" class="form-control" id="exampleInputPassword1">
     </div>
-    <h3 class="text-danger"> <?php echo isset($errProduct['price']) ? $errProduct['price'] : ''; ?></h3>
-    <h3 class="text-danger"> <?php echo isset($errProduct['prod_price_num']) ? $errProduct['prod_price_num'] : ''; ?>
+    <h3 class="text-danger text-lg"> <?php echo isset($errProduct['price']) ? $errProduct['price'] : ''; ?></h3>
+    <h3 class="text-danger text-lg"> <?php echo isset($errProduct['prod_price_num']) ? $errProduct['prod_price_num'] : ''; ?>
     </h3>
     <br>
 
@@ -41,7 +42,7 @@
 
         </select>
     </div>
-    <h3 class="text-danger"> <?php echo isset($errProduct['category']) ? $errProduct['category'] : ''; ?></h3>
+    <h3 class="text-danger text-lg"> <?php echo isset($errProduct['category']) ? $errProduct['category'] : ''; ?></h3>
     <br>
 
 
