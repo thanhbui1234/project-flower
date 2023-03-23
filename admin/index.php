@@ -7,7 +7,7 @@
 
 <?php include './models/product.php'?>
 
-<?php include './models/categories.php' ?>
+<?php include './models/categories.php'?>
 
 
 
@@ -38,7 +38,7 @@ switch ($act) {
         break;
 
     default:
-        
+
         include './view/home/home.php';
         break;
 }
