@@ -19,6 +19,7 @@
     <!-- linkcss -->
     <link rel="stylesheet" href="/../project-flower/layout/css/custom.css">
     <link rel="stylesheet" href="/../project-flower/layout/css/cssform.css">
+    <link rel="stylesheet" href="/../project-flower/layout/css/changepassw.css">
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
