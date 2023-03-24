@@ -46,7 +46,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#portfolio">Sản phẩm</a>
                 </li>
-
+                <li>
+                    <a href="#">
+                    <div id="wrapper">
+                    <i class="fa" style="font-size:24px">&#xf07a;</i>
+                    <span> 5 </span>
+                    </div>
+                    </a>
+                </li>                
 
                 <!-- <li class="nav-item"><a class="nav-link" href="/project-flower/login/login.php">Đăng nhập</a></li> -->
                 <?php if (isset($_SESSION['userName'])) {?>

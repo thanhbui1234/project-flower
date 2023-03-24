@@ -11,6 +11,10 @@
             </h3>
         </div>
         <div class="row align-items-stretch mb-5">
+            <div>Khách hàng: <input class="bill-field" type="text" value="<?php echo $_SESSION['user_fullName'];?>"></div>
+            <div>Địa chỉ: <input type="text" value="<?php echo $_SESSION['address'];?>"></div>
+            <div>Email: <input type="text" value="<?php echo $_SESSION['email'];?>"></div>
+            <div>Số điện thoại: <input type="text" value="<?php echo $_SESSION['phone'];?>"></div>
             <table class="table shadow p-3 mb-5 bg-body rounded  table-condensed table-bordered ">
             <thead class="headTable">
                 <tr>
