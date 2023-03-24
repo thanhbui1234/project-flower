@@ -9,6 +9,8 @@
 
 <?php include './models/categories.php' ?>
 
+<?php include './models/chart.php'?>
+
 
 
 <?php isset($_GET['act']) ? $act = $_GET['act'] : $act = false;
@@ -38,7 +40,7 @@ switch ($act) {
         break;
 
     default:
-        
+        thongKe();
         include './view/home/home.php';
         break;
 }
