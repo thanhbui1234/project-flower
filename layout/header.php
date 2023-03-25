@@ -37,8 +37,6 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="/../project-flower/layout/css/styles.css" rel="stylesheet" />
     <link href="/../project-flower/layout/css/custom.css" rel="stylesheet" />
-    <!-- Link TailwindCSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- slide show -->
 
     <link rel="stylesheet" href="/../project-flower/layout/owlcarousel/assets/owl.carousel.min.css" />

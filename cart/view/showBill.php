@@ -11,10 +11,25 @@
             </h3>
         </div>
         <div class="row align-items-stretch mb-5">
-            <div>Khách hàng: <input class="bill-field" type="text" value="<?php echo $_SESSION['user_fullName'];?>"></div>
-            <div>Địa chỉ: <input type="text" value="<?php echo $_SESSION['address'];?>"></div>
-            <div>Email: <input type="text" value="<?php echo $_SESSION['email'];?>"></div>
-            <div>Số điện thoại: <input type="text" value="<?php echo $_SESSION['phone'];?>"></div>
+            <table class="table shadow p-3 mb-5 bg-body rounded  table-condensed table-bordered ">
+            <tr>
+                <th id="bill_field">Khách hàng: </th>
+                <th><input id="bill_input" type="text" value="<?php if(isset($_SESSION['user_fullName'])) echo $_SESSION['user_fullName'];?>"></th>
+            </tr>
+            <tr>
+                <th id="bill_field">Số điện thoại: </th>
+                <th><input id="bill_input" type="text" value="<?php if(isset($_SESSION['phone'])) echo $_SESSION['phone'];?>"></th>
+            </tr>
+            <tr>
+                <th id="bill_field">Email: </th>
+                <th><input id="bill_input" type="text" value="<?php if(isset($_SESSION['email'])) echo $_SESSION['email'];?>"></th>
+            </tr>
+            <tr>
+                <th id="bill_field">Địa chỉ: </th>
+                <th><input id="bill_input" type="text" value="<?php if(isset($_SESSION['address'])) echo $_SESSION['address'];?>"></th>
+            </tr>
+            </table>
+            
             <table class="table shadow p-3 mb-5 bg-body rounded  table-condensed table-bordered ">
             <thead class="headTable">
                 <tr>

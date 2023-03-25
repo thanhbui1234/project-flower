@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <a class="" href="index.php"><img src="/../project-flower/layout/assets/img/flower.svg" alt="..." />
+        <a class="" href="/project-flower/index.php"><img src="/../project-flower/layout/assets/img/flower.svg" alt="..." />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,6 @@
 
                         <span class=" nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-
                             Danh mục
                         </span>
                         <ul class="dropdown-menu">
@@ -38,17 +37,14 @@
                             </li>
                             <?php }?>
                         </ul>
-
-
                     </div>
-
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#portfolio">Sản phẩm</a>
                 </li>
                 <li class="nav-item">
                     <a href="#">
-                    <div id="wrapper">
+                    <div id="">
                     <i class="fa" style="font-size:24px">&#xf07a;</i>
                     <span> 5 </span>
                     </div>
