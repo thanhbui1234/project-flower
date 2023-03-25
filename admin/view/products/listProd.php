@@ -26,7 +26,7 @@
 
 
         </div>
-        <table class="table shadow p-3 mb-5 bg-body rounded  table-condensed table-bordered  ">
+        <table class="table shadow p-3 mb-5 bg-body rounded table-condensed table-bordered  ">
             <thead class="headTable">
                 <tr>
                     <th> <input id="selectAllBoxes" type="checkbox"></th>
