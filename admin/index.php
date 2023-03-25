@@ -7,7 +7,7 @@
 
 <?php include './models/product.php'?>
 
-<?php include './models/categories.php' ?>
+<?php include './models/categories.php'?>
 
 <?php include './models/chart.php'?>
 
@@ -40,7 +40,9 @@ switch ($act) {
         break;
 
     default:
+
         thongKe();
+
         include './view/home/home.php';
         break;
 }
