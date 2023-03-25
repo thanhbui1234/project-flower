@@ -54,11 +54,67 @@ function updateProfile(){
     $sql = " UPDATE `users` SET `name`='$userName',`address`='$Address',`phone`='$Phone',`email`='$Email' , `image`='$img'  WHERE id=$id ";
     global $conn;
     $statement = $conn->prepare($sql);
-$statement->execute();
+    global $ok;
+    $ok = "false";
+if($statement->execute()){
+    $ok = "success";
+}
         }
     
     
     }
 
+    function changePasswrod()
+{
+    if (isset($_POST['savechangepass'])) {
+
+        $password = htmlspecialchars($_POST['recentpass']);
+
+        $newPasswrod = htmlspecialchars($_POST['newpass']);
+
+        $id = $_SESSION['userId'];
+
+        global $conn;
+
+        $sql = " select password from users where id = $id";
+
+        global $errChangePassword;
+        $errChangePassword = [];
+
+        $statement = $conn->prepare($sql);
+        $statement->execute();
+        $dataPassword = $statement->fetchAll();
+        foreach ($dataPassword as $passwordOld) {
+            $passwordhientai = $passwordOld['password'];
+
+        }
+
+        if (!password_verify($password, $passwordhientai)) {
+
+            $errChangePassword['nowPassword'] = 'Mật khẩu không đúng';
+
+        }
+
+        if (empty($errChangePassword)) {
+
+            $arr = ['cost' => 12];
+            $newPasswrod = password_hash($newPasswrod, PASSWORD_BCRYPT, $arr);
+            $sqlUpdatePassword = "update users set password = '$newPasswrod' where id =  $id ";
+            $statementPassword = $conn->prepare($sqlUpdatePassword);
+            global $success;
+            $success = "false";
+           if( $statementPassword->execute()){
+              $success="success";
+           }
+
+              
+
+           
+
+        }
+
+    }
+
+}
 
 ?>
