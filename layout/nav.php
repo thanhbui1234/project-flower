@@ -44,14 +44,14 @@
                     <a class="nav-link" href="#portfolio">Sản phẩm</a>
                 </li>
                 <li class="nav-item">
+                <button type="button" class="btn bg-transparent position-relative">
                     <a href="/project-flower/cart/cart.php">
-                    <div id="wrapper_cart">
-                        <i class="fa" style="font-size:24px">&#xf07a;</i>
-                        <span> <?php if(isset($_SESSION['cart'])&&sizeof($_SESSION['cart'])>0) echo sizeof($_SESSION['cart']); 
-                        else echo '0';?> </span>
-                    </div>
+                        <i class="fa" style="font-size:24px; color:white;">&#xf07a;</i> 
                     </a>
-                </li>                
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary"><?php if(isset($_SESSION['cart'])&&sizeof($_SESSION['cart'])>0) echo sizeof($_SESSION['cart']); 
+                        else echo '0';?></span>
+                </button>
+                </li>               
                 <!-- <li class="nav-item"><a class="nav-link" href="/project-flower/login/login.php">Đăng nhập</a></li> -->
                 <?php if (isset($_SESSION['userName'])) {?>
                 <li class="nav-item">
