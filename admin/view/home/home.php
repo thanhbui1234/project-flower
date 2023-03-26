@@ -110,14 +110,14 @@
 
             <tbody>
                 <?php foreach ($listThongKe as $thongke) {extract($thongke) ?>
-                    <tr>
-                        <td><?php echo $categoryID ?></td>
-                        <td><?php echo $categoryName ?></td>
-                        <td><?php echo $countProd ?></td>
-                        <td><?php echo $minPrice ?>$</td>
-                        <td><?php echo $maxPrice ?>$</td>
-                        <td><?php echo $avgPrice ?>$</td>
-                    </tr>
+                <tr>
+                    <td><?php echo $categoryID ?></td>
+                    <td><?php echo $categoryName ?></td>
+                    <td><?php echo $countProd ?></td>
+                    <td><?php echo $minPrice ?>$</td>
+                    <td><?php echo $maxPrice ?>$</td>
+                    <td><?php echo $avgPrice ?>$</td>
+                </tr>
                 <?php }?>
             </tbody>
         </table> -->
@@ -130,6 +130,10 @@
     <div id="chart">
         <canvas id="myChart"></canvas>
     </div>
+
+
+    <!-- Content Row -->
+
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -163,6 +167,56 @@
     <!-- END GOOGLE CHART -->
 
 <style>
+
+.chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+</style>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {
+    'packages': ['corechart']
+});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+        ['Danh mục', 'Số lượng sản phẩm'],
+
+
+        <?php foreach($listThongKe as $thongke) { extract($thongke) ?>
+        <?php 
+                $tongdm=count($listThongKe);
+                $i=1;
+            ?>
+
+        <?php  if($i==$tongdm) $dauphay=""; else $dauphay=","; ?>['<?php echo $thongke["categoryName"]?>',
+            <?php echo $thongke["countProd"].$dauphay?>],
+
+        <?php  $i+=1;?>
+        <?php }?>
+
+    ]);
+
+    // Optional; add a title and set the width and height of the chart
+    var options = {
+        'title': '',
+        'width': 600,
+        'height': 400
+    };
+
+    // Display the chart inside the <div> element with id="piechart"
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+    chart.draw(data, options);
+}
+</script>
+
     #chart {
         max-width: 1000px;
         margin: 0 auto;
@@ -170,4 +224,5 @@
 </style>
 
 </div>
+
 

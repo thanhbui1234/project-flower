@@ -24,11 +24,11 @@
         </script>
         <div class="owl-carousel owl-theme mt-5">
 
-        <?php if(empty($showproduct)){}?>
-            <?php 
-            foreach ($showproduct as $products){ ?>
-                <div class="item">
-                <a style="text-decoration:none" href="index.php?act=aboutproducts&id=<?php echo $products['id']?>">
+            <?php if (empty($showproduct)) {}?>
+            <?php
+foreach ($showproduct as $products) {?>
+            <div class="item">
+                <a style="text-decoration:none" href="index.php?act=aboutproducts&id=<?php echo $products['id'] ?>">
                     <img width="25" src="./admin/uploads/<?php echo $products['image'] ?>">
                     <p style="text-align:center; ">
                         <?php echo $products['name'] ?>
@@ -42,9 +42,9 @@
 
 
             <?php
-            }      
-            ?>
-            
+}
+?>
+
 
         </div>
         <h3 class="text-danger">Danh sách sản phẩm</h3>
@@ -53,24 +53,26 @@
             <?php if (empty($showproduct)) {}?>
             <?php
 
-            foreach ($showproduct as $products) {
-                // $upimg = "uploads/" . $products['image'];
-                
-                $giamgia=$products['price']-($products['price']/100*$products['deal']);
-                ?>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    
+foreach ($showproduct as $products) {
+    // $upimg = "uploads/" . $products['image'];
+
+    $giamgia = $products['price'] - ($products['price'] / 100 * $products['deal']);
+    ?>
+            <div class="col-lg-4 col-sm-6 mb-4">
+
 
                 <!-- Portfolio item 1-->
                 <div class="portfolio-item">
                     <a class="portfolio-link" href="index.php?act=aboutproducts&id=<?php echo $products['id'] ?>">
 
 
-                        <img class="img-fluid bg-white " src="./admin/uploads/<?php echo $products['image'] ?>"  alt="" style="width: 450px; text-align:center" />
-  </a>
+                        <img class="img-fluid bg-white " src="./admin/uploads/<?php echo $products['image'] ?>" alt=""
+                            style="width: 450px; text-align:center" />
+                    </a>
                     <div class="portfolio-caption">
 
-                        <a class="text-decoration-none" href="index.php?act=aboutproducts&id=<?php echo $products['id']?>">
+                        <a class="text-decoration-none"
+                            href="index.php?act=aboutproducts&id=<?php echo $products['id'] ?>">
                             <div class="portfolio-caption-heading"><?php echo $products['name'] ?>
                             </div>
                         </a>
