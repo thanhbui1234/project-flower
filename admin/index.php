@@ -5,8 +5,11 @@
 
 <?php include './layout/nav.php'?>
 
-<?php require_once './models/product.php'?>
-<?php require_once './models/categories.php'?>
+<?php include './models/product.php'?>
+
+<?php include './models/categories.php'?>
+
+<?php include './models/chart.php'?>
 
 
 
@@ -15,21 +18,30 @@
 switch ($act) {
     case 'addProd':
         addProducts();
-        selectOptionCategory();
+        showCategories();
         include '../admin/view/products/addProd.php';
         break;
     case 'listProd':
         showProducts();
+        deleteProduct();
         include '../admin/view/products/listProd.php';
         break;
 
+    case 'update_prod';
+        showProdUpdate();
+        updateProduct();
+        include '../admin/view/products/updateProd.php';
+        break;
+
     case 'categories':
-        deleteCategories();
         addCategories();
+        deleteCategories();
         include '../admin/view/categories/categories.php';
         break;
 
     default:
+
+        thongKe();
 
         include './view/home/home.php';
         break;
