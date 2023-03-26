@@ -17,7 +17,7 @@
                                 Sản phẩm
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                100
+                                <?php echo $countProducts?>
                             </div>
                         </div>
                         <div class="col-auto">
@@ -38,8 +38,7 @@
                                 Loại sản phẩm
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                100
-
+                                <?php echo $countCategories?>
                             </div>
                         </div>
                         <div class="col-auto">
@@ -51,7 +50,7 @@
         </div>
 
         <!-- Earnings (Monthly) Card Example -->
-        <!-- <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -62,7 +61,7 @@
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                        100
+                                        <?php echo $countUsers?>
                                     </div>
                                 </div>
 
@@ -74,10 +73,10 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <!-- Pending Requests Card Example -->
-        <!-- <div class="col-xl-3 col-md-6 mb-4">
+        <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -86,8 +85,7 @@
                                 Bình Luận
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                122
-
+                                <!-- <?php echo $countComments?> -->
                             </div>
                         </div>
                         <div class="col-auto">
@@ -96,9 +94,9 @@
                     </div>
                 </div>
             </div>
-        </div> -->
-        <h2>Thống kê sản phẩm theo danh mục</h2>
-        <table class="table shadow p-3 mb-5 bg-body rounded table-condensed table-bordered">
+        </div>
+
+        <!-- <table class="table shadow p-3 mb-5 bg-body rounded table-condensed table-bordered">
             <thead class="headTable">
                 <tr>
                     <td>Mã danh mục</td>
@@ -122,21 +120,54 @@
                 </tr>
                 <?php }?>
             </tbody>
-        </table>
+        </table> -->
     </div>
 
-    <!-- Biểu đồ -->
+
+
+    <!-- GOOGLE CHART -->
     <h2 class="text-center">Biểu đồ</h2>
-    <div class="chart">
-        <div id="piechart"></div>
+    <div id="chart">
+        <canvas id="myChart"></canvas>
     </div>
 
 
     <!-- Content Row -->
 
-</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Sản phẩm', 'Loại sản phẩm', 'Người dùng', 'Bình luận'],
+                datasets: [{
+                    label: 'Đơn vị',
+                    data: [
+                        <?php echo $countProducts ?>,
+                        <?php echo $countCategories ?>,
+                        <?php echo $countUsers ?>,
+                        <?php echo $countComments ?>,
+
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    <!-- END GOOGLE CHART -->
 
 <style>
+
 .chart {
     display: flex;
     justify-content: center;
@@ -185,3 +216,13 @@ function drawChart() {
     chart.draw(data, options);
 }
 </script>
+
+    #chart {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+</style>
+
+</div>
+
+
