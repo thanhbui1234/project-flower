@@ -9,7 +9,7 @@
 
 <?php include './models/categories.php' ?>
 
-<?php include './models/chart.php'?>
+<?php include './models/count.php'?>
 
 
 
@@ -40,7 +40,7 @@ switch ($act) {
         break;
 
     default:
-        thongKe();
+        countAll();
         include './view/home/home.php';
         break;
 }
