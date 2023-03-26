@@ -21,5 +21,4 @@ function showaboutproducts()
     global $showaboutproducts;
     $showaboutproducts = $statement->fetch();
 }
-
-
+?>
