@@ -105,3 +105,25 @@ margin-top: 100px;
   margin-bottom: 25px;
   color: rgb(143, 130, 130);
 }
+#bill_field{
+  width: 260px;
+}
+#bill_input{
+  background-color: transparent;
+  border: 0px solid;
+  width: 100%;
+}
+#bill_input:focus{
+  background-color: transparent;
+  border: 0px solid;
+  outline: none;
+}
+#wrapper_cart{
+  position: relative;
+  }
+  
+#wrapper_cart span{
+  position: absolute;
+  top: -2px;
+  right: -2px; 
+  }

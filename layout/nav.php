@@ -1,8 +1,9 @@
-<?php require_once './model/categories.php'?>
+<?php require_once './model/categories.php';
+?>
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <a class="" href="index.php"><img src="/../project-flower/layout/assets/img/flower.svg" alt="..." />
+        <a class="" href="/project-flower/index.php"><img src="/../project-flower/layout/assets/img/flower.svg" alt="..." />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +29,6 @@
 
                         <span class=" nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-
                             Danh mục
                         </span>
                         <ul class="dropdown-menu">
@@ -38,16 +38,20 @@
                             </li>
                             <?php }?>
                         </ul>
-
-
                     </div>
-
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#portfolio">Sản phẩm</a>
                 </li>
-
-
+                <li class="nav-item">
+                    <a href="/project-flower/cart/cart.php">
+                    <div id="wrapper_cart">
+                        <i class="fa" style="font-size:24px">&#xf07a;</i>
+                        <span> <?php if(isset($_SESSION['cart'])&&sizeof($_SESSION['cart'])>0) echo sizeof($_SESSION['cart']); 
+                        else echo '0';?> </span>
+                    </div>
+                    </a>
+                </li>                
                 <!-- <li class="nav-item"><a class="nav-link" href="/project-flower/login/login.php">Đăng nhập</a></li> -->
                 <?php if (isset($_SESSION['userName'])) {?>
                 <li class="nav-item">

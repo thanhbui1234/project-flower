@@ -30,9 +30,12 @@
     function createBill(){
         session_start();
         global $conn;
-        $customer = $_SESSION['userId'];
+        $customer = $_POST['customer'];
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        $address = $_POST['address'];
         $dateCreate = date("Y-m-d H:i a ");
-        $sql = "insert into bills (customer,date) values ('$customer','$dateCreate')";
+        $sql = "insert into bills (customer,phone,email,address,date) values ('$customer','$phone','$email','$address','$dateCreate')";
         $statement = $conn -> prepare ($sql);
         $statement -> execute();
         $id = $conn -> lastInsertId();
