@@ -1,4 +1,5 @@
-<?php require_once './model/categories.php'?>
+<?php require_once './model/categories.php';
+?>
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
@@ -43,10 +44,11 @@
                     <a class="nav-link" href="#portfolio">Sản phẩm</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#">
-                    <div id="">
-                    <i class="fa" style="font-size:24px">&#xf07a;</i>
-                    <span> 5 </span>
+                    <a href="/project-flower/cart/cart.php">
+                    <div id="wrapper_cart">
+                        <i class="fa" style="font-size:24px">&#xf07a;</i>
+                        <span> <?php if(isset($_SESSION['cart'])&&sizeof($_SESSION['cart'])>0) echo sizeof($_SESSION['cart']); 
+                        else echo '0';?> </span>
                     </div>
                     </a>
                 </li>                
