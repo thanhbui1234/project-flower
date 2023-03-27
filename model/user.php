@@ -73,23 +73,7 @@ function getAvtUser()
 
     }
 
-    $avt_image_tmp = $_FILES['pickimg']['tmp_name'];
-    $targe_dir = './admin/uploads/';
-    $target_file = $targe_dir . $img;
-    move_uploaded_file($avt_image_tmp, $target_file);
-    
-    $sql = " UPDATE `users` SET `name`='$userName',`address`='$Address',`phone`='$Phone',`email`='$Email' , `image`='$img'  WHERE id=$id ";
-    global $conn;
-    $statement = $conn->prepare($sql);
-    global $ok;
-    $ok = "false";
-if($statement->execute()){
-    $ok = "success";
-}
-        }
-    
-    
-    }
+}   
 
     function changePasswrod()
 {
