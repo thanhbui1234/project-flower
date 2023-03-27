@@ -3,7 +3,6 @@ include './model/product.php';
 include './model/category.php';
 include './model/user.php';
 include './model/search.php';
-
 ?>
 
 <body id="page-top">

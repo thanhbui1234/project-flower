@@ -119,10 +119,16 @@
 }
 #wrapper_cart{
   position: relative;
+  color: white;
   }
-  
-#wrapper_cart span{
+#count-bill{
   position: absolute;
-  top: -2px;
-  right: -2px; 
-  }
+  top: -7px;
+  right: -7px; 
+  width: 17px;
+  height: 17px;
+  background: green;
+  border-radius: 50%;
+  font-size: 12px;
+  padding-left: 5px;
+}
