@@ -4,7 +4,6 @@
         <?php if(empty($showaboutproducts)) ?>
         <?php $giamgia = $showaboutproducts['price'] - ($showaboutproducts['price'] / 100 * $showaboutproducts['deal']) ?>
     <form action="/project-flower/cart/cart.php" method="POST" >
-
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="col-md-6"><img width="500" src="./admin/uploads/<?php echo $showaboutproducts['image'] ?> ">
             </div>
@@ -22,20 +21,21 @@
 
                 <div class="d-flex">
                     <input type="text" name="name" value="<?php echo $showaboutproducts['name'] ?>" hidden>
-                    <input type="text" name="image" value="/../project-flower/layout/assets/img/productDemo/a2.png" hidden>
+                    <input type="text" name="image" value="/project-flower/admin/uploads/<?php echo $showaboutproducts['image']?>" hidden>
                     <input type="text" name="price" value="<?php echo $showaboutproducts['price'] ?>" hidden>
                     <input type="text" name="deal" value="<?php echo $showaboutproducts['deal'] ?>" hidden>
                     <div class="">
                     <div class="d-flex gap-lg-5 mb-lg-4">
                         <h3 class="">Số lượng</h3>
                         <div class="d-flex">
-                            <button id="subtract" class="btn border">-</button>
+                            <button id="subtract" class="btn border" type="button">-</button>
                             <input name="amount" class="form-control text-center " id="inputQuantity" type="text" step="none" min='1'
                                 value="1" style="max-width: 4rem" />
-                            <button id="add" class="btn border ">+</button>
+                            <button id="add" class="btn border " type="button">+</button>
                         </div>
                     </div>
                     <input type="submit" class="btn btn-outline-dark flex-shrink-0" value="Thêm vào giỏ hàng" name="add_cart">
+                    <input type="submit" class="btn btn-outline-dark flex-shrink-0" value="Mua ngay" name="add_cart">
                 </div>
             </div>
         </div>

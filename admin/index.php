@@ -7,7 +7,11 @@
 
 <?php include './models/product.php'?>
 
-<?php include './models/categories.php' ?>
+<?php include './models/categories.php'?>
+
+
+<?php include './models/count.php'?>
+
 
 
 
@@ -38,7 +42,7 @@ switch ($act) {
         break;
 
     default:
-        
+        countAll();
         include './view/home/home.php';
         break;
 }

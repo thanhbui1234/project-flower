@@ -1,6 +1,8 @@
+<?php require_once 'models/users.php'?>
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
     <!-- Main Content -->
+
 
 
     <div id="content">
@@ -38,13 +40,22 @@
 
 
                 <div class="topbar-divider d-none d-sm-block"></div>
+                <?php showNameAvt()?>
 
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Tên ...</span>
-                        <i class="fa-solid fa-user"></i>
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                            <?php foreach ($dataUser as $user) {
+    echo $user['userName'];
+    echo empty($user['image'])
+    ? '<img class="mr-lg-5 rounded-circle" width="25" src="/../project-flower/layout/assets/img/avtDefault.jpg" alt="">'
+    : "<img class=' ml-lg-2  rounded-circle' width='25' height='' src='/../project-flower/admin/uploads/$user[image]' alt=''>";
+
+}?>
+                        </span>
+
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
