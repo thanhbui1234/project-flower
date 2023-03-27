@@ -6,6 +6,7 @@ include './model/search.php';
 include './model/comment.php';
 
 
+
 ?>
 
 <body id="page-top">
@@ -39,15 +40,20 @@ include './model/comment.php';
             include './view/search/search.php';
             break;
 
+
         case 'profile';
             updateProfile();
             include './view/profile/profile.php';
             break;
 
-        case 'changepassword';
-            include './view/profile/changepassword.php';
-            break;
-        default:
+    case 'changepassword';
+    changePasswrod();
+        include './view/profile/changepassword.php';
+        break;
+    default:
+
+
+       
 
             showproduct();
             include './view/products/product.php';

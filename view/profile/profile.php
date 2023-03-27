@@ -1,6 +1,12 @@
 <?php showDataUser();?>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<?php
+global $ok;
+if ($ok=="success") {
 
+    echo "<script>swal( 'Success' ,  'Cập nhật thành công' ,  'success' );</script>";
+
+}?>
 <section class="bg-light container  mt-5 p-lg-3  bg-body" id="">
     <div class="rounded shadow p-lg-4" id="formbg">
     <h2 class="h2">Hồ sơ của tôi</h2><br>
@@ -21,13 +27,13 @@
 </div>
 
 <div class="input-container">
-  <i class="fa fa-key icon"></i>
+  <i class="fa fa-city icon"></i>
   <input class="input-field" type="text" placeholder="address" value="<?php echo $user["address"]?>"  name="address_profile">
 </div>
 
 <div class="input-container">
 <i class="fa fa-phone icon"></i>
-  <input class="input-field" type="text" placeholder="PhoneNumber" value="<?php echo $user["phone"]?>" name="phone_profile">
+  <input  class="input-field" type="text" placeholder="PhoneNumber" value="<?php echo $user["phone"]?>" name="phone_profile">
 </div>
 
 
@@ -36,7 +42,7 @@
     </div>
    
    <div>
-   <?php echo empty($user['image']) ? "<img class='imgprofile'  src='/../project-flower/layout/assets/img/avtDefault.jpg' alt=''><br>" : "<img class='imgprofile'  src='/../project-flower/admin/uploads/$user[image]' alt=''><br>"; ?>
+   <?php echo empty($user['image']) ? "<img style='width:600px;'  class='imgprofile'  src='/../project-flower/layout/assets/img/avtDefault.jpg' alt=''><br>" : "<img class='imgprofile'  src='/../project-flower/admin/uploads/$user[image]' alt=''><br>"; ?>
   
     <label class="pick"  for="pickanh">Chọn ảnh</label>
     <input type="file" hidden  name="pickimg" id="pickanh">
@@ -54,19 +60,7 @@ var email = document.querySelector('input[name="email_profile"]');
 var address = document.querySelector('input[name="address_profile"]');
 var phone = document.querySelector('input[name="phone_profile"]');
 
-// function a(){
-//   if(user.value.length<1){
- 
-//   swal( "Oops" ,  "Something went wrong!" ,  "error" );
-// }else {
-//   swal({
-//   title: "Good job!",
-//   text: "You clicked the button!",
-//   icon: "success",
-//   button: "Aww yiss!",
-// });
-// }
-// }
+
 form.addEventListener("submit", (e) => {
   if (user.value.length<1 || email.value.length<1 || address.value.length<1 || phone.value.length<1 ) {
     e.preventDefault();
@@ -87,7 +81,7 @@ form.addEventListener("submit", (e) => {
   }else if(isNaN(phone.value) || !phone.value.startsWith("0")){
     e.preventDefault();
     return swal( "Lỗi PhoneNumber" ,  "Số điện thoại không hợp lệ!" ,  "error" );
-  }else  return alert("submit thanh cong");
+  }
    
   
 });

@@ -37,6 +37,8 @@
                             <input type="submit" class="btn btn-outline-dark flex-shrink-0" value="Thêm vào giỏ hàng" name="add_cart">
                         </div>
                     </div>
+
+   
                 </div>
         </form>
     </div>

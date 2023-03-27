@@ -15,6 +15,7 @@ session_start();
     <link rel="icon" type="image/x-icon" href="/../project-flower/layout/assets/img/flower.svg" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -39,7 +40,6 @@ session_start();
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="/../project-flower/layout/css/styles.css" rel="stylesheet" />
     <link href="/../project-flower/layout/css/custom.css" rel="stylesheet" />
-
     <!-- slide show -->
 
     <link rel="stylesheet" href="/../project-flower/layout/owlcarousel/assets/owl.carousel.min.css" />
