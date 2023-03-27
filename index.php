@@ -3,39 +3,48 @@ include './model/product.php';
 include './model/category.php';
 include './model/user.php';
 include './model/search.php';
+include './model/comment.php';
+
+
+
 ?>
 
 <body id="page-top">
     <?php
-include './layout/nav.php';
-?>
+    include './layout/nav.php';
+    ?>
 
 
 
     <?php isset($_GET['act']) ? $url = $_GET['act'] : $url = false;
 
-switch ($url) {
+    switch ($url) {
 
-    case 'aboutproducts';
-        showaboutproducts();
-        showproduct();
-        include './view/products/aboutproduct.php';
-        break;
+        case 'aboutproducts';
+            showaboutproducts();
+            showproduct();
+            showcmt();
+            addcmt();
+ 
 
-    case 'category';
-        loadcategory();
-        include './view/category/category.php';
+            include './view/products/aboutproduct.php';
+            break;
 
-        break;
-    case 'search';
-        search();
-        include './view/search/search.php';
-        break;
+        case 'category';
+            loadcategory();
+            include './view/category/category.php';
 
-    case 'profile';
-        updateProfile();
-        include './view/profile/profile.php';
-        break;
+            break;
+        case 'search';
+            search();
+            include './view/search/search.php';
+            break;
+
+
+        case 'profile';
+            updateProfile();
+            include './view/profile/profile.php';
+            break;
 
     case 'changepassword';
     changePasswrod();
@@ -43,13 +52,16 @@ switch ($url) {
         break;
     default:
 
-        showproduct();
-        include './view/products/product.php';
-        break;
-}
 
-?>
+       
+
+            showproduct();
+            include './view/products/product.php';
+            break;
+    }
+
+    ?>
 
 
 
-    <?php include './layout/footer.php'?>
+    <?php include './layout/footer.php' ?>
