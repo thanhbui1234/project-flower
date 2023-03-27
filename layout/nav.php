@@ -1,5 +1,8 @@
-<?php require_once './model/categories.php';
-?>
+<?php require_once './model/categories.php'?>
+<?php require_once './model/user.php'?>
+<?php getAvtUser()?>
+
+
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
@@ -58,8 +61,20 @@
                     <div class="dropdown">
                         <span class=" nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <img class="mr-lg-5 rounded-circle" width="25"
-                                src="/../project-flower/layout/assets/img/avtDefault.jpg" alt="">
+
+                            <?php foreach ($avt as $avtt) {}?>
+
+                            <?php echo empty($avt)
+    ? '<img class="mr-lg-5 rounded-circle" width="25"src="/../project-flower/layout/assets/img/avtDefault.jpg" alt="">'
+    : "<img class='mr-lg-5 rounded-circle' width='35' src='/../shop_xx//uploads/$avtt[image]' alt=''>"; ?>
+
+
+
+
+
+
+
+
                             <?php echo $_SESSION['userName'] ?>
                         </span>
                         <ul class="dropdown-menu">
