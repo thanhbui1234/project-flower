@@ -15,3 +15,13 @@ function showNameAvt()
     }
 
 }
+function showUsers()
+{
+    global $conn;
+    $sql = "select * from users ";
+    $stament = $conn->query($sql);
+    $stament->execute();
+    global $dataAllUsers;
+    $dataAllUsers = $stament->fetchAll();
+
+}

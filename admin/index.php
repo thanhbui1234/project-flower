@@ -40,7 +40,10 @@ switch ($act) {
         deleteCategories();
         include '../admin/view/categories/categories.php';
         break;
-
+    case 'users':
+        showUsers();
+        include '../admin/view/users/users.php';
+        break;
     default:
         countAll();
         include './view/home/home.php';
