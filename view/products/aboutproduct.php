@@ -1,5 +1,3 @@
-
-
 <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
 
@@ -47,33 +45,51 @@
 <section class="py-5 bg-light">
     <div class="container px-4 px-lg-5 mt-5">
         <h2 class="fw-bolder mb-4">Bình luận</h2> <br>
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"> </div>
 
+        <div class="abcxyz">
+
+            <div class="content">
+                <?php foreach ($showcmt as $cmt) { ?>
+                    <div class="comment-text">
+                        <div class="cmt">
+                            <div class="comments" style="  display: flex; margin-top: 48px">
+
+                                <div class="image" style="margin-right: 24px;">
+                                    <?php echo empty($cmt['image']) ? "<img class='imgprofile'  src='/../project-flower/layout/assets/img/avtDefault.jpg' alt=''><br>" : "<img  class='imgprofile'  src='/../project-flower/admin/uploads/$cmt[image]' alt=''><br>"; ?>
+                                </div>
+                                <div class="text-content-cmt" style="margin-top: 24px;">
+
+                                    <h6><?php echo $cmt['name'] ?></h6>
+                                    <p>(ID: <?php echo $cmt['userName'] ?>)</p>
+                                    <?php echo $cmt['date'] ?>
+
+                                    <p class="nam">Nội dung: <?php echo $cmt['content'] ?></p>
+                                    <p><span><svg style="width: 20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+                                            </svg></span> <?php echo "1 giờ trước" ?> </p> <br>
+                                </div>
+                            </div> 
+                        </div>
+
+                        <div class="cmt2">
+
+                        </div>
+                    </div>
+
+                <?php
+                } ?>
+            </div>
         </div>
 
-        <?php foreach ($showcmt as $cmt) { ?>
-            <h6><?php echo $cmt['name'] ?></h6>
-            <p class="nam">Nội dung: <?php echo $cmt['content'] ?></p>
-            <p><span><svg style="width: 20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
-                    </svg></span> <?php echo "1 giờ trước" ?> </p> <br>
-        <?php
-        } ?>
-
-
-
-
-
-    </div>
-    </div>
     </div>
 
 
 </section>
 
 <form style="text-align:center" action="" method="post">
-<input type="hidden" name="" id="">
-    <input type="text" name="noidung" >
+    <input type="hidden" name="" id="">
+    <input type="text" name="noidung">
     <input type="submit" name="submit">
 </form>
 

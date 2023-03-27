@@ -6,7 +6,7 @@ include './model/connect.php'; ?>
 function showcmt()
 {
     $id = $_GET['id'];
-    $sql = "SELECT users.name,comments.content
+    $sql = "SELECT users.name,comments.content,users.image,users.userName,comments.date
     FROM ((comments
     INNER JOIN products ON comments.product = products.id)
     INNER JOIN users ON comments.user = users.id)
