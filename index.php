@@ -38,6 +38,7 @@ switch ($url) {
         break;
 
     case 'changepassword';
+    changePasswrod();
         include './view/profile/changepassword.php';
         break;
     default:

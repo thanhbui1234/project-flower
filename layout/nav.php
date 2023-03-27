@@ -75,6 +75,8 @@
                             <?php echo $_SESSION['role'] == 2 ? '<li><a class="dropdown-item" href="/project-flower/admin">Admin</a>' : ''; ?>
                             <li><a class="dropdown-item" href="index.php?act=category&id=id">Gio hang</a>
                             </li>
+                            <li><a class="dropdown-item" href="index.php?act=changepassword">changePassword</a>
+                            </li>
                             <li><a class="dropdown-item" href="/project-flower/view/logout/logout.php">Dang
                                     xuat</a>
                             </li>
