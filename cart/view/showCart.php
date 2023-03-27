@@ -5,7 +5,10 @@
         array_splice($_SESSION['cart'],$_GET['del_id'],1);
     }
     getCart();
-    if(isset($_GET['del_cart'])&&$_GET['del_cart']==1) unset($_SESSION['cart']);
+    if(isset($_GET['del_cart'])&&$_GET['del_cart']==1) {
+        unset($_SESSION['cart']);
+        $_SESSION['cart']=[];
+    }
 ?>
 <section class="page-section" id="contact">
     <div class="container">
