@@ -40,7 +40,6 @@ switch ($act) {
         break;
 
     default:
-
         thongKe();
 
         include './view/home/home.php';

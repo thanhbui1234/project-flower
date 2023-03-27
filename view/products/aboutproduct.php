@@ -4,7 +4,6 @@
         <?php if(empty($showaboutproducts)) ?>
         <?php $giamgia = $showaboutproducts['price'] - ($showaboutproducts['price'] / 100 * $showaboutproducts['deal']) ?>
     <form action="/project-flower/cart/cart.php" method="POST" >
-
         <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="col-md-6"><img width="500" src="./admin/uploads/<?php echo $showaboutproducts['image'] ?> ">
             </div>
