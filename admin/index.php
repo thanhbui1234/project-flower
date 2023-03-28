@@ -9,7 +9,9 @@
 
 <?php include './models/categories.php'?>
 
+
 <?php include './models/count.php'?>
+
 
 
 
@@ -38,7 +40,11 @@ switch ($act) {
         deleteCategories();
         include '../admin/view/categories/categories.php';
         break;
-
+    case 'users':
+        showUsers();
+        deleteUsers();
+        include '../admin/view/users/users.php';
+        break;
     default:
         countAll();
         include './view/home/home.php';

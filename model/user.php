@@ -71,6 +71,66 @@ function getAvtUser()
         global $avt;
         $avt = $statement->fetchAll();
 
+        foreach ($avt as $avtt) {}
+        echo empty($avtt['image'])
+        ? '<img class="mr-lg-5 rounded-circle" width="25" src="/../project-flower/layout/assets/img/avtDefault.jpg" alt="">'
+        : "<img class='pr-lg-5 rounded-circle' width='27' src='/../project-flower/admin/uploads/$avtt[image]' alt=''>";
+
+    }
+
+}   
+
+    function changePasswrod()
+{
+    if (isset($_POST['savechangepass'])) {
+
+        $password = htmlspecialchars($_POST['recentpass']);
+
+        $newPasswrod = htmlspecialchars($_POST['newpass']);
+
+        $id = $_SESSION['userId'];
+
+        global $conn;
+
+        $sql = " select password from users where id = $id";
+
+        global $errChangePassword;
+        $errChangePassword = [];
+
+        $statement = $conn->prepare($sql);
+        $statement->execute();
+        $dataPassword = $statement->fetchAll();
+        foreach ($dataPassword as $passwordOld) {
+            $passwordhientai = $passwordOld['password'];
+
+        }
+
+        if (!password_verify($password, $passwordhientai)) {
+
+            $errChangePassword['nowPassword'] = 'Mật khẩu không đúng';
+
+        }
+
+        if (empty($errChangePassword)) {
+
+            $arr = ['cost' => 12];
+            $newPasswrod = password_hash($newPasswrod, PASSWORD_BCRYPT, $arr);
+            $sqlUpdatePassword = "update users set password = '$newPasswrod' where id =  $id ";
+            $statementPassword = $conn->prepare($sqlUpdatePassword);
+            global $success;
+            $success = "false";
+           if( $statementPassword->execute()){
+              $success="success";
+           }
+
+              
+
+           
+
+        }
+
     }
 
 }
+
+?>
