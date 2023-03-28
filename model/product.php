@@ -24,6 +24,7 @@ function showaboutproducts()
     $showaboutproducts = $statement->fetch();
 }
 
+
 function view()
 {
 
