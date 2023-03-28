@@ -20,12 +20,14 @@ include './model/comment.php';
 
     switch ($url) {
 
-        case 'aboutproducts';
-            showaboutproducts();
-            showproduct();
-            showcmt();
-            addcmt();
- 
+
+    case 'aboutproducts';
+        view();
+        showaboutproducts();
+        showproduct();
+        include './view/products/aboutproduct.php';
+        break;
+
 
             include './view/products/aboutproduct.php';
             break;

@@ -85,7 +85,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="index.php?act=users">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Khách hàng</span></a>
             </li>
@@ -95,7 +95,7 @@
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                <span class="btn rounded-circle border-0" id="sidebarToggle"></span>
             </div>
         </ul>
         <!-- End of Sidebar -->
