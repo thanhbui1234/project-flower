@@ -42,6 +42,7 @@ switch ($act) {
         break;
     case 'users':
         showUsers();
+        deleteUsers();
         include '../admin/view/users/users.php';
         break;
     default:

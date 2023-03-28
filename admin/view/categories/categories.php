@@ -27,44 +27,46 @@ if (isset($_GET['successUpdate'])) {
 
         </form>
 
-        <?php if (isset($_GET['update'])) { ?>
-            <?php showDataUpdate() ?>
+        <?php if (isset($_GET['update'])) {?>
+        <?php showDataUpdate()?>
 
 
 
-            <form method="post" class="mt-5" action="#">
+        <form method="post" class="mt-5" action="#">
 
 
-                <div class="form-group">
-                    <label for="exampleInputEmail1"></label>
-                    <?php foreach ($dataUpdateCate as $updateCate) { ?>
-                        <input type="text" value="<?php echo $updateCate['name'] ?>" class="form-control" name="category2" aria-describedby="emailHelp" placeholder="">
-                    <?php } ?>
+            <div class="form-group">
+                <label for="exampleInputEmail1"></label>
+                <?php foreach ($dataUpdateCate as $updateCate) {?>
+                <input type="text" value="<?php echo $updateCate['name'] ?>" class="form-control" name="category2"
+                    aria-describedby="emailHelp" placeholder="">
+                <?php }?>
 
-                </div>
-                <?php updateCate() ?>
-
-
-                <div class="d-flex justify-content-between">
-                    <button type="submit" name="updateCategory" id="add_category" class="btn btn-primary">Chỉnh
-                        sửa</button>
+            </div>
+            <?php updateCate()?>
 
 
-                    <button type="submit" name="cancelUpdate" id="add_category" class="btn btn-primary btn-danger">Hủy
-                    </button>
+            <div class="d-flex justify-content-between">
+                <button type="submit" name="updateCategory" id="add_category" class="btn btn-primary">Chỉnh
+                    sửa</button>
 
 
-                </div>
+                <a href="index.php?act=categories" name="cancelUpdate" id="add_category"
+                    class="btn btn-primary btn-danger">Hủy
+                </a>
 
 
-            </form>
+            </div>
 
-        <?php } ?>
+
+        </form>
+
+        <?php }?>
 
     </div>
 
 
-    <?php showCategories() ?>
+    <?php showCategories()?>
     <div class="col">
         <table class="table table-bordered  mt-3">
             <thead>
@@ -80,18 +82,19 @@ if (isset($_GET['successUpdate'])) {
 
 
                 <?php foreach ($dataCategories as $categories) {
-                    extract($categories) ?>
+    extract($categories)?>
 
-                    <tr>
-                        <td> <?php echo $id ?></td>
-                        <td><?php echo $name ?></td>
-                        <td><a class="btn btn-success" href="index.php?act=categories&update=<?php echo $id ?>">UPDATE</a>
-                            <a class="delete_categories" data-id="<?php echo $id ?>"><button class="btn btn-danger">DELETE</button></a>
-                        </td>
+                <tr>
+                    <td> <?php echo $id ?></td>
+                    <td><?php echo $name ?></td>
+                    <td><a class="btn btn-success" href="index.php?act=categories&update=<?php echo $id ?>">UPDATE</a>
+                        <a class="delete_categories" data-id="<?php echo $id ?>"><button
+                                class="btn btn-danger">DELETE</button></a>
+                    </td>
 
-                    </tr>
+                </tr>
 
-                <?php } ?>
+                <?php }?>
             </tbody>
 
         </table>

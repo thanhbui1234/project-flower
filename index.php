@@ -17,6 +17,7 @@ include './layout/nav.php';
 switch ($url) {
 
     case 'aboutproducts';
+        view();
         showaboutproducts();
         showproduct();
         include './view/products/aboutproduct.php';

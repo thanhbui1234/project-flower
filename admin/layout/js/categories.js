@@ -37,4 +37,4 @@ deleteCategories.forEach((btn) => {
     });
   });
 });
-x
+x;

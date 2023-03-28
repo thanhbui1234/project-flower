@@ -71,6 +71,11 @@ function getAvtUser()
         global $avt;
         $avt = $statement->fetchAll();
 
+        foreach ($avt as $avtt) {}
+        echo empty($avtt['image'])
+        ? '<img class="mr-lg-5 rounded-circle" width="25" src="/../project-flower/layout/assets/img/avtDefault.jpg" alt="">'
+        : "<img class='pr-lg-5 rounded-circle' width='27' src='/../project-flower/admin/uploads/$avtt[image]' alt=''>";
+
     }
 
 }
