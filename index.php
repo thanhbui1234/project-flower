@@ -59,12 +59,6 @@ include './model/comment.php';
         break;
 }
 
-       
-
-            showproduct();
-            include './view/products/product.php';
-            break;
-    }
 
     ?>
 
