@@ -25,6 +25,7 @@ include './model/comment.php';
         view();
         showaboutproducts();
         showcmt();
+        showproduct();
         include './view/products/aboutproduct.php';
         break;
 
@@ -54,13 +55,11 @@ include './model/comment.php';
         break;
     default:
 
+        showproduct();
+        include './view/products/product.php';
+        break;
+}
 
-       
-
-            showproduct();
-            include './view/products/product.php';
-            break;
-    }
 
     ?>
 
