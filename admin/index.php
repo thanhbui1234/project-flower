@@ -9,6 +9,7 @@
 
 <?php include './models/categories.php'?>
 
+<?php include './models/bill-controller.php'?>
 
 <?php include './models/count.php'?>
 
@@ -45,6 +46,15 @@ switch ($act) {
         showUsers();
         deleteUsers();
         include '../admin/view/users/users.php';
+        break;
+    case 'bills':
+        showBill();
+        deleteBill();
+        include '../admin/view/bills/bill.php';
+        break;
+    case 'bill-detail':
+
+        include '../admin/view/bills/bill-detail.php';
         break;
     default:
         countAll();

@@ -3,19 +3,19 @@
         <div class="row align-items-center">
             <div class="col-md-3 col-sm-6 my-3">
                 <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
-                        src="../../layout/assets/img/logos/google.svg" alt="..." aria-label="Google Logo" /></a>
+                        src="/project-flower/layout/assets/img/logos/google.svg" alt="..." aria-label="Google Logo" /></a>
             </div>
             <div class="col-md-3 col-sm-6 my-3">
                 <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
-                        src="/../shop_xx/layout/assets/img/logos/google.svg" alt="..." aria-label="Google Logo" /></a>
+                        src="/project-flower/layout/assets/img/logos/facebook.svg" alt="..." aria-label="Google Logo" /></a>
             </div>
             <div class="col-md-3 col-sm-6 my-3">
                 <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
-                        src="/../shop_xx/layout/assets/img/logos/ibm.svg" alt="..." aria-label="Google Logo" /></a>
+                        src="/project-flower/layout/assets/img/logos/ibm.svg" alt="..." aria-label="Google Logo" /></a>
             </div>
             <div class="col-md-3 col-sm-6 my-3">
                 <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
-                        src="/../shop_xx/layout/assets/img/logos/microsoft.svg" alt="..."
+                        src="/project-flower/layout/assets/img/logos/microsoft.svg" alt="..."
                         aria-label="Google Logo" /></a>
             </div>
         </div>
@@ -53,7 +53,7 @@
 <!-- Core theme JS-->
 
 
-<script src="/../shop_xx/layout/js/scripts.js"></script>
+<script src="/project-flower/layout/js/scripts.js"></script>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <!-- * *                               SB Forms JS                               * *-->
