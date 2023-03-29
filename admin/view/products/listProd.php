@@ -13,7 +13,8 @@
 
 
         <div class="d-flex flex-row gap-2  ">
-            <select name="option" class="form-select form-select-sm form-control w-25 mb-4" id="selectAllprod" aria-label="Default select example">
+            <select name="option" class="form-select form-select-sm form-control w-25 mb-4" id="selectAllprod"
+                aria-label="Default select example">
                 <option selected>Chức năng</option>
                 <!-- <option value="in_stock">Còn hàng</option>
                 <option value="out_of_stock">Hết hàng</option>
@@ -47,14 +48,15 @@
             <tbody>
 
                 <?php if (empty($dataProducts)) { ?>
-                    <tr>
-                        <td class=" text-xl-center text-warning" colspan="10">EMPTY</td>
-                    </tr>
+                <tr>
+                    <td class=" text-xl-center text-warning" colspan="10">EMPTY</td>
+                </tr>
                 <?php } ?>
 
 
                 <?php foreach ($dataProducts as $product) {
                     extract($product) ?>
+
                     <tr>
                         <td><input class="selectAllBoxesChild" name="checkBoxArr[]" value="<?php echo $id ?>" type="checkbox"></td>
                         <td><?php echo $id ?></td>
@@ -85,6 +87,7 @@
                             </a>
                         </td>
                     </tr>
+
                 <?php } ?>
 
 
