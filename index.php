@@ -21,6 +21,7 @@ switch ($url) {
     case 'aboutproducts';
         view();
         showaboutproducts();
+        showcmt();
         showproduct();
         include './view/products/aboutproduct.php';
         break;
@@ -54,7 +55,10 @@ switch ($url) {
         break;
 }
 
-?>
+
+
+    ?>
+
 
 
 

@@ -1,3 +1,4 @@
+<?php $id=$_GET['id'] ?>
 <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
 
@@ -33,14 +34,14 @@
                             <div class="d-flex gap-lg-5 mb-lg-4">
                                 <h3 class="">Số lượng</h3>
                                 <div class="d-flex">
-                                    <button id="subtract" class="btn border">-</button>
-                                    <input name="amount" class="form-control text-center " id="inputQuantity"
-                                        type="text" step="none" min='1' value="1" style="max-width: 4rem" />
-                                    <button id="add" class="btn border ">+</button>
+
+                                    <button id="subtract" class="btn border" type="button">-</button>
+                                    <input name="amount" class="form-control text-center " id="inputQuantity" type="text" step="none" min='1' value="1" style="max-width: 4rem" />
+                                    <button id="add" class="btn border " type="button">+</button>
                                 </div>
                             </div>
-                            <input type="submit" class="btn btn-outline-dark flex-shrink-0" value="Thêm vào giỏ hàng"
-                                name="add_cart">
+                            <input id="button_add_cart" type="submit" class="btn btn-outline-dark flex-shrink-0" value="Thêm vào giỏ hàng" name="add_cart">
+
                         </div>
                     </div>
 
@@ -97,19 +98,21 @@
 
 </section>
 
-<form style="text-align:center" action="" method="post">
+<form style="text-align:center" action="binhluan.php?id=<?php echo $id; ?>" method="post">
     <input type="hidden" name="" id="">
     <input type="text" name="noidung">
     <input type="submit" name="submit">
 </form>
 
 <script>
-var subtract = document.querySelector('#subtract')
-var add = document.querySelector('#add')
-var inputQuantity = document.querySelector('#inputQuantity');
 
-add.addEventListener('click', (e) => {
-    inputQuantity.value++;
+    var subtract = document.querySelector('#subtract')
+    var add = document.querySelector('#add')
+    var inputQuantity = document.querySelector('#inputQuantity');
+    var button_add_cart = document.querySelector('#button_add_cart'); 
+    add.addEventListener('click', (e) => {
+        inputQuantity.value++;
+
 
 })
 
@@ -119,5 +122,15 @@ subtract.addEventListener('click', (e) => {
         inputQuantity.value = 1;
     }
 
-})
+
+
+    })
+    button_add_cart.addEventListener('click', (e) => {
+        return Swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+        )
+    })
+
 </script>
