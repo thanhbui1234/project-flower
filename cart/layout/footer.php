@@ -53,7 +53,7 @@
 <!-- Core theme JS-->
 
 
-<script src="/../shop_xx/layout/js/scripts.js"></script>
+<script src="/project-flower/layout/js/scripts.js"></script>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <!-- * *                               SB Forms JS                               * *-->

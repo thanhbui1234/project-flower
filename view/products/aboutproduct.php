@@ -29,12 +29,12 @@
                             <div class="d-flex gap-lg-5 mb-lg-4">
                                 <h3 class="">Số lượng</h3>
                                 <div class="d-flex">
-                                    <button id="subtract" class="btn border">-</button>
+                                    <button id="subtract" class="btn border" type="button">-</button>
                                     <input name="amount" class="form-control text-center " id="inputQuantity" type="text" step="none" min='1' value="1" style="max-width: 4rem" />
-                                    <button id="add" class="btn border ">+</button>
+                                    <button id="add" class="btn border " type="button">+</button>
                                 </div>
                             </div>
-                            <input type="submit" class="btn btn-outline-dark flex-shrink-0" value="Thêm vào giỏ hàng" name="add_cart">
+                            <input id="button_add_cart" type="submit" class="btn btn-outline-dark flex-shrink-0" value="Thêm vào giỏ hàng" name="add_cart">
                         </div>
                     </div>
 
@@ -98,7 +98,7 @@
     var subtract = document.querySelector('#subtract')
     var add = document.querySelector('#add')
     var inputQuantity = document.querySelector('#inputQuantity');
-
+    var button_add_cart = document.querySelector('#button_add_cart'); 
     add.addEventListener('click', (e) => {
         inputQuantity.value++;
 
@@ -111,4 +111,12 @@
         }
 
     })
+    button_add_cart.addEventListener('click', (e) => {
+        return Swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+        )
+    })
+    
 </script>
