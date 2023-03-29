@@ -15,27 +15,37 @@
         global $bills;
         $bills = $statement -> fetchAll();
     }
-    function deleteBill() {
-        if (isset($_GET['deleteBill'])) {
-            global $conn;
-            $id = $_GET['deleteBill'];
-            $sql = "DELETE FROM bills WHERE id = $id";
-            $statement = $conn->prepare($sql);
-            if($statement -> execute()) {
-                header("location: index.php?act=bills");
-            }
-        }
-    }
     function confirmBill() {
-        if (isset($_POST['confirmBill'])) {
+        if (isset($_GET["id"])) {
             global $conn;
             $id = $_GET["id"];
-            }
-            global $conn;
-            $sql = "UPDATE bills SET status = 'delivering' WHERE id = $id ";
+            $sql = "UPDATE bills SET status = 'delivering' WHERE id = $id";
             $statement = $conn-> prepare($sql);
             if ($statement -> execute()) {
-                header("location: index.php?act=listProd");
+                header("location: index.php?act=bills");
                 }
             }
+        }
+    function showInfor(){
+        if (isset($_GET["id"])) {
+            global $conn;
+            $id = $_GET["id"];
+            $sql = "SELECT * FROM bills WHERE id=$id";
+            $statement = $conn -> prepare($sql);
+            $statement -> execute();
+            global $billInf;
+            $billInf = $statement -> fetchAll();
+        }
+    }
+    function showDetail(){
+        if (isset($_GET["id"])) {
+            global $conn;
+            $id = $_GET["id"];
+            $sql = "SELECT * FROM bill_detail WHERE bill=$id";
+            $statement = $conn -> prepare($sql);
+            $statement -> execute();
+            global $products;
+            $products = $statement -> fetchAll();
+        }
+    }
 ?>
