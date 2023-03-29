@@ -26,6 +26,7 @@ switch ($act) {
     case 'listProd':
         showProducts();
         deleteProduct();
+        applyProd();
         include '../admin/view/products/listProd.php';
         break;
 

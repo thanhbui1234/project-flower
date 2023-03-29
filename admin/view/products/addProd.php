@@ -54,11 +54,8 @@
 
 
     <div class="form-group">
-        <label for="exampleInputPassword1">Trạng thái</label> <br>
-        <select name="prod_status" id="selectStatus" class="form-select" aria-label="Default select example">
-            <option value="public"> Public </option>
-            <option value="private">Private</option>
-        </select>
+        <label for="exampleInputPassword1">Số lượng</label> <br>
+        <input type="text" name="prod_amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
     </div>
     <br>
 

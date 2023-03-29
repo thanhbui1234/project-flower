@@ -54,6 +54,10 @@ include './model/comment.php';
         break;
     default:
 
+        showproduct();
+        include './view/products/product.php';
+        break;
+}
 
        
 
