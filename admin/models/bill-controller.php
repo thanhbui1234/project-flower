@@ -1,7 +1,15 @@
 <?php 
     function showBill(){
         global $conn;
-        $sql = "SELECT * FROM bills WHERE status IN ('No_confirm','delivering')";
+        $sql = "SELECT * FROM bills WHERE status ='No_confirm'";
+        $statement = $conn -> prepare($sql);
+        $statement -> execute();
+        global $bills;
+        $bills = $statement -> fetchAll();
+    }
+    function showConfirmedBill(){
+        global $conn;
+        $sql = "SELECT * FROM bills WHERE status IN ('confirmed','delivering')";
         $statement = $conn -> prepare($sql);
         $statement -> execute();
         global $bills;
