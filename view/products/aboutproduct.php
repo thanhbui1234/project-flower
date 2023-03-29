@@ -1,3 +1,4 @@
+<?php $id=$_GET['id'] ?>
 <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
 
@@ -88,7 +89,7 @@
 
 </section>
 
-<form style="text-align:center" action="" method="post">
+<form style="text-align:center" action="binhluan.php?id=<?php echo $id; ?>" method="post">
     <input type="hidden" name="" id="">
     <input type="text" name="noidung">
     <input type="submit" name="submit">
