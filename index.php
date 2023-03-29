@@ -24,9 +24,8 @@ include './model/comment.php';
     case 'aboutproducts';
         view();
         showaboutproducts();
-        showproduct();
         showcmt();
-        addcmt();
+        showproduct();
         include './view/products/aboutproduct.php';
         break;
 

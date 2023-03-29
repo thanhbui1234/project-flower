@@ -1,4 +1,4 @@
-<?php 
+<?php
 include './model/connect.php'; ?>
 <?php
 
@@ -18,17 +18,18 @@ function showcmt()
     $showcmt = $statement->fetchAll();
 }
 
-function addcmt(){
+function addcmt()
+{
     if (isset($_POST['submit'])) {
         $noidung = $_POST['noidung'];
-        $id=$_GET['id'];
-        $datecmt=date("Y-m-d H:i a ");
-        $sqls="INSERT INTO comments (content,product,user,date) VALUES ('$noidung','$id','$_SESSION[userId]','$datecmt')";
+        $id = $_GET['id'];
+        $datecmt = date("Y-m-d H:i a ");
+        $sqls = "INSERT INTO comments (content,product,user,date) VALUES ('$noidung','$id','$_SESSION[userId]','$datecmt')";
         global $conn;
         $statement = $conn->prepare($sqls);
- 
-        if($statement->execute()){
-            
+
+        if ($statement->execute()) {
+            header("location: index.php?act=aboutproducts&id=$id");
         }
     }
 }
