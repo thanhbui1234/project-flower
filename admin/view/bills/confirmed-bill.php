@@ -1,4 +1,4 @@
-        <div class="mx-4">
+<div class="mx-4">
                 <table class="table shadow p-3 mb-5 bg-body rounded table-condensed table-bordered  ">
                     <thead class="headTable">
                         <tr>
@@ -10,13 +10,12 @@
                             <th>Trạng thái</th>
                             <th>Chi tiết hóa đơn</th>
                             <th>Tổng đơn</th>
-                            <th>Action</th>
                         </tr>        
                     </thead>
                     <tbody>        
                         <?php if (empty($bills)) { ?>
                         <tr>
-                            <td class=" text-xl-center text-warning" colspan="10">Không có đơn hàng cần xử lý</td>
+                            <td class=" text-xl-center text-warning" colspan="10">Không có đơn hàng</td>
                         </tr>
                         <?php } ?>
         
@@ -36,11 +35,6 @@
                             </td>
                             <td><a href="index.php?act=bill-detail&&id=<?php echo $id ?>">Xem chi tiết</a></td>
                             <td><?php echo $total ?></td>
-                            <td class="action_prod">
-                                <a href="index.php?act=bills&&id=<?php echo $id ?>" >
-                                    <button class="btn btn-success" name="confirmBill">Xác nhận</button>
-                                </a>
-                            </td>
                         </tr>
                         <?php } ?>        
                     </tbody>        

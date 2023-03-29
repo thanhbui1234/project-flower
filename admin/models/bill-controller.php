@@ -27,15 +27,14 @@
         }
     }
     function confirmBill() {
-        if (isset($_POST['confirmBill'])) {
+        if (isset($_GET["id"])) {
             global $conn;
             $id = $_GET["id"];
-            }
-            global $conn;
-            $sql = "UPDATE bills SET status = 'delivering' WHERE id = $id ";
+            $sql = "UPDATE bills SET status = 'delivering' WHERE id = $id";
             $statement = $conn-> prepare($sql);
             if ($statement -> execute()) {
-                header("location: index.php?act=listProd");
+                header("location: index.php?act=bills");
                 }
             }
+        }
 ?>
