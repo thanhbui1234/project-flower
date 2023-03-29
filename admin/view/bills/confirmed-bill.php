@@ -34,7 +34,7 @@
                             else echo 'Đang giao hàng'; ?>
                             </td>
                             <td><a href="index.php?act=bill-detail&&id=<?php echo $id ?>">Xem chi tiết</a></td>
-                            <td><?php echo $total ?></td>
+                            <td><?php echo $total ?>$</td>
                         </tr>
                         <?php } ?>        
                     </tbody>        
