@@ -42,7 +42,6 @@ switch ($url) {
         include './view/profile/changepassword.php';
         break;
     default:
-
         showproduct();
         include './view/products/product.php';
         break;

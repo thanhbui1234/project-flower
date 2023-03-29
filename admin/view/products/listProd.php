@@ -15,9 +15,9 @@
         <div class="d-flex flex-row gap-2  ">
             <select name="option" class="form-select form-select-sm form-control w-25 mb-4" id="selectAllprod" aria-label="Default select example">
                 <option selected>Chức năng</option>
-                <option value="public">Public</option>
-                <option value="private">Private</option>
-                <option value="clone">Tạo bản sao</option>
+                <!-- <option value="in_stock">Còn hàng</option>
+                <option value="out_of_stock">Hết hàng</option>
+                <option value="clone">Tạo bản sao</option> -->
                 <option value="delete">Xóa</option>
 
             </select>
@@ -38,7 +38,7 @@
                     <th>Danh mục</th>
                     <th>Ngày nhập</th>
                     <th>Mô tả</th>
-                    <th>Trạng thái</th>
+                    <th>Số lượng</th>
                     <th>Lượt xem</th>
                     <th>Action</th>
                 </tr>
@@ -68,7 +68,15 @@
                         <?php }?>
                         <td><?php echo $date ?></td>
                         <td><?php echo substr($description, 0, 50) ?>...</td>
-                        <td><?php echo $status ?></td>
+                        <td>
+                            <?php
+                                if($amount > 0) {
+                                    echo 'Còn hàng';
+                                } else {
+                                    echo 'Hết hàng';
+                                }
+                            ?>
+                        </td>
                         <td><?php echo $view ?></td>
                         <td class="action_prod">
                             <a class="btn btn-success" href="index.php?act=update_prod&&id=<?php echo $id ?>">UPDATE</a>
@@ -88,3 +96,4 @@
 </div>
 
 <script src="layout/js/products.js"></script>
+<script src="layout/js/checkbox.js"></script>

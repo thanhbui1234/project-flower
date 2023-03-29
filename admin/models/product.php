@@ -29,7 +29,7 @@ function addProducts()
         $category = $_POST['prod_category'];
         $date = date("Y-m-d H:i a ");
         $description = $_POST['prod_desc'];
-        $status = $_POST['prod_status'];
+        $amount = $_POST['prod_amount'];
         $tag = $_POST['prod_tag'];
     
 
@@ -56,10 +56,12 @@ function addProducts()
         if (empty($errProduct)) {
             global $conn;
 
-            $sql = "INSERT INTO products (name, image, price, deal, category, date, description, status, tag) VALUES ('$name', '$image', '$price', '$deal', '$category', '$date', '$description', '$status', '$tag')";
+            $sql = "INSERT INTO products (name, image, price, deal, category, date, description, amount, tag) VALUES ('$name', '$image', '$price', '$deal', '$category', '$date', '$description', '$amount', '$tag')";
 
             $statement = $conn->prepare($sql);
-            $statement->execute();
+            if ($statement->execute()) {
+                header("location:index.php?act=listProd");
+            }
     
             
                 // $price_old = $price;
@@ -147,7 +149,7 @@ function updateProduct() {
         $category = $_POST['prod_category'];
         $date = date("Y-m-d H:i a ");
         $description = $_POST['prod_desc'];
-        $status = $_POST['prod_status'];
+        $amount = $_POST['prod_amount'];
         $tag = $_POST['prod_tag'];
 
         global $errUpdate;
@@ -164,7 +166,7 @@ function updateProduct() {
         if (empty($errUpdate)) {
             global $conn;
 
-            $sql = "UPDATE products SET name = '$name', image = '$image', price = '$price', deal = '$deal', category = '$category', date = '$date', description = '$description', status = '$status', tag = '$tag' WHERE id = $id";
+            $sql = "UPDATE products SET name = '$name', image = '$image', price = '$price', deal = '$deal', category = '$category', date = '$date', description = '$description', amount = '$amount', tag = '$tag' WHERE id = $id";
 
             $statement = $conn-> prepare($sql);
 
@@ -196,6 +198,34 @@ function deleteProduct() {
         $statement = $conn->prepare($sql);
         if($statement -> execute()) {
             header("location: index.php?act=listProd");
+        }
+    }
+}
+
+function applyProd() {
+    if (isset($_POST['apply'])) {
+        global $conn;
+        $checkboxes = $_POST['checkBoxArr'];
+        foreach ($checkboxes as $checkbox) {
+            $option = $_POST['option'];
+            
+            switch ($option) {
+                case "delete":
+
+                    $sql = "DELETE FROM products WHERE id = $checkbox";
+                    $statement = $conn->query($sql);
+                    if ($statement -> execute()) {
+                        header("location: index.php?act=listProd");
+                    }
+                    break;
+
+                default:
+
+                    echo "<script>Swal.fire('Bạn phải chọn chức năng')</script>";
+                    break;
+
+            }
+
         }
     }
 }
