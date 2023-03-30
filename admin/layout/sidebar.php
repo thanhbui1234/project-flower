@@ -89,6 +89,11 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Khách hàng</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.php?act=comment">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Bình luận</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block" />
