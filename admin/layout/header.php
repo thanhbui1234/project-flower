@@ -45,5 +45,5 @@
     <!-- Custom styles for this template-->
     <link href="/../project-flower/admin/layout/css/sb-admin-2.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="./css//style.css">
+    <link rel="stylesheet" href="/project-flower/layout/css/custom.css">
 </head>

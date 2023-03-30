@@ -75,8 +75,8 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Chức năng</h6>
-                        <a class="collapse-item" href="index.php?act=bills">Đơn hàng</a>
-                        <a class="collapse-item" href="index.php?act=bills">Đơn hàng</a>
+                        <a class="collapse-item" href="index.php?act=bills">Đơn hàng cần xử lý</a>
+                        <a class="collapse-item" href="index.php?act=confirmed-bill">Đơn hàng đã xác nhận</a>
                     </div>
                 </div>
             </li>
