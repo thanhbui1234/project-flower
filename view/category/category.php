@@ -30,7 +30,7 @@
                     </a>
                     <div class="portfolio-caption">
 
-                        <a class="text-decoration-none" href="#">
+                        <a class="text-decoration-none" href="index.php?act=aboutproducts&id=<?php echo $category['id'] ?>">
                             <div class="portfolio-caption-heading"><?php echo $category['name'] ?>
                             </div>
                         </a>
