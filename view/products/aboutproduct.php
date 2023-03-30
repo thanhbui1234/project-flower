@@ -31,7 +31,7 @@
                                 <h3 class="">Số lượng</h3>
                                 <div class="d-flex">
                                     <button id="subtract" class="btn border" type="button">-</button>
-                                    <input name="amount" class="form-control text-center " id="inputQuantity" type="text" step="none" min='1' value="1" style="max-width: 4rem" />
+                                    <input name="amount" class="form-control text-center " id="inputQuantity" type="text" step="none" min='1' value="1" style="max-width: 4rem"/>
                                     <button id="add" class="btn border " type="button">+</button>
                                 </div>
                             </div>
