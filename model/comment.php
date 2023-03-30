@@ -9,7 +9,7 @@ include './model/connect.php';?>
 function showcmt()
 {
     $id = $_GET['id'];
-    $sql = "SELECT users.name,comments.content,users.image,users.userName,comments.date
+    $sql = "SELECT users.name,comments.content,users.image,users.userName,comments.date,comments.id,comments.status
     FROM ((comments
     INNER JOIN products ON comments.product = products.id)
     INNER JOIN users ON comments.user = users.id)
@@ -27,7 +27,7 @@ function addcmt()
         $noidung = $_POST['noidung'];
         $id = $_GET['id'];
         $datecmt = date("Y-m-d H:i a ");
-        $sqls = "INSERT INTO comments (content,product,user,date) VALUES ('$noidung','$id','$_SESSION[userId]','$datecmt')";
+        $sqls = "INSERT INTO comments (content,product,user,date,status,trangthai) VALUES ('$noidung','$id','$_SESSION[userId]','$datecmt','1','chưa duyệt')";
         global $conn;
         $statement = $conn->prepare($sqls);
 
@@ -38,3 +38,30 @@ function addcmt()
         }
     }
 }
+
+
+function deleteCmt()
+{
+    if (isset($_GET['id']) && ($_GET['id']) > 0) {
+        global $conn;
+        $id = $_GET['id'];
+        $sql = "DELETE FROM comments WHERE id = $id";
+        $statement = $conn->prepare($sql);
+        if ($statement->execute()) {
+        }
+    }
+}
+
+function showstatus()
+{
+    $sql = "SELECT * FROM comments";
+    global $conn;
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    global $showstatus;
+    $showstatus = $statement->fetchAll();
+}
+
+
+?>
+

@@ -23,6 +23,7 @@ switch ($url) {
         showaboutproducts();
         showcmt();
         showproduct();
+        showstatus();
         include './view/products/aboutproduct.php';
         break;
 
