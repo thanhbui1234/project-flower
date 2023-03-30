@@ -20,7 +20,7 @@ function updatecmt1()
 {
     $id = $_GET['id'];
     $sql = "UPDATE comments
-    SET status = '2', trangthai= 'chưa duyệt'
+    SET status = '1', trangthai= 'chưa duyệt'
     WHERE id = $id";
     global $conn;
     $statement = $conn->prepare($sql);
@@ -32,7 +32,7 @@ function updatecmt2()
 {
     $id = $_GET['id'];
     $sql = "UPDATE comments
-    SET status = '1', trangthai= 'đã duyệt'
+    SET status = '2', trangthai= 'đã duyệt'
     WHERE id = $id";
     global $conn;
     $statement = $conn->prepare($sql);
