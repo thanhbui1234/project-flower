@@ -26,6 +26,7 @@ include './model/comment.php';
         showaboutproducts();
         showcmt();
         showproduct();
+        showstatus();
         include './view/products/aboutproduct.php';
         break;
 
