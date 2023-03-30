@@ -49,11 +49,16 @@ switch ($act) {
         break;
     case 'bills':
         showBill();
-        deleteBill();
+        confirmBill();
         include '../admin/view/bills/bill.php';
         break;
+    case 'confirmed-bill':
+        showConfirmedBill();
+        include '../admin/view/bills/confirmed-bill.php';
+        break;
     case 'bill-detail':
-
+        showInfor();
+        showDetail();
         include '../admin/view/bills/bill-detail.php';
         break;
     default:

@@ -60,6 +60,7 @@
                     <tr>
                         <th colspan="6">Total:</th> 
                         <th colspan="1"><?php echo $total;?> $</th>
+                        <input type="text" name="total" hidden value="<?php echo $total;?>">;
                     </tr>
                 </tfoot>
                 </table>

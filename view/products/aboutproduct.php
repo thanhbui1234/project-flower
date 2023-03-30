@@ -26,8 +26,9 @@
 
                     <div class="d-flex">
                         <input type="text" name="name" value="<?php echo $showaboutproducts['name'] ?>" hidden>
-                        <input type="text" name="image" value="/../project-flower/layout/assets/img/productDemo/a2.png"
-                            hidden>
+
+                        <input type="text" name="image" value="/project-flower/admin/uploads/<?php echo $showaboutproducts['image']?>" hidden>
+
                         <input type="text" name="price" value="<?php echo $showaboutproducts['price'] ?>" hidden>
                         <input type="text" name="deal" value="<?php echo $showaboutproducts['deal'] ?>" hidden>
                         <div class="">
