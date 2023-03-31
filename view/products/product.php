@@ -77,17 +77,12 @@ foreach ($showproducts as $products) {
                             </div>
                         </a>
                         <div class="portfolio-caption-subheading text-muted">
-                            <del><?php echo $products['price'] . "$" ?></del>
-                        </div>
-                        <div class="portfolio-caption-subheading text-muted">
-                            <?php echo $giamgia . "$"
-
-    ?>
-
-                        </div>
-                        <div class="portfolio-caption-subheading text-muted">
-                            <p style="color: red;"><?php echo "Khuyến mãi:" . $products['deal'] . "%" ?></p>
-
+                            <span class="fs-3 text-danger"><?php echo $giamgia . '$' ?>
+                                <span style="background-color: pink; font-size:15px; padding: 2px ; margin-left: 15px "
+                                    class="  rounded">
+                                    <?php echo '-' . $products['deal'] . '%' ?>
+                                </span>
+                            </span>
                         </div>
 
 
