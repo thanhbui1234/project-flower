@@ -1,7 +1,10 @@
+
 <?php
 include './model/connect.php'; ?>
-<?php
 
+<?php
+include './model/connect.php';?>
+<?php
 
 function showcmt()
 {
@@ -29,10 +32,13 @@ function addcmt()
         $statement = $conn->prepare($sqls);
 
         if ($statement->execute()) {
+
             header("location: index.php?act=aboutproducts&id=$id");
+
         }
     }
 }
+
 
 function deleteCmt()
 {
@@ -58,3 +64,4 @@ function showstatus()
 
 
 ?>
+
