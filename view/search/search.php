@@ -13,28 +13,40 @@
 
         <?php } else {?>
         <div class="row">
+            <?php foreach ($dataSearch as $search) {extract($search)?>
+
+            <?Php $giamgia = $price - ($price / 100 * $deal);?>
+
+
             <div class="col-lg-4 col-sm-6 mb-4">
                 <!-- Portfolio item 1-->
 
-                <?php foreach ($dataSearch as $search) {extract($search)?>
-                <div class="portfolio-item">
-                    <a class="portfolio-link" href="./index.php?act=about_product&id=id">
 
-                        <img class="img-fluid" src="/../project-flower/layout/assets/img/productDemo/a1.png" alt="" />
+                <div class="portfolio-item">
+                    <a class="portfolio-link" href="./index.php?act=aboutproducts&id=<?php echo $id ?>">
+
+                        <img class="img-fluid bg-white" src="/../project-flower/admin/uploads/<?php echo $image ?>"
+                            alt="<?php echo $name ?>" />
                     </a>
                     <div class="portfolio-caption">
 
-                        <a class="text-decoration-none" href="./index.php?act=about_product&id=1">
-                            <div class="portfolio-caption-heading">ten san pham
+                        <a class="text-decoration-none" href="./index.php?act=aboutproducts&id=<?php echo $id ?>">
+                            <div class="portfolio-caption-heading"><?php echo $name ?>
                             </div>
                         </a>
                         <div class="portfolio-caption-subheading text-muted">
-                            111111 VND
+                            <span class="fs-3 text-danger"><?php echo $giamgia . '$' ?>
+                                <span style="background-color: pink; font-size:15px; padding: 2px ; margin-left: 15px "
+                                    class="  rounded">
+                                    <?php echo '-' . $deal . '%' ?>
+                                </span>
+                            </span>
                         </div>
                     </div>
                 </div>
-                <?php }?>
+
             </div>
+            <?php }?>
 
         </div>
         <?php }?>
