@@ -34,8 +34,9 @@
         $phone = $_POST['phone'];
         $email = $_POST['email'];
         $address = $_POST['address'];
+        $total = $_POST['total'];
         $dateCreate = date("Y-m-d H:i a ");
-        $sql = "insert into bills (customer,phone,email,address,date) values ('$customer','$phone','$email','$address','$dateCreate')";
+        $sql = "insert into bills (customer,phone,email,address,total,date) values ('$customer','$phone','$email','$address','$total','$dateCreate')";
         $statement = $conn -> prepare ($sql);
         $statement -> execute();
         $id = $conn -> lastInsertId();

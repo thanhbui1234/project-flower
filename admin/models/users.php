@@ -12,7 +12,7 @@ function showNameAvt()
         // global $dataUser;
         $dataUser = $stament->fetchAll();
         foreach ($dataUser as $user) {
-            echo $user['userName'];
+            echo "<span class='mr-lg-3'>$user[userName]</span>";
             echo empty($user['image'])
             ? '<img class="mr-lg-5 rounded-circle" width="25" src="/../project-flower/layout/assets/img/avtDefault.jpg" alt="">'
             : "<img class=' ml-lg-2  rounded-circle' width='25' height='' src='/../project-flower/admin/uploads/$user[image]' alt=''>";

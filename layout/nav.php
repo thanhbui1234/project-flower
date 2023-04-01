@@ -99,3 +99,5 @@
         <div class="masthead-heading">Flower </div>
     </div>
 </header>
+
+<script src="js/search.js"></script>

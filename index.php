@@ -4,6 +4,7 @@ include './model/category.php';
 include './model/user.php';
 include './model/search.php';
 include './model/comment.php';
+
 ?>
 
 <body id="page-top">
@@ -19,7 +20,13 @@ switch ($url) {
 
     case 'aboutproducts';
         showaboutproducts();
+        showcmt();
         showproduct();
+        showstatus();
+        include './view/products/aboutproduct.php';
+        break;
+
+
         include './view/products/aboutproduct.php';
         break;
 
@@ -33,13 +40,14 @@ switch ($url) {
         include './view/search/search.php';
         break;
 
+
     case 'profile';
         updateProfile();
         include './view/profile/profile.php';
         break;
 
     case 'changepassword';
-    changePasswrod();
+        changePasswrod();
         include './view/profile/changepassword.php';
         break;
     default:
@@ -49,7 +57,12 @@ switch ($url) {
         break;
 }
 
-?>
+
+
+
+    ?>
+
+
 
 
 

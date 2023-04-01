@@ -1,16 +1,19 @@
-<!-- <?php ob_start()?> -->
-<?php include './layout/header.php'?>
+<!-- <?php ob_start() ?> -->
+<?php include './layout/header.php' ?>
 
-<?php include './layout/sidebar.php'?>
+<?php include './layout/sidebar.php' ?>
 
-<?php include './layout/nav.php'?>
+<?php include './layout/nav.php' ?>
 
-<?php include './models/product.php'?>
+<?php include './models/product.php' ?>
 
-<?php include './models/categories.php'?>
+<?php include './models/categories.php' ?>
 
+<?php include './models/bill-controller.php' ?>
 
-<?php include './models/count.php'?>
+<?php include './models/count.php' ?>
+
+<?php include './models/comment.php' ?>
 
 
 
@@ -46,6 +49,47 @@ switch ($act) {
         deleteUsers();
         include '../admin/view/users/users.php';
         break;
+
+    case 'comment':
+        showcmt();
+        include '../admin/view/comment/comment.php';
+        break;
+
+    
+
+    case 'updatecmt1':
+        updatecmt1();
+        include '../admin/view/comment/comment.php';
+        break;
+
+    case 'updatecmt2':
+        updatecmt2();
+        include '../admin/view/comment/comment.php';
+        break;
+
+    case 'updatecmt2':
+        include '../admin/view/comment/update2.php';
+        break;
+
+    case 'delcmt':
+        delcmt();
+        include '../admin/view/comment/comment.php';
+        break;
+
+    case 'bills':
+        showBill();
+        confirmBill();
+        include '../admin/view/bills/bill.php';
+        break;
+    case 'confirmed-bill':
+        showConfirmedBill();
+        include '../admin/view/bills/confirmed-bill.php';
+        break;
+    case 'bill-detail':
+        showInfor();
+        showDetail();
+        include '../admin/view/bills/bill-detail.php';
+        break;
     default:
         countAll();
         include './view/home/home.php';
@@ -62,4 +106,4 @@ switch ($act) {
 
 
 
-<?php include './layout/footer.php'?>
+<?php include './layout/footer.php' ?>

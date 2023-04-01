@@ -5,10 +5,7 @@
 <section class="page-section" id="contact">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase">Xác nhận đơn hàng</h2>
-            <h3 class="section-subheading text-muted">
-                Shop X uy tín số 1 thế giới
-            </h3>
+            <h2 class="section-heading text-uppercase" style="color:brown;">Xác nhận đơn hàng</h2>
         </div>
         <form action="/project-flower/cart/cart.php?act=submit" method="POST">
             <div class="row align-items-stretch mb-5">
@@ -27,7 +24,7 @@
                 </tr>
                 <tr>
                     <th id="bill_field">Địa chỉ: </th>
-                    <th><input id="bill_input" name="address" type="text" value="<?php if(isset($_SESSION['address'])) echo $_SESSION['address'];?>"></th>
+                    <th><input required id="bill_input" name="address" type="text" value="<?php if(isset($_SESSION['address'])) echo $_SESSION['address'];?>"></th>
                 </tr>
                 </table>
                 
@@ -63,6 +60,7 @@
                     <tr>
                         <th colspan="6">Total:</th> 
                         <th colspan="1"><?php echo $total;?> $</th>
+                        <input type="text" name="total" hidden value="<?php echo $total;?>">;
                     </tr>
                 </tfoot>
                 </table>
