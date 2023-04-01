@@ -24,7 +24,7 @@ deleteBtn.forEach((btn) => {
                 confirmButtonText:
                     '<a class="text-white" href="index.php?act=listProd&deleteProduct=' + dataId + '">Xóa</a>',
                 cancelButtonText: "No, cancel!",
-                reverseButtons: true,
+                reverseButtons: false,
             })
             .then((result) => {
                 if (result.isConfirmed) {
