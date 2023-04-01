@@ -2,12 +2,27 @@
 include './model/connect.php';
 function showproduct()
 {
-    $sql = "SELECT * FROM products WHere 1 order by id DESC limit 0,9";
+
     global $conn;
+    $sql = "SELECT * FROM products ";
     $statement = $conn->prepare($sql);
     $statement->execute();
-    global $showproduct;
-    $showproduct = $statement->fetchAll();
+    global $dataProduct;
+    $dataProduct = count($statement->fetchAll());
+    $perPage = 9;
+    global $countPage;
+    $countPage = (ceil($dataProduct / $perPage));
+
+    isset($_GET['page']) ? $pageGet = $_GET['page'] : $pageGet = '';
+
+    ($pageGet == '' || $pageGet == 1) ? $pageSelect = 0 : $pageSelect = ($pageGet * $perPage) - $perPage;
+
+    $sqlShowProd = "SELECT * FROM products order by id  desc limit $pageSelect , $perPage ";
+    $statementShowProd = $conn->prepare($sqlShowProd);
+    $statementShowProd->execute();
+    global $showproducts;
+    $showproducts = $statementShowProd->fetchAll();
+
 }
 
 function showaboutproducts()
@@ -23,7 +38,6 @@ function showaboutproducts()
     global $showaboutproducts;
     $showaboutproducts = $statement->fetch();
 }
-
 
 function view()
 {
