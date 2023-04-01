@@ -2,31 +2,37 @@
 
 include_once 'connect.php';
 
-function countAll() {
+function countAll()
+{
     global $conn;
 
     $sqlProduct = "SELECT COUNT(*) FROM products";
     $statement = $conn->prepare($sqlProduct);
-    $statement ->execute();
+    $statement->execute();
     global $countProducts;
-    $countProducts = $statement -> fetchColumn();
-    
+    $countProducts = $statement->fetchColumn();
+
     $sqlCategory = "SELECT COUNT(*) FROM categories";
     $statement = $conn->prepare($sqlCategory);
-    $statement ->execute();
+    $statement->execute();
     global $countCategories;
-    $countCategories = $statement -> fetchColumn();
+    $countCategories = $statement->fetchColumn();
 
     $sqlUser = "SELECT COUNT(*) FROM users";
     $statement = $conn->prepare($sqlUser);
-    $statement ->execute();
+    $statement->execute();
     global $countUsers;
-    $countUsers = $statement -> fetchColumn();
+    $countUsers = $statement->fetchColumn();
 
     $sqlComment = "SELECT COUNT(*) FROM comments";
     $statement = $conn->prepare($sqlComment);
-    $statement ->execute();
+    $statement->execute();
     global $countComments;
-    $countComments = $statement -> fetchColumn();
+    $countComments = $statement->fetchColumn();
 
+    $sqlViewMax = "SELECT max(view) as maxView, name FROM products";
+    $statement = $conn->prepare($sqlViewMax);
+    $statement->execute();
+    global $dataViewMax;
+    $dataViewMax = $statement->fetchAll();
 }
