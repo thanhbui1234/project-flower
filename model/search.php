@@ -9,7 +9,7 @@ function search()
 
         $value = $_POST['search'];
 
-        $sql = "SELECT * from products WHERE tag like '%$value%' and tag not like ' ,' ";
+        $sql = "SELECT * from products WHERE tag like '%$value%' or name like '%$value%' and tag not like ' ,' ";
         $statement = $conn->prepare($sql);
         $statement->execute();
         global $dataSearch;

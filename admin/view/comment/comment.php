@@ -67,13 +67,13 @@
                          <td style=""><?php echo $cmt['trangthai'] ?></td>
 
 
+
+
+
                          <td class="action_prod">
                              <a class="btn btn-success" href="index.php?act=updatecmt2&id=<?php echo $cmt['id'] ?>">OK</a>
                              <a class="btn btn-dark" href="index.php?act=updatecmt1&id=<?php echo $cmt['id'] ?>">Huỷ</a>
                              <a onclick="return confirm('Có chắc chắn muốn xoá không')" class="btn btn-danger" href="index.php?act=delcmt&id=<?php echo $cmt['id'] ?>">Xoá</a>
-                             <!-- <a href="index.php?act=delcmt&id=<?php echo $cmt['id'] ?>">
-                                <button class="btn btn-danger">Xóa</button>
-                            </a> -->
                          </td>
                      </tr>
 

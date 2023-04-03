@@ -1,7 +1,10 @@
+
 <?php
 include './model/connect.php'; ?>
-<?php
 
+<?php
+include './model/connect.php';?>
+<?php
 
 function showcmt()
 {
@@ -29,6 +32,7 @@ function addcmt()
         $target_file = $target_dir . $image;
         move_uploaded_file($prod_image_tmp, $target_file);
 
+
         $erorr = [];
         if ((($_POST['noidung']))  == '') {
             $erorr['noidung'] = "Không được để trống";
@@ -43,9 +47,12 @@ function addcmt()
             if ($statement->execute()) {
                 header("location: index.php?act=aboutproducts&id=$id");
             }
-        }
+
+        
     }
 }
+}
+
 
 function deleteCmt()
 {
@@ -71,3 +78,4 @@ function showstatus()
 
 
 ?>
+
