@@ -99,7 +99,7 @@
                             <div style="">
                                 <div>
                                     <div class="form-group">
-                                        <label class="border btn btn-warning" for="img" style="padding: 14px 20px;border-radius: 8px;"> Thêm hình ảnh</label>
+                                        <label class="border btn btn-warning" for="img" style="padding: 14px 20px;border-radius: 8px;margin-top: 7px"> Thêm hình ảnh</label>
                                         <!-- <td><img width="100" src="../../uploads//<?php echo $image ?>" alt=""></td> -->
                                         <input hidden name="prod_img" type="file" id="img">
                                         <input class="border btn btn-success" style="margin-top: 7px; color: white;padding: 14px 20px;border: none;border-radius: 8px;cursor: pointer;" type="submit" name="submit" value=" Gửi bình luận">
