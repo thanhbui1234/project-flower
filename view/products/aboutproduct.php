@@ -61,6 +61,7 @@
                                     </div>
                                 </div>
                                 <input id="button_add_cart" type="submit" class="btn btn-outline-dark flex-shrink-0" value="Thêm vào giỏ hàng" name="add_cart">
+                                <input id="button_add_cart" type="submit" class="btn btn-outline-dark flex-shrink-0" value="Mua ngay" name="add_cart">
                             </div>
                         </div>
 
