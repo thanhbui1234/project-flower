@@ -35,9 +35,10 @@
         <select name="prod_category" id="select" class="form-select" aria-label="Default select example">
             <option value="default" selected>Loại sản phẩm</option>
 
-            <?php foreach ($dataCategories as $category) {extract($category)?>
-                <option value="<?php echo $id?>"><?php echo $name?></option>
-            <?php }?>
+            <?php foreach ($dataCategories as $category) {
+                extract($category) ?>
+                <option value="<?php echo $id ?>"><?php echo $name ?></option>
+            <?php } ?>
 
 
         </select>
@@ -56,6 +57,7 @@
     <div class="form-group">
         <label for="exampleInputPassword1">Số lượng</label> <br>
         <input type="text" name="prod_amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+        <h3 class="text-danger text-lg"> <?php echo isset($errProduct['amount']) ? $errProduct['amount'] : ''; ?></h3>
     </div>
     <br>
 
