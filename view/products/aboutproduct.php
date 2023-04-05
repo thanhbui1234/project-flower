@@ -12,13 +12,6 @@
         body {
             margin-top: 20px;
         }
-
-
-        
-
-       
-
-       
     </style>
 </head>
 
@@ -93,7 +86,7 @@
                     if (!empty($_SESSION['userId'])) {
 
                     ?>
-                        <form style="margin-bottom: 30px;" action="binhluan.php?id=<?php echo $id; ?>" method="post" en>
+                        <form style="margin-bottom: 30px;" action="binhluan.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
                             <h3 style=" font-weight: 400; font-size: 20px; color: #555555; margin: 10px 0 15px; padding: 0;">Nội dung bình luận</h3>
                             <textarea style="height: 150px;" name="noidung" cols="105" rows="10" required></textarea>
                             <input type="hidden" name="" id="">
@@ -129,43 +122,37 @@
                     <?php
                     foreach ($showcmt as $cmt) {
                         if ($cmt['status'] == 2) { ?>
-                            <div style=" border-top: 1px dashed #DDDDDD;padding: 20px 0;margin: 0;" class="media">
-
-                                <div class="comment-text">
-                                
-                                    <a style="" class="pull-left" href="#"><img style="margin-right: 24px;max-width: 170px;border-radius: 12px;" class="media-object" src="/../project-flower/admin/uploads/<?php echo $cmt['image'] ?>" alt=""></a>
-                                    <div class="media-body">
-
-                                        <h6 class="media-heading"><?php echo $cmt['name'] ?></h6>
-                                        <p style="font-size: 10px;">(ID: <?php echo $cmt['userName'] ?>)</p>
-
-                                        <p><?php echo $cmt['content'] ?></p>
-                                        <p style="font-size: 10px;"><span><svg style="width: 20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
-                                                </svg></span> <?php echo $cmt['date'] ?> </p> <br>
+                            <div style=" border-top: 2px dashed #DDDDDD;padding: 20px 0;margin-top: 48px; width: 300px" class="media"> 
+                                    <div class="border-top: 2px dashed #DDDDDD;">
+                                    <a style="" class="pull-left" href="#"><img style="margin-right: 24px;max-width: 50px;height:50px;border-radius: 30px;" class="media-object" src="/../project-flower/admin/uploads/<?php echo $cmt['image'] ?>" alt=""></a>
+                                    <h4 style="" class="media-heading"><?php echo $cmt['name'] ?></h4>
+                                    <p style="font-size: 10px;">(ID: <?php echo $cmt['userName'] ?>)</p>
+                                    <p style="font-size: 20px;"><?php echo $cmt['content'] ?></p>
+                                    <p style="font-size: 12px;"><span><svg style="width: 20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+                                            </svg></span> <?php echo $cmt['date'] ?> </p> <br>
+                                    
+                                    <a class="pull-left" href="#"><img style="width:300px; margin-bottom:48px" class="media-object" src="/../project-flower/admin/uploads/<?php echo $cmt['img'] ?>" alt=""></a>
+                                    
                                     </div>
-                                </div>
+                            <?php
 
-                                <!-- <div class="comment-img">
-                                    <a class="pull-left" href="#"><img class="media-object" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""></a>
-                                </div> -->
-                            </div>
-                        <?php
+
                         }
+                            ?>
+
+
+                        <?php
+
+                     }
                         ?>
 
 
-                    <?php
-
-                    }
-                    ?>
 
 
-
-
+                            </div> 
                 </div>
             </div>
-        </div>
     </section>
 
     <script>
