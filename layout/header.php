@@ -1,4 +1,4 @@
-<?php 
+<?php
 ob_end_clean();
 session_start();
 ?>
@@ -13,15 +13,18 @@ session_start();
     <title>PERFUME</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="/../project-flower/layout/assets/img/flower.svg" />
+
+
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- linkcss -->
     <link rel="stylesheet" href="/../project-flower/layout/css/custom.css">
     <link rel="stylesheet" href="/../project-flower/layout/css/cssform.css">
+    <link rel="stylesheet" href="/../project-flower/layout/css/order.css">
     <link rel="stylesheet" href="/../project-flower/layout/css/changepassw.css">
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
@@ -46,6 +49,9 @@ session_start();
     <link rel="stylesheet" href="/../project-flower/layout/owlcarousel/assets/owl.theme.default.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="/../project-flower/layout/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <?php date_default_timezone_set('Asia/Ho_Chi_Minh');?>
 <!-- <h3>ok</h3> -->

@@ -27,6 +27,7 @@
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6"><img width="500" src="./admin/uploads/<?php echo $showaboutproducts['image'] ?> ">
                     </div>
+
                     <div class="col-md-6">
                         <h1 class="display-5 fw-bolder"><?php echo $showaboutproducts['name'] ?></h1>
                         <div class="fs-5 mb">
@@ -52,14 +53,19 @@
                                         <input name="amount" class="form-control text-center " id="inputQuantity" type="text" step="none" min='1' value="1" style="max-width: 4rem" />
                                         <button id="add" class="btn border " type="button">+</button>
                                     </div>
+
                                 </div>
                                 <input id="button_add_cart" type="submit" class="btn btn-outline-dark flex-shrink-0" value="Thêm vào giỏ hàng" name="add_cart">
                                 <input id="button_add_cart" type="submit" class="btn btn-outline-dark flex-shrink-0" value="Mua ngay" name="add_cart">
                             </div>
+
+
                         </div>
 
 
+
                     </div>
+
             </form>
         </div>
     </section>
@@ -70,6 +76,7 @@
 
             </div>
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"> </div>
+
 
 
 
@@ -101,10 +108,15 @@
                                 </div>
 
 
+                                <h6><?php echo $cmt['name'] ?></h6>
+                                <p>(ID: <?php echo $cmt['userName'] ?>)</p>
+
+
                                 <div>
 
                                 </div>
                             </div>
+
 
                         </form>
                     <?php
@@ -138,14 +150,17 @@
                             <?php
 
 
+
                         }
                             ?>
+
 
 
                         <?php
 
                      }
                         ?>
+
 
 
 
@@ -183,3 +198,4 @@
 </body>
 
 </html>
+
