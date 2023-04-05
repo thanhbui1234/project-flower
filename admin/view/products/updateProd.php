@@ -65,8 +65,9 @@
 
 
         <div class="form-group">
-            <label for="exampleInputPassword1">Trạng thái</label> <br>
+            <label for="exampleInputPassword1">Số lượng</label> <br>
             <input value="<?php echo $amount ?>" type="text" name="prod_amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+        <h3 class="text-danger text-lg"> <?php echo isset($errUpdate['amount']) ? $errUpdate['amount'] : ''; ?></h3>
         </div>
         <br>
 
