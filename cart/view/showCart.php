@@ -1,5 +1,5 @@
 <?php
-include "../model/functions.php";
+// include "./cart/model/functions.php";
 session_start();
 if (isset($_GET['del_id']) && $_GET['del_id'] >= 0) {
     array_splice($_SESSION['cart'], $_GET['del_id'], 1);
@@ -10,6 +10,7 @@ if (isset($_GET['del_cart']) && $_GET['del_cart'] == 1) {
     $_SESSION['cart'] = [];
 }
 ?>
+
 <section class="page-section" id="contact">
     <div class="container">
         <div class="text-center">

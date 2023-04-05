@@ -27,7 +27,8 @@
                     <div class="d-flex">
                         <input type="text" name="name" value="<?php echo $showaboutproducts['name'] ?>" hidden>
 
-                        <input type="text" name="image" value="/project-flower/admin/uploads/<?php echo $showaboutproducts['image']?>" hidden>
+                        <input type="text" name="image"
+                            value="/project-flower/admin/uploads/<?php echo $showaboutproducts['image']?>" hidden>
 
                         <input type="text" name="price" value="<?php echo $showaboutproducts['price'] ?>" hidden>
                         <input type="text" name="deal" value="<?php echo $showaboutproducts['deal'] ?>" hidden>
@@ -37,12 +38,15 @@
                                 <div class="d-flex">
 
                                     <button id="subtract" class="btn border" type="button">-</button>
-                                    <input name="amount" class="form-control text-center " id="inputQuantity" type="text" step="none" min='1' value="1" style="max-width: 4rem"/>
+                                    <input name="amount" class="form-control text-center " id="inputQuantity"
+                                        type="text" step="none" min='1' value="1" style="max-width: 4rem" />
                                     <button id="add" class="btn border " type="button">+</button>
                                 </div>
                             </div>
-                            <input id="button_add_cart" type="submit" class="btn btn-outline-dark flex-shrink-0" value="Thêm vào giỏ hàng" name="add_cart">
-                            <input id="button_add_cart" type="submit" class="btn btn-outline-dark flex-shrink-0" value="Mua ngay" name="add_cart">
+                            <input id="button_add_cart" type="submit" class="btn btn-outline-dark flex-shrink-0"
+                                value="Thêm vào giỏ hàng" name="add_cart">
+                            <input id="button_add_cart" type="submit" class="btn btn-outline-dark flex-shrink-0"
+                                value="Mua ngay" name="add_cart">
                         </div>
                     </div>
 
@@ -56,14 +60,16 @@
     <div class="container px-4 px-lg-5 mt-5">
         <h2 class="fw-bolder mb-4">Bình luận</h2> <br>
         <div style=" border-radius: 5px;">
-        <form style="text-align:center" action="binhluan.php?id=<?php echo $id; ?>" method="post"en>
-            <input style=" width: 70%;padding: 12px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;" 
-            type="text" name="noidung" required id="fname"  placeholder="Nội dung bình luận">
-            <input type="hidden" name="" id="">
-            <input style="width: 70%; background-color: #212529;color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;" 
-            type="submit" name="submit" value= " Gửi bình luận">
-            
-        </form>
+            <form style="text-align:center" action="binhluan.php?id=<?php echo $id; ?>" method="post" en>
+                <input
+                    style=" width: 70%;padding: 12px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;"
+                    type="text" name="noidung" required id="fname" placeholder="Nội dung bình luận">
+                <input type="hidden" name="" id="">
+                <input
+                    style="width: 70%; background-color: #212529;color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;"
+                    type="submit" name="submit" value=" Gửi bình luận">
+
+            </form>
         </div>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"> </div>
 
@@ -74,29 +80,19 @@
                 <?php foreach ($showcmt as $cmt) {
                     if ($cmt['status'] == 2) { ?>
 
-                        <div class="comment-text">
-                            <div class="cmt">
-                                <div class="comments" style="  display: flex; margin-top: 48px">
+                <div class="comment-text">
+                    <div class="cmt">
+                        <div class="comments" style="  display: flex; margin-top: 48px">
 
-                                    <div class="image" style="margin-right: 24px; ">
-                                        <?php echo empty($cmt['image']) ? "<img class='imgprofile'  src='/../project-flower/layout/assets/img/avtDefault.jpg' alt=''><br>" : "<img  class='imgprofile'  src='/../project-flower/admin/uploads/$cmt[image]' alt=''><br>"; ?>
-                                    </div>
-                                    <div class="text-content-cmt" style="margin-top: 24px;">
-
-                                        <h6><?php echo $cmt['name'] ?></h6>
-                                        <p>(ID: <?php echo $cmt['userName'] ?>)</p>
-
-                                        <h5 class="nam"><?php echo $cmt['content'] ?></h5>
-                                        <p><span><svg style="width: 20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
-                                                </svg></span> <?php echo $cmt['date'] ?> </p> <br>
-                                    </div>
-                                </div>
+                            <div class="image" style="margin-right: 24px; ">
+                                <?php echo empty($cmt['image']) ? "<img class='imgprofile'  src='/../project-flower/layout/assets/img/avtDefault.jpg' alt=''><br>" : "<img  class='imgprofile'  src='/../project-flower/admin/uploads/$cmt[image]' alt=''><br>"; ?>
                             </div>
+                            <div class="text-content-cmt" style="margin-top: 24px;">
 
+                                <h6><?php echo $cmt['name'] ?></h6>
+                                <p>(ID: <?php echo $cmt['userName'] ?>)</p>
 
-
-                                <p class="nam">Nội dung: <?php echo $cmt['content'] ?></p>
+                                <h5 class="nam"><?php echo $cmt['content'] ?></h5>
                                 <p><span><svg style="width: 20" xmlns="http://www.w3.org/2000/svg" fill="none"
                                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                             class="w-6 h-6">
@@ -105,16 +101,28 @@
                                         </svg></span> <?php echo $cmt['date'] ?> </p> <br>
                             </div>
                         </div>
+                    </div>
 
-                <?php
+
+
+                    <p class="nam">Nội dung: <?php echo $cmt['content'] ?></p>
+                    <p><span><svg style="width: 20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+                            </svg></span> <?php echo $cmt['date'] ?> </p> <br>
+                </div>
+            </div>
+
+            <?php
 
                     } else {
                         // echo "xnxx";
                     }
                 } ?>
 
-            </div>
         </div>
+    </div>
 
     </div>
 
@@ -124,13 +132,12 @@
 
 
 <script>
-
-    var subtract = document.querySelector('#subtract')
-    var add = document.querySelector('#add')
-    var inputQuantity = document.querySelector('#inputQuantity');
-    var button_add_cart = document.querySelector('#button_add_cart');
-    add.addEventListener('click', (e) => {
-        inputQuantity.value++;
+var subtract = document.querySelector('#subtract')
+var add = document.querySelector('#add')
+var inputQuantity = document.querySelector('#inputQuantity');
+var button_add_cart = document.querySelector('#button_add_cart');
+add.addEventListener('click', (e) => {
+    inputQuantity.value++;
 
 
 })
@@ -143,13 +150,12 @@ subtract.addEventListener('click', (e) => {
 
 
 
-    })
-    button_add_cart.addEventListener('click', (e) => {
-        return Swal.fire(
-            'Good job!',
-            'You clicked the button!',
-            'success'
-        )
-    })
-
+})
+button_add_cart.addEventListener('click', (e) => {
+    return Swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+    )
+})
 </script>
