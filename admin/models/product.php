@@ -160,7 +160,11 @@ function updateProduct() {
         }
 
         if (!is_numeric($price)) {
-            $errUpdate['$price'] = 'Giá có vấn đề';
+            $errUpdate['price'] = 'Giá có vấn đề';
+        }
+
+        if ($amount < 0) {
+            $errUpdate['amount'] = 'Số lượng có vấn đề';
         }
 
         if (empty($errUpdate)) {

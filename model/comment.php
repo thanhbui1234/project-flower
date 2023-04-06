@@ -9,7 +9,7 @@ include './model/connect.php';?>
 function showcmt()
 {
     $id = $_GET['id'];
-    $sql = "SELECT users.name,comments.content,users.image,users.userName,comments.date,comments.id,comments.status
+    $sql = "SELECT users.name,comments.content,users.image,users.userName,comments.date,comments.id,comments.status,comments.img
     FROM ((comments
     INNER JOIN products ON comments.product = products.id)
     INNER JOIN users ON comments.user = users.id)
@@ -26,17 +26,31 @@ function addcmt()
     if (isset($_POST['submit'])) {
         $noidung = $_POST['noidung'];
         $id = $_GET['id'];
-        $datecmt = date("Y-m-d H:i a ");
-        $sqls = "INSERT INTO comments (content,product,user,date,status,trangthai) VALUES ('$noidung','$id','$_SESSION[userId]','$datecmt','1','chưa duyệt')";
-        global $conn;
-        $statement = $conn->prepare($sqls);
+        $image = $_FILES['prod_img']['name'];
+        $prod_image_tmp = $_FILES['prod_img']['tmp_name'];
+        $target_dir = './uploads/';
+        $target_file = $target_dir . $image;
+        move_uploaded_file($prod_image_tmp, $target_file);
 
-        if ($statement->execute()) {
 
-            header("location: index.php?act=aboutproducts&id=$id");
+        $erorr = [];
+        if ((($_POST['noidung']))  == '') {
+            $erorr['noidung'] = "Không được để trống";
+        } else {
+            $noidung = $_POST['noidung'];
+            $id = $_GET['id'];
+            $datecmt = date("Y-m-d H:i a ");
+            $sqls = "INSERT INTO comments (content,product,user,date,status,trangthai,img) VALUES ('$noidung','$id','$_SESSION[userId]','$datecmt','1','chưa duyệt','$image')";
+            global $conn;
+            $statement = $conn->prepare($sqls);
 
-        }
+            if ($statement->execute()) {
+                header("location: index.php?act=aboutproducts&id=$id");
+            }
+
+        
     }
+}
 }
 
 
