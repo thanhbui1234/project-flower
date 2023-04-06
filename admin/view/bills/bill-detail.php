@@ -25,7 +25,7 @@
                 <tr>
                     <th id="bill_field">Trạng thái đơn hàng: </th>
                     <th><?php if($billInf['0']['status'] == 'No_confirm') echo 'Chưa xác nhận';
-                            else if($billInf['0']['status'] == 'confirmed')  echo 'Đã giao hàng';
+                            else if($billInf['0']['status'] == 'delivered')  echo 'Đã giao hàng';
                             else echo 'Đang giao hàng'; ?></th>
                 </tr>
                 </table>
