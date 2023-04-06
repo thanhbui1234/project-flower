@@ -59,18 +59,17 @@ function countAll()
     $statement = $conn->prepare($sqlViewMax);
     $statement->execute();
     $ViewMax = $statement->fetchAll();
-    foreach($ViewMax as $ViewMax1) {
+    foreach ($ViewMax as $ViewMax1) {
         global $dataViewMax;
         $dataViewMax = $ViewMax1['max(view)'];
     }
-    
-    $sqlSelectNameViewMax = "SELECT name FROM products WHERE view = '$dataViewMax'";
-    $statement = $conn ->prepare($sqlSelectNameViewMax);
-    $statement ->execute();
-    global $dataNameViewMax;
-    $dataNameViewMax = $statement ->fetchAll();
 
-    
+    $sqlSelectNameViewMax = "SELECT name FROM products WHERE view = '$dataViewMax'";
+    $statement = $conn->prepare($sqlSelectNameViewMax);
+    $statement->execute();
+    global $dataNameViewMax;
+    $dataNameViewMax = $statement->fetchAll();
+
     //Sản phẩm có lượt mua nhiều nhất
     $sqlbuyMax = "SELECT max(amount) FROM bill_detail INNER JOIN bills ON bills.id = bill_detail.bill WHERE status = 'delivering' ";
     $statement = $conn->prepare($sqlbuyMax);
@@ -87,5 +86,4 @@ function countAll()
     global $dataNameBuyMax;
     $dataNameBuyMax = $statement->fetchAll();
 
-    
 }
