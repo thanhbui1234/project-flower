@@ -50,7 +50,7 @@
   display: none;
 }
 .tab-pane.active {
-  display: blo ck;
+  display: block;
 }
 .tab-pane h2 {
   font-size: 24px;
