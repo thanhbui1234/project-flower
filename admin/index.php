@@ -83,6 +83,7 @@ switch ($act) {
         break;
     case 'confirmed-bill':
         showConfirmedBill();
+        deliveryConfirm();
         include '../admin/view/bills/confirmed-bill.php';
         break;
     case 'bill-detail':

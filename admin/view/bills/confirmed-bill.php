@@ -10,6 +10,7 @@
                             <th>Trạng thái</th>
                             <th>Chi tiết hóa đơn</th>
                             <th>Tổng đơn</th>
+                            <th>Action</th>
                         </tr>        
                     </thead>
                     <tbody>        
@@ -30,11 +31,16 @@
                             <td><?php echo $phone ?></td>
                             <td><?php echo $date ?></td>
                             <td><?php if($status == 'No_confirm') echo 'Chưa xác nhận';
-                            else if($status == 'confirmed')  echo 'Đã giao hàng';
+                            else if($status == 'delivered')  echo 'Đã giao hàng';
                             else echo 'Đang giao hàng'; ?>
                             </td>
                             <td><a href="index.php?act=bill-detail&&id=<?php echo $id ?>">Xem chi tiết</a></td>
                             <td><?php echo $total ?>$</td>
+                            <td class="action_prod">
+                                <a href="index.php?act=confirmed-bill&&id=<?php echo $id ?>" >
+                                    <button <?php if($status == 'delivered') echo 'disabled style="background-color:gray;border:gray;"';?> class="btn btn-success" name="confirmBill">Đã giao</button>
+                                </a>
+                            </td>
                         </tr>
                         <?php } ?>        
                     </tbody>        

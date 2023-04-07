@@ -9,7 +9,7 @@
     }
     function showConfirmedBill(){
         global $conn;
-        $sql = "SELECT * FROM bills WHERE status IN ('confirmed','delivering')";
+        $sql = "SELECT * FROM bills WHERE status IN ('delivered','delivering')";
         $statement = $conn -> prepare($sql);
         $statement -> execute();
         global $bills;
@@ -25,6 +25,17 @@
                 header("location: index.php?act=bills");
                 }
             }
+        }
+    function deliveryConfirm() {
+            if (isset($_GET["id"])) {
+                global $conn;
+                $id = $_GET["id"];
+                $sql = "UPDATE bills SET status = 'delivered' WHERE id = $id";
+                $statement = $conn-> prepare($sql);
+                if ($statement -> execute()) {
+                    header("location: index.php?act=confirmed-bill");
+                    }
+                }
         }
     function showInfor(){
         if (isset($_GET["id"])) {
