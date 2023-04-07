@@ -67,11 +67,7 @@ function addCart()
 
     }
     if ($check == 1) {
-        echo "<script>Swal.fire(
-                'Good job!',
-                'You clicked the button!',
-                'success'
-              )</script>";
+        header('location: /project-flower/index.php');
     }
     unset($_SESSION['cart']);
     //header('location: /project-flower/index.php');

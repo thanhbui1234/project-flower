@@ -75,3 +75,66 @@ function selectCancelBill($id)
     }
 
 }
+
+function showDeleveringBill()
+{
+    if (isset($_SESSION['userId'])) {
+
+        global $conn;
+        $sql = "select id ,total from bills where status = 'delivering' and userId = $_SESSION[userId]   ";
+        $statemnet = $conn->prepare($sql);
+        $statemnet->execute();
+        global $dataDelivering;
+        $dataDelivering = $statemnet->fetchAll();
+
+    }
+
+}
+function selectAboutDeliveringBill($id)
+{
+
+    if (isset($id)) {
+
+        global $conn;
+        $sql = "SELECT image , productName, amount from bill_detail where bill = $id";
+        $statemnet = $conn->prepare($sql);
+        $statemnet->execute();
+        global $dataAboutDeliveringBill;
+        $dataAboutDeliveringBill = $statemnet->fetchAll();
+        echo (count($dataAboutDeliveringBill));
+
+    }
+
+}
+
+function showBillsDelivered()
+{
+    if (isset($_SESSION['userId'])) {
+
+        global $conn;
+        $sql = "select id ,total from bills where status = 'delivered' and userId = $_SESSION[userId]   ";
+        $statemnet = $conn->prepare($sql);
+        $statemnet->execute();
+        global $dataDelivered;
+        $dataDelivered = $statemnet->fetchAll();
+
+    }
+
+}
+
+function selectAboutDelivered($id)
+{
+
+    if (isset($id)) {
+
+        global $conn;
+        $sql = "SELECT image , productName, amount from bill_detail where bill = $id";
+        $statemnet = $conn->prepare($sql);
+        $statemnet->execute();
+        global $dataAboutDelivered;
+        $dataAboutDelivered = $statemnet->fetchAll();
+        echo (count($dataAboutDelivered));
+
+    }
+
+}

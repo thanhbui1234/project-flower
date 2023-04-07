@@ -16,12 +16,15 @@
 </head>
 
 <body>
-    <?php $id = $_GET['id'] ?>
+    <?php $id = $_GET['id']?>
     <section class="py-5">
         <div class="container px-4 px-lg-5 my-5">
 
-            <?php if (empty($showaboutproducts)) ?>
-            <?php $giamgia = $showaboutproducts['price'] - ($showaboutproducts['price'] / 100 * $showaboutproducts['deal']) ?>
+            <?php if (empty($showaboutproducts)) {
+    ;
+}
+?>
+            <?php $giamgia = $showaboutproducts['price'] - ($showaboutproducts['price'] / 100 * $showaboutproducts['deal'])?>
             <form action="/project-flower/cart/cart.php" method="POST">
 
                 <div class="row gx-4 gx-lg-5 align-items-center">
@@ -91,9 +94,9 @@
             <div class="row">
                 <div class="col-sm-8">
                     <?php
-                    if (!empty($_SESSION['userId'])) {
+if (!empty($_SESSION['userId'])) {
 
-                    ?>
+    ?>
                     <form style="margin-bottom: 30px;" action="binhluan.php?id=<?php echo $id; ?>" method="post"
                         enctype="multipart/form-data">
                         <h3
@@ -101,7 +104,7 @@
                             Nội dung bình luận</h3>
                         <textarea style="height: 150px;" name="noidung" cols="105" rows="10" required></textarea>
                         <input type="hidden" name="" id="">
-                        <div style="">
+                        <div>
                             <div>
                                 <div class="form-group">
                                     <label class="border btn btn-warning" for="img"
@@ -124,24 +127,24 @@
                     </form>
                     <?php
 
-                    } else { ?>
+} else {?>
                     <div>
                         <h3>Bạn cần <a href="http://localhost/project-flower/login/login.php">đăng nhập</a> để bình luận
                         </h3>
                     </div>
                     <?php
 
-                    }
-                    ?>
+}
+?>
 
                     <!-- COMMENT 1 - START -->
                     <?php
-                    foreach ($showcmt as $cmt) {
-                        if ($cmt['status'] == 2) { ?>
+foreach ($showcmt as $cmt) {
+    if ($cmt['status'] == 2) {?>
                     <div style=" border-top: 2px dashed #DDDDDD;padding: 20px 0;margin-top: 48px; width: 300px"
                         class="media">
                         <div class="border-top: 2px dashed #DDDDDD;">
-                            <a style="" class="pull-left" href="#"><img
+                            <a class="pull-left" href="#"><img
                                     style="margin-right: 24px;max-width: 50px;height:50px;border-radius: 30px;"
                                     class="media-object"
                                     src="/../project-flower/admin/uploads/<?php echo $cmt['image'] ?>" alt=""></a>
@@ -162,15 +165,14 @@
                         </div>
                         <?php
 
-
-                        }
-                            ?>
+    }
+    ?>
 
 
                         <?php
 
-                     }
-                        ?>
+}
+?>
 
 
 
