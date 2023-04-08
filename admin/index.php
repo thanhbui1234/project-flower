@@ -57,19 +57,11 @@ switch ($act) {
 
     
 
-    case 'updatecmt1':
-        updatecmt1();
+    case 'updatecmt':
+        updatecmt();
         include '../admin/view/comment/comment.php';
         break;
 
-    case 'updatecmt2':
-        updatecmt2();
-        include '../admin/view/comment/comment.php';
-        break;
-
-    case 'updatecmt2':
-        include '../admin/view/comment/update2.php';
-        break;
 
     case 'delcmt':
         delcmt();
