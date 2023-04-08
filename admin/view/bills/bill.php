@@ -48,4 +48,4 @@
         
         </div>
         
-        <script src="layout/js/products.js"></script>
+        <script src="/project-flower/admin/layout/js/products.js"></script>

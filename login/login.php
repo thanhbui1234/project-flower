@@ -11,6 +11,9 @@
 <?php switch ($act) {
 
     case 'register';
+        checkUniqeEmail();
+        checkUniqePhone();
+        checkUniqeUserName();
         register();
         include './view/register.php';
 

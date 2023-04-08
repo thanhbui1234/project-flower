@@ -1,5 +1,3 @@
-
-
 <?php
 include 'connect.php';
 
@@ -37,7 +35,57 @@ function register()
     }
 
 }
+function checkUniqeEmail()
+{
 
+    global $conn;
+    $sql = "SELECT email from users ";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $dataEmailUnique = $statement->fetchAll();
+    global $arrEmailUniqeue;
+    $arrEmailUniqeue = [];
+
+    foreach ($dataEmailUnique as $email) {
+
+        array_push($arrEmailUniqeue, $email);
+    }
+
+}
+function checkUniqePhone()
+{
+
+    global $conn;
+    $sql = "SELECT phone from users ";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $dataPhoneUnique = $statement->fetchAll();
+    global $arrPhoneUniqeue;
+    $arrPhoneUniqeue = [];
+
+    foreach ($dataPhoneUnique as $phone) {
+
+        array_push($arrPhoneUniqeue, $phone);
+    }
+
+}
+
+function checkUniqeUserName()
+{
+    global $conn;
+    $sql = "SELECT userName from users ";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $datauserNameUnique = $statement->fetchAll();
+    global $arruserNameUniqeue;
+    $arruserNameUniqeue = [];
+
+    foreach ($datauserNameUnique as $userName) {
+
+        array_push($arruserNameUniqeue, $userName);
+    }
+
+}
 function login()
 {
     if (isset($_POST['login'])) {
@@ -54,38 +102,44 @@ function login()
 
         }
 
-        if (empty($password)) {
-            $errLogin['password'] = 'Bạn phải nhập mật khẩu';
+        try {
+            if (empty($password)) {
+                return $errLogin['password'] = 'Bạn phải nhập mật khẩu';
 
-        }
+            }
 
-        $sql = "select * from users where userName = '$userName' ";
-        $statement = $conn->prepare($sql);
-        $statement->execute();
+            $sql = "select * from users where userName = '$userName' ";
+            $statement = $conn->prepare($sql);
+            $statement->execute();
 
-        $dataLogin = $statement->fetchAll();
-        if (empty($dataLogin)) {
-            return $errLogin['falseUserName'] = 'Tai khoan sai';
-        }
-        foreach ($dataLogin as $user) {
+            $dataLogin = $statement->fetchAll();
+            if (empty($dataLogin)) {
+                return $errLogin['falseUserName'] = 'Tai khoan sai';
+            }
+            foreach ($dataLogin as $user) {
 
-            $userPassword = $user['password'];
-        }
+                $userPassword = $user['password'];
+            }
 
-        if ((password_verify($password, $userPassword))) {
-            session_start();
-            echo $_SESSION['userId'] = $user['id'];
-            echo $_SESSION['user_fullName'] = $user['name'];
-            echo $_SESSION['userName'] = $user['userName'];
-            echo $_SESSION['role'] = $user['role'];
-            echo $_SESSION['address'] = $user['address'];
-            echo $_SESSION['phone'] = $user['phone'];
-            echo $_SESSION['email'] = $user['email'];
-            header('location: /project-flower/index.php');
+            if ((password_verify($password, $userPassword))) {
+                session_start();
+                echo $_SESSION['userId'] = $user['id'];
+                echo $_SESSION['user_fullName'] = $user['name'];
+                echo $_SESSION['userName'] = $user['userName'];
+                echo $_SESSION['role'] = $user['role'];
+                echo $_SESSION['address'] = $user['address'];
+                echo $_SESSION['phone'] = $user['phone'];
+                echo $_SESSION['email'] = $user['email'];
+                header('location: /project-flower/index.php');
 
-        } else {
+            } else {
 
-            return $errLogin['falsePassword'] = 'Mat khau sai';
+                return $errLogin['falsePassword'] = 'Mat khau sai';
+
+            }
+
+        } catch (Exception $e) {
+            echo ': ' . $e->getMessage();
 
         }
 
