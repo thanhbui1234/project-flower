@@ -29,7 +29,7 @@
          <table class="table shadow p-3 mb-5 bg-body rounded table-condensed table-bordered  ">
              <thead class="headTable">
                  <tr>
-                     <th><input id="selectAllBoxes" type="checkbox"></th>
+                     
                      <th>ID</th>
                      <th>User bình luận</th>
                      <th>Tên sản phẩm</th>
@@ -56,23 +56,29 @@
                     ?>
 
                      <tr>
-                         <td><input class="selectAllBoxesChild" name="checkBoxArr[]" value="<?php echo $cmt['id'] ?>" type="checkbox"></td>
+                       
                          <td><?php echo $cmt['id'] ?></td>
                          <td><?php echo $cmt['userName'] ?></td>
                          <td><?php echo $cmt['name'] ?></td>
                          <td><?php echo $cmt['content'] ?></td>
-                         <a href="sss">
                              <td><?php echo $cmt['date'] ?></td>
-                         </a>
-                         <td style=""><?php echo $cmt['trangthai'] ?></td>
+                         <td><?php if($cmt['status']=="2"){
+                             echo  '<div style="color: green">đã duyệt</div> ';
+                        } else {
+                            
+                            echo  '<div style="color: red">chưa duyệt</div> ';
+                         } ?></td>
+                         <td>
+                         <a class="pull-left" href="#"><img style="width:100px; margin-bottom:48px" class="media-object" src="/../project-flower/admin/uploads/<?php echo $cmt['img'] ?>" alt=""></a>
+                         </td>
 
 
 
 
 
                          <td class="action_prod">
-                             <a class="btn btn-success" href="index.php?act=updatecmt2&id=<?php echo $cmt['id'] ?>">OK</a>
-                             <a class="btn btn-dark" href="index.php?act=updatecmt1&id=<?php echo $cmt['id'] ?>">Huỷ</a>
+                             
+                             <a class="btn btn-success" href="index.php?act=updatecmt&id=<?php echo $cmt['id'] ?>">Duyệt</a>
                              <a onclick="return confirm('Có chắc chắn muốn xoá không')" class="btn btn-danger" href="index.php?act=delcmt&id=<?php echo $cmt['id'] ?>">Xoá</a>
                          </td>
                      </tr>
@@ -86,6 +92,7 @@
      </form>
 
  </div>
+
 
  <script src="layout/js/comment.js"></script>
  <script src="layout/js/checkbox.js"></script>

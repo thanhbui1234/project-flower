@@ -40,7 +40,7 @@ function addcmt()
             $noidung = $_POST['noidung'];
             $id = $_GET['id'];
             $datecmt = date("Y-m-d H:i a ");
-            $sqls = "INSERT INTO comments (content,product,user,date,status,trangthai,img) VALUES ('$noidung','$id','$_SESSION[userId]','$datecmt','1','chưa duyệt','$image')";
+            $sqls = "INSERT INTO comments (content,product,user,date,status,img) VALUES ('$noidung','$id','$_SESSION[userId]','$datecmt','1','$image')";
             global $conn;
             $statement = $conn->prepare($sqls);
 
