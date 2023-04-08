@@ -17,8 +17,8 @@ btnSubmit.addEventListener("click", (e) => {
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonText: "Mày đã chắc chưa!",
-      cancelButtonText: "Đéo!",
+      confirmButtonText: "Chac chưa!",
+      cancelButtonText: "Chưa!",
       reverseButtons: true,
     })
     .then((result) => {
