@@ -94,7 +94,7 @@ if (!empty($_SESSION['userId'])) {
                             <h3 style=" font-weight: 400; font-size: 20px; color: #555555; margin: 10px 0 15px; padding: 0;">Nội dung bình luận</h3>
                             <textarea style="height: 150px;" name="noidung" cols="105" rows="10" required></textarea>
                             <input type="hidden" name="" id="">
-                            <div style="">
+                            <div>
                                 <div>
                                     <div class="form-group">
                                         <label class="border btn " for="img" style="padding: 14px 20px;border-radius: 8px;margin-top: 7px"> Thêm hình ảnh</label>
