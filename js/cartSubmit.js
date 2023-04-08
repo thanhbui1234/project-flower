@@ -1,5 +1,3 @@
-alert("hi");
-
 const swalWithBootstrapButtons = Swal.mixin({
   customClass: {
     confirmButton: "m-1 btn btn-success",
