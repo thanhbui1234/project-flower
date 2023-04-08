@@ -75,131 +75,210 @@
         </form>
     </div>
 </section>
-
-
-
 <script>
-const $ = document.querySelector.bind(document);
-var form_register = $('#contactForm');
-var hoten = $('input[name=name]');
-var email = $('input[name=email]');
-var phone = $('input[name=phone]');
-var userName = $('input[name=userName]');
-var password = $('input[name=password]');
-var password2 = $('input[name=password2]');
+const dataEmail = () => {
+    const emailUnique = <?php echo json_encode($arrEmailUniqeue); ?>;
+    const arrEmail = [];
+
+    emailUnique.forEach((emaill, index) => {
+
+        arrEmail.push(emaill.email);
+    })
+    return arrEmail;
+}
 
 
-form_register.addEventListener('submit', (e) => {
+const dataPhone = () => {
+    const phoneUnique = <?php echo json_encode($arrPhoneUniqeue); ?>;
+    const arrPhone = [];
 
-    if (hoten.value.length < 9 || !isNaN(Number(hoten.value))) {
+    phoneUnique.forEach((phoneChild) => {
 
-
-        e.preventDefault()
-
-        return Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Họ tên có vấn đề',
-
-        })
-
-    }
-    if (email.value.length < 1) {
-
-        e.preventDefault()
-
-        return Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Email có vấn đề!',
-        })
-
-    }
+        arrPhone.push(phoneChild.phone);
+    })
+    return arrPhone;
+}
 
 
+const dataUserName = () => {
+    const UserNameUnique = <?php echo json_encode($arruserNameUniqeue); ?>;
+    const arrUserName = [];
 
-    if (phone.value.length < 10 || isNaN(phone.value) || !phone.value.startsWith('0')) {
+    UserNameUnique.forEach((UserNameChild) => {
 
-        e.preventDefault()
-
-        return Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Lỗi số điện thoại rồi!',
-        })
-
-    }
+        arrUserName.push(UserNameChild.userName);
+    })
+    return arrUserName;
+}
 
 
-
-    if (userName.value.length == 0) {
-
-        e.preventDefault()
-
-        return Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Tên tài khoản không được bỏ trống!',
-        })
-
-    }
-
-    if (userName.value.length <= 5) {
-
-        e.preventDefault()
-
-        return Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Tên tài khoản phải lớn hơn 5 ký tự!',
-        })
-
-    }
-    if (password.value.length == 0) {
-        e.preventDefault()
-
-        return Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Mật khẩu không được bỏ trống!',
-        })
-
-    }
-
-
-    if (password.value.length <= 5) {
-        e.preventDefault()
-
-        return Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Mật khẩu phải trên 5 ký tự!',
-        })
-
-    }
-
-    if (password2.value.length == 0) {
-        e.preventDefault()
-        return Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Hãy nhật lại mật khẩu!',
-        })
-
-    }
-
-
-    if (password.value !== password2.value) {
-        e.preventDefault()
-        return Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Mật khẩu phải đúng!',
-        })
-
-    }
+const validate = () => {
+    const $ = document.querySelector.bind(document);
+    var form_register = $("#contactForm");
+    var hoten = $("input[name=name]");
+    var email = $("input[name=email]");
+    var phone = $("input[name=phone]");
+    var userName = $("input[name=userName]");
+    var password = $("input[name=password]");
+    var password2 = $("input[name=password2]");
+    arrEmail = dataEmail();
+    arrPhone = dataPhone();
+    arrUserName = dataUserName();
 
 
 
-})
+
+    form_register.addEventListener("submit", (e) => {
+        if (hoten.value.length < 9 || !isNaN(Number(hoten.value))) {
+            e.preventDefault();
+
+            return Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Họ tên có vấn đề",
+            });
+        }
+
+        (valueEmail = email.oninput = function() {
+
+            checkEmail = arrEmail.find((emailChild) => {
+                return emailChild === email.value;
+            })
+
+
+            if (checkEmail) {
+                e.preventDefault();
+
+                return Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Email đã có người sử dụng ",
+                });
+            }
+
+        })();
+
+
+
+        (valuePhone = phone.oninput = function() {
+
+            checkPhone = arrPhone.find((phoneChild) => {
+                return phoneChild === phone.value;
+            })
+
+
+            if (checkPhone) {
+                e.preventDefault();
+
+                return Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Số điện thoại đã có người sử dụng ",
+                });
+            }
+
+        })();
+        (valueUserName = userName.oninput = function() {
+
+            checkUserName = arrUserName.find((userNameChild) => {
+                return userNameChild === userName.value;
+            })
+
+
+            if (checkUserName) {
+                e.preventDefault();
+
+                return Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Tên người dùng đã được đăng ký",
+                });
+            }
+
+        })();
+
+        if (email.value.length < 1) {
+            e.preventDefault();
+
+            return Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Email có vấn đề!",
+            });
+        }
+
+
+        if (
+            phone.value.length < 10 || isNaN(phone.value) || !phone.value.startsWith("0")) {
+            e.preventDefault();
+
+            return Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Lỗi số điện thoại rồi!",
+            });
+        }
+
+        if (userName.value.length == 0) {
+            e.preventDefault();
+
+            return Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Tên tài khoản không được bỏ trống!",
+            });
+        }
+
+        if (userName.value.length <= 5) {
+            e.preventDefault();
+
+            return Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Tên tài khoản phải lớn hơn 5 ký tự!",
+            });
+        }
+        if (password.value.length == 0) {
+            e.preventDefault();
+
+            return Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Mật khẩu không được bỏ trống!",
+            });
+        }
+
+        if (password.value.length <= 5) {
+            e.preventDefault();
+
+            return Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Mật khẩu phải trên 5 ký tự!",
+            });
+        }
+
+        if (password2.value.length == 0) {
+            e.preventDefault();
+            return Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Hãy nhật lại mật khẩu!",
+            });
+        }
+
+        if (password.value !== password2.value) {
+            e.preventDefault();
+            return Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Mật khẩu phải đúng!",
+            });
+        }
+    });
+};
+validate();
+</script>
+
+
 </script>

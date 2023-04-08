@@ -16,12 +16,15 @@
 </head>
 
 <body>
-    <?php $id = $_GET['id'] ?>
+    <?php $id = $_GET['id']?>
     <section class="py-5">
         <div class="container px-4 px-lg-5 my-5">
 
-            <?php if (empty($showaboutproducts)) ?>
-            <?php $giamgia = $showaboutproducts['price'] - ($showaboutproducts['price'] / 100 * $showaboutproducts['deal']) ?>
+            <?php if (empty($showaboutproducts)) {
+    ;
+}
+?>
+            <?php $giamgia = $showaboutproducts['price'] - ($showaboutproducts['price'] / 100 * $showaboutproducts['deal'])?>
             <form action="/project-flower/cart/cart.php" method="POST">
 
                 <div class="row gx-4 gx-lg-5 align-items-center">
@@ -91,9 +94,9 @@
             <div class="row">
                 <div class="col-sm-8">
                     <?php
-                    if (!empty($_SESSION['userId'])) {
+if (!empty($_SESSION['userId'])) {
 
-                    ?>
+    ?>
                     <form style="margin-bottom: 30px;" action="binhluan.php?id=<?php echo $id; ?>" method="post"
                         enctype="multipart/form-data">
                         <h3
@@ -124,20 +127,20 @@
                     </form>
                     <?php
 
-                    } else { ?>
+} else {?>
                     <div>
                         <h3>Bạn cần <a href="http://localhost/project-flower/login/login.php">đăng nhập</a> để bình luận
                         </h3>
                     </div>
                     <?php
 
-                    }
-                    ?>
+}
+?>
 
                     <!-- COMMENT 1 - START -->
                     <?php
-                    foreach ($showcmt as $cmt) {
-                        if ($cmt['status'] == 2) { ?>
+foreach ($showcmt as $cmt) {
+    if ($cmt['status'] == 2) {?>
                     <div style=" border-top: 2px dashed #DDDDDD;padding: 20px 0;margin-top: 48px; width: 300px"
                         class="media">
                         <div class="border-top: 2px dashed #DDDDDD;">
@@ -162,15 +165,14 @@
                         </div>
                         <?php
 
-
-                        }
-                            ?>
+    }
+    ?>
 
 
                         <?php
 
-                     }
-                        ?>
+}
+?>
 
 
 
