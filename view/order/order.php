@@ -208,10 +208,10 @@
                         <p class="mt-4">Số tiền phải trả :</p>
                         <p class="text-danger fs-1"><?php echo $total ?>$</p>
                     </span>
-
-                    <span class="d-flex gap-5  justify-content-end  ">
-                        <button style="background-color: #D8D8D8; width: 150px;" class="btn px-2 border" disabled>Đang
-                            giao</button>
+                    <!-- style="background-color: #D8D8D8; width: 150px;" -->
+                    <span class="d-flex gap-5  justify-content-end   ">
+                        <button id="btnSuccess" style="width :150px" class="btn px-2 btn-danger border">Đã
+                            nhận</button>
 
                     </span>
 

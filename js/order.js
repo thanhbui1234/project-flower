@@ -11,7 +11,6 @@
   line.style.width = tabActive.offsetWidth + "px";
 
   tabs.forEach((tab, index) => {
-    console.log(index);
     const pane = panes[index];
     tab.onclick = function () {
       $(".tab-item.active").classList.remove("active");
@@ -54,5 +53,12 @@
         reverseButtons: true,
       });
     });
+  });
+})();
+
+(changeButton = () => {
+  btn = document.querySelector("#btnSuccess");
+  btn.addEventListener("click", function () {
+    this.setAttribute("disabled", "");
   });
 })();
