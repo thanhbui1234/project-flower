@@ -28,10 +28,9 @@ function addcmt()
         $id = $_GET['id'];
         $image = $_FILES['prod_img']['name'];
         $prod_image_tmp = $_FILES['prod_img']['tmp_name'];
-        $target_dir = './uploads/';
+        $target_dir = 'admin/./uploads/';
         $target_file = $target_dir . $image;
         move_uploaded_file($prod_image_tmp, $target_file);
-
 
         $erorr = [];
         if ((($_POST['noidung']))  == '') {

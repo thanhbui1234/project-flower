@@ -37,6 +37,7 @@
                      <th>Nội dung</th>
                      <th>Ngày bình luận</th>
                      <th>Trạng thái</th>
+                     <th style="width:50px;">Ảnh</th>
                      <th>Action</th>
                  </tr>
 
@@ -71,7 +72,7 @@ foreach ($showcmt as $cmt) {
                             echo  '<div style="color: red">chưa duyệt</div> ';
                          } ?></td>
                          <td>
-                         <a class="pull-left" href="#"><img style="width:100px; margin-bottom:48px" class="media-object" src="/../project-flower/admin/uploads/<?php echo $cmt['img'] ?>" alt=""></a>
+                         <img style="width:40px;" class="media-object" src="/../project-flower/admin/uploads/<?php echo $cmt['img'] ?>" alt=""></a>
                          </td>
 
 
@@ -82,7 +83,7 @@ foreach ($showcmt as $cmt) {
 
                          <td class="action_prod">
                              
-                             <a class="btn btn-success" href="index.php?act=updatecmt&id=<?php echo $cmt['id'] ?>">Duyệt</a>
+                             <a <?php if($cmt['status'] == '2') echo 'disabled style="background-color:gray;border:gray;"';?> class="btn btn-success" href="index.php?act=updatecmt&id=<?php echo $cmt['id'] ?>">Duyệt</a>
                              <a onclick="return confirm('Có chắc chắn muốn xoá không')" class="btn btn-danger" href="index.php?act=delcmt&id=<?php echo $cmt['id'] ?>">Xoá</a>
                          </td>
                      </tr>
@@ -98,8 +99,4 @@ foreach ($showcmt as $cmt) {
 
  </div>
 
-
- <script src="layout/js/comment.js"></script>
- <script src="layout/js/checkbox.js"></script>
- <script src="layout/js/comment.js"></script>
 
