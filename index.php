@@ -4,6 +4,7 @@ include './model/category.php';
 include './model/user.php';
 include './model/search.php';
 include './model/comment.php';
+include './model/order.php';
 
 ?>
 
@@ -40,6 +41,12 @@ switch ($url) {
         include './view/search/search.php';
         break;
 
+    case 'order';
+        cancelBill();
+        waitAccpetOrder();
+        include './view/order/order.php';
+        break;
+
     case 'profile';
         updateProfile();
         include './view/profile/profile.php';
@@ -56,9 +63,7 @@ switch ($url) {
         break;
 }
 
-
-
-    ?>
+?>
 
 
 
