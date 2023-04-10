@@ -60,9 +60,13 @@
                                         <button id="add" class="btn border " type="button">+</button>
                                     </div>
                                 </div>
-                                <input id="button_add_cart" type="submit" class="btn btn-outline-dark flex-shrink-0"
+                                <div id="alertBox" style="display:none;" class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <strong>Không đủ hàng!</strong> Xin lỗi quý khách, hiện tại chỉ còn <?php echo $showaboutproducts['amount']?> sản phẩm.
+                                </div>
+                                <input id="amountLeft" type="text" hidden value="<?php echo $showaboutproducts['amount']?>">
+                                <input id="button_add_cart1" type="submit" class="btn btn-outline-dark flex-shrink-0"
                                     value="Thêm vào giỏ hàng" name="add_cart">
-                                <input id="button_add_cart" type="submit" class="btn btn-outline-dark flex-shrink-0"
+                                <input id="button_add_cart2" type="submit" class="btn btn-outline-dark flex-shrink-0"
                                     value="Mua ngay" name="add_cart">
                             </div>
                         </div>
@@ -185,18 +189,28 @@ foreach ($showcmt as $cmt) {
     var subtract = document.querySelector('#subtract')
     var add = document.querySelector('#add')
     var inputQuantity = document.querySelector('#inputQuantity');
-    var button_add_cart = document.querySelector('#button_add_cart');
+    var button_add_cart1 = document.querySelector('#button_add_cart1');
+    var button_add_cart2 = document.querySelector('#button_add_cart2');
+    var amount = document.querySelector('#amountLeft');
+    var alertBox = document.querySelector('#alertBox');
     add.addEventListener('click', (e) => {
         inputQuantity.value++;
-
+        if(inputQuantity.value>amount.value){
+        alertBox.style.display = "block";
+        button_add_cart1.disabled = true;
+        button_add_cart2.disabled = true;
+        }
     })
-
     subtract.addEventListener('click', (e) => {
         inputQuantity.value--;
         if (inputQuantity.value <= 0) {
             inputQuantity.value = 1;
         }
-
+        if(inputQuantity.value<=amount.value){
+            alertBox.style.display = "none";
+            button_add_cart1.disabled = false;
+            button_add_cart2.disabled = false;
+        }
     })
     </script>
 </body>
