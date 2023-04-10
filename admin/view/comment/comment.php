@@ -56,7 +56,6 @@ foreach ($showcmt as $cmt) {
     $stt++;
     ?>
 
-
                      <tr>
                        
                          <td><?php echo $cmt['id'] ?></td>
@@ -71,14 +70,8 @@ foreach ($showcmt as $cmt) {
                             echo  '<div style="color: red">chưa duyệt</div> ';
                          } ?></td>
                          <td>
-                         <a class="pull-left" href="#"><img style="width:100px; margin-bottom:48px" class="media-object" src="/../project-flower/admin/uploads/<?php echo $cmt['img'] ?>" alt=""></a>
+                         <a class="pull-left" href="#"><img style="width:100px; margin-bottom:48px" class="media-object" src="/project-flower/admin/uploads/<?php echo $cmt['img'] ?>" alt=""></a>
                          </td>
-
-
-
-
-
-
 
                          <td class="action_prod">
                              
