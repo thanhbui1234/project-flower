@@ -57,36 +57,37 @@
                 <?php foreach ($dataProducts as $product) {
                     extract($product) ?>
 
-                    <tr>
-                        <td><input class="selectAllBoxesChild" name="checkBoxArr[]" value="<?php echo $id ?>" type="checkbox"></td>
-                        <td><?php echo $id ?></td>
-                        <td><?php echo $name ?></td>
-                        <td><img width="50" src="/../project-flower/admin/uploads/<?php echo $image ?>" alt=""></td>
-                        <td><?php echo $price ?>$</td>
-                        <td><?php echo $deal ?>%</td>
-                        <?php selectNameCategory($category)?>
-                        <?php foreach($dataNameCategory as $NameCategory) { ?>
-                            <td><?php echo $NameCategory['name']?></td>
-                        <?php }?>
-                        <td><?php echo $date ?></td>
-                        <td><?php echo substr($description, 0, 50) ?>...</td>
-                        <td>
-                            <?php
+                <tr>
+                    <td><input class="selectAllBoxesChild" name="checkBoxArr[]" value="<?php echo $id ?>"
+                            type="checkbox"></td>
+                    <td><?php echo $id ?></td>
+                    <td><?php echo $name ?></td>
+                    <td><img width="50" src="/../project-flower/admin/uploads/<?php echo $image ?>" alt=""></td>
+                    <td><?php echo $price ?>$</td>
+                    <td><?php echo $deal ?>%</td>
+                    <?php selectNameCategory($category)?>
+                    <?php foreach($dataNameCategory as $NameCategory) { ?>
+                    <td><?php echo $NameCategory['name']?></td>
+                    <?php }?>
+                    <td><?php echo $date ?></td>
+                    <td><?php echo substr($description, 0, 50) ?>...</td>
+                    <td>
+                        <?php
                                 if($amount > 0) {
                                     echo 'Còn hàng';
                                 } else {
                                     echo 'Hết hàng';
                                 }
                             ?>
-                        </td>
-                        <td><?php echo $view ?></td>
-                        <td class="action_prod">
-                            <a class="btn btn-success" href="index.php?act=update_prod&&id=<?php echo $id ?>">UPDATE</a>
-                            <a class="deleteProd" data-id="<?php echo $id ?>">
-                                <button class="btn btn-danger">Xóa</button>
-                            </a>
-                        </td>
-                    </tr>
+                    </td>
+                    <td><?php echo $view ?></td>
+                    <td class="action_prod">
+                        <a class="btn btn-success" href="index.php?act=update_prod&&id=<?php echo $id ?>">UPDATE</a>
+                        <a class="deleteProd" data-id="<?php echo $id ?>">
+                            <button class="btn btn-danger">Xóa</button>
+                        </a>
+                    </td>
+                </tr>
 
                 <?php } ?>
 
