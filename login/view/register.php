@@ -197,7 +197,7 @@ const validate = () => {
 
         })();
 
-        if (email.value.length < 1) {
+        if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))) {
             e.preventDefault();
 
             return Swal.fire({
