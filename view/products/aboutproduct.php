@@ -141,7 +141,7 @@ foreach ($showcmt as $cmt) {
                                 <div style=" border-top: 2px dashed #DDDDDD;padding: 20px 0;margin-top: 48px; width: 300px"
                                     class="media">
                                     <div class="border-top: 2px dashed #DDDDDD;">
-                                        <a style="" class="pull-left" href="#"><img
+                                        <a class="pull-left" href="#"><img
                                                 style="margin-right: 24px;max-width: 50px;height:50px;border-radius: 30px;"
                                                 class="media-object"
                                                 src="/../project-flower/admin/uploads/<?php echo $cmt['image'] ?>"

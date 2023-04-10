@@ -1,7 +1,6 @@
 <?php
-include 'connect.php'; ?>
+include 'connect.php';?>
 <?php
-
 
 function showcmt()
 {
@@ -30,12 +29,15 @@ function updatecmt()
 
 function delcmt()
 {
-    global $conn;
-    $id = $_GET['id'];
-    $sql = "delete from comments where id = $id";
-    $statement = $conn->prepare($sql);
-    $statement->execute();
-    header("location: index.php?act=comment");
-}
+    if (isset($_GET['delete'])) {
 
-?>
+        global $conn;
+        $id = $_GET['delete'];
+        $sql = "delete from comments where id = $id";
+        $statement = $conn->prepare($sql);
+        $statement->execute();
+        header("location: index.php?act=comment");
+
+    }
+
+}

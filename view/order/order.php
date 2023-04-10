@@ -210,8 +210,10 @@
                     </span>
                     <!-- style="background-color: #D8D8D8; width: 150px;" -->
                     <span class="d-flex gap-5  justify-content-end   ">
-                        <button id="btnSuccess" style="width :150px" class="btn px-2 btn-danger border">Đã
+                        <button data-id="<?php echo $id ?>" style="width :150px"
+                            class="btn px-2 btn-danger border delivered">Đã
                             nhận</button>
+
 
                     </span>
 
@@ -275,10 +277,7 @@
                         <p class="text-danger fs-1"><?php echo $total ?>$</p>
                     </span>
 
-                    <span class="d-flex gap-5  justify-content-end  ">
-                        <button data-id='<?php echo $id ?>' style="width:150px" class="btn btn-white  border ">Mua
-                            lại</button>
-                    </span>
+
 
 
                 </div>
@@ -295,5 +294,30 @@
 
 </section>
 
+<!-- <script>
+// (() => {
+//     btnSuccess = document.querySelectorAll('.delivered');
+//     console.log(btnSuccess);
+//     btnSuccess.forEach(function(btn) {
+//         btn.onclick = function() {
+//             this.setAttribute('disabled', 'disabled')
 
+//         }
+//     })
+
+// })();
+
+var students = [{
+    name: 'thanh bui',
+    age: 18,
+    phone: 1233123213,
+    address: 'Nam DINH '
+}];
+
+localStorage.setItem('student', JSON.stringify(students));
+
+
+var students = JSON.parse(localStorage.getItem('student'));
+console.log(students);
+</script> -->
 <script src="./js/order.js"></script>

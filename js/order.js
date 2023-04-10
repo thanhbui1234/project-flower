@@ -56,9 +56,22 @@
   });
 })();
 
-(changeButton = () => {
-  btn = document.querySelector("#btnSuccess");
-  btn.addEventListener("click", function () {
-    this.setAttribute("disabled", "");
+(disebelBtn = () => {
+  // localStorage.setItem("student", JSON.stringify(students));
+
+  // var students = JSON.parse(localStorage.getItem("student"));
+  // console.log(students);
+  var dataDisible = [];
+
+  btndelivered = document.querySelectorAll(".delivered");
+
+  btndelivered.forEach((btn) => {
+    btn.onclick = function () {
+      dataBtn = this.getAttribute("data-id");
+      dataDisible.push(dataBtn);
+      localStorage.setItem("dataDisible", JSON.stringify(dataDisible));
+    };
   });
+
+  dataDisible = JSON.parse(localStorage.getItem("dataDisible"));
 })();
