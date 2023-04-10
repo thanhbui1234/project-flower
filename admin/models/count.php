@@ -41,8 +41,10 @@ function countAll()
     global $countComments;
     $countComments = $statement->fetchColumn();
 
+
     //Đếm comments chưa duyệt
     $sqlCmtChuaduyet = "SELECT COUNT(*) FROM comments WHERE trangthai = 'chưa duyệt'";
+    $sqlCmtChuaduyet = "SELECT COUNT(*) FROM comments WHERE status = '1'";
     $statement = $conn->prepare($sqlCmtChuaduyet);
     $statement->execute();
     global $CmtChuaduyet;
