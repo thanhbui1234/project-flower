@@ -1,5 +1,5 @@
 const regaxPhone =
-  /^(\+{0,})(\d{0,})([(]{1}\d{1,3}[)]{0,}){0,}(\s?\d+|\+\d{2,3}\s{1}\d+|\d+){6}[\s|-]?\d+([\s|-]?\d+){1,2}(\s){0,}$/gm;
+  /^(\+{0,})(\d{0,})([(]{1}\d{1,3}[)]{0,}){0,}(\s?\d+|\+\d{2,3}\s{1}\d+|\d+){5}[\s|-]?\d+([\s|-]?\d+){1,2}(\s){0,}$/gm;
 $ = document.querySelector.bind(document);
 const swalWithBootstrapButtons = Swal.mixin({
   customClass: {
@@ -30,21 +30,21 @@ formCart.addEventListener("submit", (e) => {
     return Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: "Số iện thoại có vấn ề",
+      text: "Số điện thoại có vấn đề",
     });
   }
   if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
     return Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: "Email",
+      text: " Email có vấn đề",
     });
   }
   if (adress.value === "") {
     return Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: "ia chi",
+      text: "Địa chỉ không được bỏ trống",
     });
   }
 
@@ -76,5 +76,3 @@ formCart.addEventListener("submit", (e) => {
       });
   });
 });
-
-
