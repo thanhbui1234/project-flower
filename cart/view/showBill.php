@@ -34,7 +34,7 @@ session_start();
                     </tr>
                     <tr>
                         <th id="bill_field">Địa chỉ: </th>
-                        <th><input required id="bill_input" name="address" type="text" value="<?php if (isset($_SESSION['address'])) {
+                        <th><input id="bill_input" name="address" type="text" value="<?php if (isset($_SESSION['address'])) {
     echo $_SESSION['address'];
 }
 ?>"></th>
