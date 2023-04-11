@@ -1,4 +1,4 @@
-<?php if (isset($_GET['message'])) {
+ <?php if (isset($_GET['message'])) {
     echo "<script>
             Swal.fire(
                 'Good job!',
@@ -39,30 +39,28 @@
                      <td class=" text-xl-center text-warning" colspan="10">Chưa có bình luận</td>
                  </tr>
                  <?php }?>
+
+
+                 <th>ID</th>
+                 <th>User bình luận</th>
+                 <th>Tên sản phẩm</th>
+                 <th>Nội dung</th>
+                 <th>Ngày bình luận</th>
+                 <th>Trạng thái</th>
+                 <th>Action</th>
+                 </tr>
+
+                 </thead>
+             <tbody>
+
+                 <?php if (empty($showcmt)) {?>
+                 <tr>
+                     <td class=" text-xl-center text-warning" colspan="10">Chưa có bình luận</td>
+                 </tr>
+                 <?php }?>
+
+
                  <?php
-
-
-                <th>ID</th>
-                <th>User bình luận</th>
-                <th>Tên sản phẩm</th>
-                <th>Nội dung</th>
-                <th>Ngày bình luận</th>
-                <th>Trạng thái</th>
-                <th>Action</th>
-            </tr>
-
-        </thead>
-        <tbody>
-
-            <?php if (empty($showcmt)) { ?>
-                <tr>
-                    <td class=" text-xl-center text-warning" colspan="10">Chưa có bình luận</td>
-                </tr>
-            <?php } ?>
-
-
-            <?php
-
 
 $stt = 0;
 foreach ($showcmt as $cmt) {
@@ -71,23 +69,23 @@ foreach ($showcmt as $cmt) {
 
 
 
-            <tr>
+                 <tr>
 
-                <td><?php echo $cmt['id'] ?></td>
-                <td><?php echo $cmt['userName'] ?></td>
-                <td><?php echo $cmt['name'] ?></td>
-                <td><?php echo $cmt['content'] ?></td>
-                <td><?php echo $cmt['date'] ?></td>
-                <td><?php if ($cmt['status'] == "2") {
+                     <td><?php echo $cmt['id'] ?></td>
+                     <td><?php echo $cmt['userName'] ?></td>
+                     <td><?php echo $cmt['name'] ?></td>
+                     <td><?php echo $cmt['content'] ?></td>
+                     <td><?php echo $cmt['date'] ?></td>
+                     <td><?php if ($cmt['status'] == "2") {
         echo '<div style="color: green">đã duyệt</div> ';
     } else {
 
         echo '<div style="color: red">chưa duyệt</div> ';
     }?></td>
-                <td>
-                    <a class="pull-left" href="#"><img style="width:100px; margin-bottom:48px" class="media-object"
-                            src="/../project-flower/admin/uploads/<?php echo $cmt['img'] ?>" alt=""></a>
-                </td>
+                     <td>
+                         <a class="pull-left" href="#"><img style="width:100px; margin-bottom:48px" class="media-object"
+                                 src="/../project-flower/admin/uploads/<?php echo $cmt['img'] ?>" alt=""></a>
+                     </td>
 
 
 
@@ -95,22 +93,22 @@ foreach ($showcmt as $cmt) {
 
 
 
-                <td class="action_prod">
+                     <td class="action_prod">
 
-                    <a class="btn btn-success" href="index.php?act=updatecmt&id=<?php echo $cmt['id'] ?>">Duyệt</a>
-                    <button class=" btn-delete btn btn-danger" data-id='<?php echo $cmt['id'] ?>'>Xoá</button>
-                </td>
-            </tr>
-
-
-
-            <?php } ?>
+                         <a class="btn btn-success" href="index.php?act=updatecmt&id=<?php echo $cmt['id'] ?>">Duyệt</a>
+                         <button class=" btn-delete btn btn-danger" data-id='<?php echo $cmt['id'] ?>'>Xoá</button>
+                     </td>
+                 </tr>
 
 
 
-        </tbody>
+                 <?php }?>
 
-    </table>
-    </form>
+
+
+             </tbody>
+
+         </table>
+     </form>
 
  </div>
