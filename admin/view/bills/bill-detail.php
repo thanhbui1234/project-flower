@@ -25,7 +25,7 @@
                 <tr>
                     <th id="bill_field">Trạng thái đơn hàng: </th>
                     <th><?php if($billInf['0']['status'] == 'No_confirm') echo 'Chưa xác nhận';
-                            else if($billInf['0']['status'] == 'delivered')  echo 'Đã giao hàng';
+                            else if($billInf['0']['status'] == 'confirmed')  echo 'Đã giao hàng';
                             else echo 'Đang giao hàng'; ?></th>
                 </tr>
                 </table>
@@ -48,7 +48,7 @@
                                 <td><?php echo $productName?></td>
                                 <td><img width="50" src="<?php echo $image?>" alt=""></td>
                                 <td><?php echo $price?>$</td>
-                                <td>- <?php echo $deal;?>$</td>
+                                <td>- <?php echo ($price*$deal)/100;?>$</td>
                                 <td><?php echo $amount?></td>
                                 <td><?php echo $sum?>$</td>
                             </tr>

@@ -1,3 +1,4 @@
+
  <?php if (isset($_GET['message'])) {
     echo "<script>
             Swal.fire(
@@ -40,10 +41,12 @@
                  </tr>
                  <?php }?>
                  <?php
+
 $stt = 0;
 foreach ($showcmt as $cmt) {
     $stt++;
     ?>
+
                      <tr>      
                          <td><?php echo $cmt['id'] ?></td>
                          <td><?php echo $cmt['userName'] ?></td>
@@ -68,11 +71,13 @@ foreach ($showcmt as $cmt) {
                  <?php }?>
 
 
-             </tbody>
 
-         </table>
-     </form>
+        </tbody>
+
+    </table>
+    </form>
 
  </div>
+
 
 

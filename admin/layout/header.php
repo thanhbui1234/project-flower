@@ -1,18 +1,6 @@
-<?php ob_start()?>
+<?php ob_start() ?>
 
-<?php session_start()?>
-
-
-<!-- <?php
-
-// if (!isset($_SESSION['userId'])) {
-
-//     header('Location: /shop_xx/index.php');
-
-// }
-
-?> -->
-
+<?php session_start() ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +12,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Shop X</title>
+    <title>Shop Perfume</title>
 
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -46,4 +34,6 @@
     <link href="/../project-flower/admin/layout/css/sb-admin-2.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="/project-flower/layout/css/custom.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css" />
 </head>

@@ -12,10 +12,13 @@
         body {
             margin-top: 20px;
         }
+
         .brg:hover {
             background-color: black;
             color: white;
         }
+
+
     </style>
 </head>
 
@@ -30,6 +33,7 @@
 ?>
             <?php $giamgia = $showaboutproducts['price'] - ($showaboutproducts['price'] / 100 * $showaboutproducts['deal'])?>
             <form action="/project-flower/cart/cart.php" method="POST">
+
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6"><img width="500" src="./admin/uploads/<?php echo $showaboutproducts['image'] ?> ">
                     </div>
@@ -118,7 +122,9 @@ if (!empty($_SESSION['userId'])) {
                         <div>
                             <h3>Bạn cần <a href="http://localhost/project-flower/login/login.php">đăng nhập</a> để bình luận</h3>
                         </div>
+
                     <?php
+
 }
 ?>
 

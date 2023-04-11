@@ -30,11 +30,16 @@ function updatecmt()
 
 function delcmt()
 {
-    global $conn;
-    $id = $_GET['id'];
-    $sql = "delete from comments where id = $id";
-    $statement = $conn->prepare($sql);
-    $statement->execute();
-    header("location: index.php?act=comment");
+    if (isset($_GET['id']) && ($_GET['id']) > 0) {
+        global $conn;
+        $id = $_GET['id'];
+        $sql = "DELETE FROM comments WHERE id = $id";
+        $statement = $conn->prepare($sql);
+        if ($statement->execute()) {
+            header("location: index.php?act=comment");
+        }
+    }
 }
+
 ?>
+

@@ -11,7 +11,6 @@
   line.style.width = tabActive.offsetWidth + "px";
 
   tabs.forEach((tab, index) => {
-    console.log(index);
     const pane = panes[index];
     tab.onclick = function () {
       $(".tab-item.active").classList.remove("active");
@@ -55,4 +54,24 @@
       });
     });
   });
+})();
+
+(disebelBtn = () => {
+  // localStorage.setItem("student", JSON.stringify(students));
+
+  // var students = JSON.parse(localStorage.getItem("student"));
+  // console.log(students);
+  var dataDisible = [];
+
+  btndelivered = document.querySelectorAll(".delivered");
+
+  btndelivered.forEach((btn) => {
+    btn.onclick = function () {
+      dataBtn = this.getAttribute("data-id");
+      dataDisible.push(dataBtn);
+      localStorage.setItem("dataDisible", JSON.stringify(dataDisible));
+    };
+  });
+
+  dataDisible = JSON.parse(localStorage.getItem("dataDisible"));
 })();
