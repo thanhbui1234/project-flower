@@ -42,7 +42,7 @@ function countAll()
     $countComments = $statement->fetchColumn();
 
     //Đếm comments chưa duyệt
-    $sqlCmtChuaduyet = "SELECT COUNT(*) FROM comments WHERE trangthai = 'chưa duyệt'";
+    $sqlCmtChuaduyet = "SELECT COUNT(*) FROM comments WHERE status != '2'";
     $statement = $conn->prepare($sqlCmtChuaduyet);
     $statement->execute();
     global $CmtChuaduyet;
@@ -61,6 +61,8 @@ function countAll()
     $statement->execute();
     global $Prodconfirmed;
     $Prodconfirmed = $statement->fetchColumn();
+
+    
 
     //Sản phẩm có lượt xem nhiều nhất
     $sqlViewMax = "SELECT name, max(view) FROM products";
@@ -93,5 +95,24 @@ function countAll()
     global $dataNameBuyMax;
     $dataNameBuyMax = $statement->fetchAll();
 
+    //Doanh thu
+    // $sqlbuyMax = "SELECT max(amount) FROM bill_detail INNER JOIN bills ON bills.id = bill_detail.bill WHERE status = 'delivering' ";
+    // $statement = $conn->prepare($sqlbuyMax);
+    // $statement->execute();
+
+    // $sqlGetDate = "SELECT DATE_FORMAT(date, '%Y %m') FROM bills";
+    // $statement = $conn->prepare($sqlGetDate);
+    // $statement->execute();
+    // print_r($statement->execute());
+    // die();
+}
+
+function doanhthu() {
+    global $conn;
     
+    $sqlGetDate = "SELECT DATE_FORMAT(date, '%Y %m') FROM bills";
+    $statement = $conn->prepare($sqlGetDate);
+    $statement->execute();
+    print_r($statement->execute());
+    die();
 }
