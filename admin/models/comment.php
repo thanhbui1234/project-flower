@@ -37,5 +37,4 @@ function delcmt()
     $statement->execute();
     header("location: index.php?act=comment");
 }
-
 ?>
