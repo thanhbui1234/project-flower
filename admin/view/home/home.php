@@ -56,7 +56,6 @@
 <div class="container-fluid">
     <div class="tabs">
         <div class="tab-item active">Thống kê</div>
-        <div class="tab-item">Doanh thu</div>
         <div class="line"></div>
     </div>
 
@@ -336,8 +335,6 @@ foreach ($dataNameViewMax as $name) {
             </script>
             <!-- END GOOGLE CHART -->
         </div>
-        <div class="tab-pane">
-            <h2>Doanh thu</h2>
         </div>
     </div>
 
