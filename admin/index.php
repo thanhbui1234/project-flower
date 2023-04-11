@@ -18,6 +18,8 @@
 
 
 
+
+
 <?php isset($_GET['act']) ? $act = $_GET['act'] : $act = false;
 
 switch ($act) {
@@ -83,6 +85,7 @@ switch ($act) {
         break;
     default:
         countAll();
+        doanhthu();
         include './view/home/home.php';
         break;
 }
