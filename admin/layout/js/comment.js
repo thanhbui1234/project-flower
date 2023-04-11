@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 const swalWithBootstrapButtons = Swal.mixin({
   customClass: {
     confirmButton: "border border-white m-2 ",
@@ -29,4 +26,3 @@ btn.forEach((btnDelete) => {
     });
   });
 });
->>>>>>> 54e29f96913e16d1e31c2b91dff16c2fce39a4de
