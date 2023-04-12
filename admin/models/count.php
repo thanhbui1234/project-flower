@@ -43,7 +43,7 @@ function countAll()
 
 
     //Đếm comments chưa duyệt
-    $sqlCmtChuaduyet = "SELECT COUNT(*) FROM comments WHERE trangthai = 'chưa duyệt'";
+    $sqlCmtChuaduyet = "SELECT COUNT(*) FROM comments WHERE status = '1'";
     $statement = $conn->prepare($sqlCmtChuaduyet);
     $statement->execute();
     global $CmtChuaduyet;
@@ -109,11 +109,11 @@ function countAll()
 }
 
 function doanhthu() {
-    global $conn;
+    // global $conn;
     
-    $sqlGetDate = "SELECT DATE_FORMAT(date, '%Y %m') FROM bills";
-    $statement = $conn->prepare($sqlGetDate);
-    $statement->execute();
-    print_r($statement->execute());
-    die();
+    // $sqlGetDate = "SELECT DATE_FORMAT(date, '%Y %m') FROM bills";
+    // $statement = $conn->prepare($sqlGetDate);
+    // $statement->execute();
+    // print_r($statement->execute());
+    // die();
 }
