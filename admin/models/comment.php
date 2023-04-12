@@ -1,6 +1,7 @@
 <?php
-include 'connect.php';?>
+include 'connect.php'; ?>
 <?php
+
 
 function showcmt()
 {
@@ -29,15 +30,16 @@ function updatecmt()
 
 function delcmt()
 {
-    if (isset($_GET['delete'])) {
-
+    if (isset($_GET['id']) && ($_GET['id']) > 0) {
         global $conn;
-        $id = $_GET['delete'];
-        $sql = "delete from comments where id = $id";
+        $id = $_GET['id'];
+        $sql = "DELETE FROM comments WHERE id = $id";
         $statement = $conn->prepare($sql);
-        $statement->execute();
-        header("location: index.php?act=comment");
-
+        if ($statement->execute()) {
+            header("location: index.php?act=comment");
+        }
     }
-
 }
+
+?>
+
