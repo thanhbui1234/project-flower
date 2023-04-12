@@ -41,10 +41,8 @@ function countAll()
     global $countComments;
     $countComments = $statement->fetchColumn();
 
-
     //Đếm comments chưa duyệt
     $sqlCmtChuaduyet = "SELECT COUNT(*) FROM comments WHERE trangthai = 'chưa duyệt'";
-    $sqlCmtChuaduyet = "SELECT COUNT(*) FROM comments WHERE status = '1'";
     $statement = $conn->prepare($sqlCmtChuaduyet);
     $statement->execute();
     global $CmtChuaduyet;
@@ -73,7 +71,7 @@ function countAll()
         global $dataViewMax;
         $dataViewMax = $ViewMax1['max(view)'];
     }
-    
+
     $sqlSelectNameViewMax = "SELECT name FROM products WHERE view = '$dataViewMax'";
     $statement = $conn->prepare($sqlSelectNameViewMax);
     $statement->execute();
@@ -95,5 +93,31 @@ function countAll()
     global $dataNameBuyMax;
     $dataNameBuyMax = $statement->fetchAll();
 
-    
+    //Doanh thu
+    // $sqlbuyMax = "SELECT max(amount) FROM bill_detail INNER JOIN bills ON bills.id = bill_detail.bill WHERE status = 'delivering' ";
+    // $statement = $conn->prepare($sqlbuyMax);
+    // $statement->execute();
+
+    // $sqlGetDate = "SELECT DATE_FORMAT(date, '%Y %m') FROM bills";
+    // $statement = $conn->prepare($sqlGetDate);
+    // $statement->execute();
+    // print_r($statement->execute());
+    // die();
+}
+
+function doanhthu()
+{
+    global $conn;
+
+    $sqlGetDate = "SELECT sum(total) ,MONTH(date) from bills where status = 'delivering'  group by MONTH(date)  order by MONTH(date)  ";
+    $statement = $conn->prepare($sqlGetDate);
+    $statement->execute();
+    // print_r($statement->execute());
+    // die();
+    $data = $statement->fetchAll();
+    foreach ($data as $value) {
+        /////// show data
+        echo "Tháng " . $value['MONTH(date)'] . ' Có tổng doanh thu là' . $value['sum(total)'] . '<br />';
+
+    }
 }
