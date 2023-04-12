@@ -182,10 +182,10 @@ if (!empty($_SESSION['userId'])) {
         var alertBox = document.querySelector('#alertBox');
         add.addEventListener('click', (e) => {
             inputQuantity.value++;
-            if(inputQuantity.value>amount.value){
-            alertBox.style.display = "block";
-            button_add_cart1.disabled = true;
-            button_add_cart2.disabled = true;
+            if(Number(inputQuantity.value)>Number(amount.value)){
+                alertBox.style.display = "block";
+                button_add_cart1.disabled = true;
+                button_add_cart2.disabled = true;
             }
         })
         subtract.addEventListener('click', (e) => {
@@ -193,11 +193,11 @@ if (!empty($_SESSION['userId'])) {
             if (inputQuantity.value <= 0) {
                 inputQuantity.value = 1;
             }
-        if(inputQuantity.value<=amount.value){
-            alertBox.style.display = "none";
-            button_add_cart1.disabled = false;
-            button_add_cart2.disabled = false;
-            }
+            if(Number(inputQuantity.value)<=Number(amount.value)){
+                alertBox.style.display = "none";
+                button_add_cart1.disabled = false;
+                button_add_cart2.disabled = false;
+                }
         })
     </script>
 </body>
