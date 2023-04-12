@@ -1,3 +1,5 @@
+<?php echo $_SESSION['userId'] ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

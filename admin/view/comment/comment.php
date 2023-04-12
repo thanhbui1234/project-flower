@@ -76,8 +76,7 @@ foreach ($showcmt as $cmt) {
 
     </table>
     </form>
-
+<script type=""></script>
  </div>
-
 
 
