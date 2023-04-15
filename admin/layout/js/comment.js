@@ -1,41 +1,28 @@
 const swalWithBootstrapButtons = Swal.mixin({
-    customClass: {
-        confirmButton: "btn btn-success",
-        cancelButton: "btn btn-danger",
-    },
-    buttonsStyling: false,
+  customClass: {
+    confirmButton: "border border-white m-2 ",
+    cancelButton: "m-2 btn btn-danger",
+  },
+  buttonsStyling: false,
 });
 
-const deleteBtn = document.querySelectorAll(".deleteProd");
+const btn = document.querySelectorAll(".btn-delete");
+console.log(btn);
 
-deleteBtn.forEach((btn) => {
-    const dataId = btn.getAttribute("data-id");
-    console.log(dataId);
-
-    btn.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        swalWithBootstrapButtons
-            .fire({
-                title: "Bạn có chắc không?",
-                text: "Bạn muốn xóa sản phẩm này phải không?",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonText:
-                    '<a class="text-white" href="index.php?act=listProd&deleteProduct=' + dataId + '">Xóa</a>',
-                cancelButtonText: "No, cancel!",
-                reverseButtons: true,
-            })
-            .then((result) => {
-                if (result.isConfirmed) {
-                    return "";
-                } else if (result.dismiss === Swal.DismissReason.cancel) {
-                    swalWithBootstrapButtons.fire(
-                        "Cancelled",
-                        "Ok không xóa nữa :)))",
-                        "error"
-                    );
-                }
-            });
+btn.forEach((btnDelete) => {
+  btnData = btnDelete.getAttribute("data-id");
+  btnDelete.addEventListener("click", (e) => {
+    return swalWithBootstrapButtons.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText:
+        "<a class='btn btn-success' href='index.php?act=comment&delete=" +
+        btnData +
+        "'>Yes delete it</a>",
+      cancelButtonText: "No, cancel!",
+      reverseButtons: true,
     });
+  });
 });

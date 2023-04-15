@@ -5,7 +5,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <a class="" href="/project-flower/index.php"><img src="/../project-flower/layout/assets/img/flower.svg"
+        <a class="" href="/project-flower/index.php"><img src="/project-flower/layout/assets/img/flower.svg"
                 alt="..." />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
@@ -74,12 +74,12 @@
                             <li><a class="dropdown-item" href="/project-flower/index.php?act=profile">Profile</a>
                             </li>
                             <?php echo $_SESSION['role'] == 2 ? '<li><a class="dropdown-item" href="/project-flower/admin">Admin</a>' : ''; ?>
-                            <li><a class="dropdown-item" href="index.php?act=category&id=id">Gio hang</a>
+                            <li><a class="dropdown-item" href="index.php?act=order">Đơn mua</a>
                             </li>
-                            <li><a class="dropdown-item" href="index.php?act=changepassword">changePassword</a>
+                            <li><a class="dropdown-item" href="index.php?act=changepassword">Đổi mật khẩu</a>
                             </li>
-                            <li><a class="dropdown-item" href="/project-flower/view/logout/logout.php">Dang
-                                    xuat</a>
+                            <li><a class="dropdown-item" href="/project-flower/view/logout/logout.php">Đăng
+                                    xuất</a>
                             </li>
                         </ul>
                     </div>

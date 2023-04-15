@@ -4,6 +4,7 @@ include './model/category.php';
 include './model/user.php';
 include './model/search.php';
 include './model/comment.php';
+include './model/order.php';
 
 ?>
 
@@ -19,13 +20,13 @@ include './layout/nav.php';
 switch ($url) {
 
     case 'aboutproducts';
+        view();
         showaboutproducts();
         showcmt();
         showproduct();
         showstatus();
         include './view/products/aboutproduct.php';
         break;
-
 
         include './view/products/aboutproduct.php';
         break;
@@ -40,12 +41,16 @@ switch ($url) {
         include './view/search/search.php';
         break;
 
+    case 'order';
+        cancelBill();
+        waitAccpetOrder();
+        include './view/order/order.php';
+        break;
 
     case 'profile';
         updateProfile();
         include './view/profile/profile.php';
         break;
-
 
     case 'changepassword';
         changePasswrod();
@@ -58,11 +63,7 @@ switch ($url) {
         break;
 }
 
-
-
-
-    ?>
-
+?>
 
 
 

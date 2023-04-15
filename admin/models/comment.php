@@ -5,7 +5,7 @@ include 'connect.php'; ?>
 
 function showcmt()
 {
-    $sql = "SELECT comments.content,users.image,users.userName,comments.date,products.name,comments.id,comments.trangthai
+    $sql = "SELECT comments.content,users.image,users.userName,comments.date,products.name,comments.id,comments.status,comments.img
     FROM ((comments
     INNER JOIN products ON comments.product = products.id)
     INNER JOIN users ON comments.user = users.id)";
@@ -16,23 +16,11 @@ function showcmt()
     $showcmt = $statement->fetchAll();
 }
 
-function updatecmt1()
+function updatecmt()
 {
     $id = $_GET['id'];
     $sql = "UPDATE comments
-    SET status = '2', trangthai= 'chưa duyệt'
-    WHERE id = $id";
-    global $conn;
-    $statement = $conn->prepare($sql);
-    $statement->execute();
-    header("location: index.php?act=comment");
-}
-
-function updatecmt2()
-{
-    $id = $_GET['id'];
-    $sql = "UPDATE comments
-    SET status = '1', trangthai= 'đã duyệt'
+    SET status = '2'
     WHERE id = $id";
     global $conn;
     $statement = $conn->prepare($sql);
@@ -42,12 +30,16 @@ function updatecmt2()
 
 function delcmt()
 {
-    global $conn;
-    $id = $_GET['id'];
-    $sql = "delete from comments where id = $id";
-    $statement = $conn->prepare($sql);
-    $statement->execute();
-    header("location: index.php?act=comment");
+    if (isset($_GET['id']) && ($_GET['id']) > 0) {
+        global $conn;
+        $id = $_GET['id'];
+        $sql = "DELETE FROM comments WHERE id = $id";
+        $statement = $conn->prepare($sql);
+        if ($statement->execute()) {
+            header("location: index.php?act=comment");
+        }
+    }
 }
 
 ?>
+

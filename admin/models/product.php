@@ -160,7 +160,11 @@ function updateProduct() {
         }
 
         if (!is_numeric($price)) {
-            $errUpdate['$price'] = 'Giá có vấn đề';
+            $errUpdate['price'] = 'Giá có vấn đề';
+        }
+
+        if ($amount < 0) {
+            $errUpdate['amount'] = 'Số lượng có vấn đề';
         }
 
         if (empty($errUpdate)) {
@@ -204,28 +208,27 @@ function deleteProduct() {
 
 function applyProd() {
     if (isset($_POST['apply'])) {
-        global $conn;
-        $checkboxes = $_POST['checkBoxArr'];
-        foreach ($checkboxes as $checkbox) {
-            $option = $_POST['option'];
-            
-            switch ($option) {
-                case "delete":
+        if (!empty($_POST['checkBoxArr'])) {
+            global $conn;
+            $checkboxes = $_POST['checkBoxArr'];
+            foreach ($checkboxes as $checkbox) {
+                $option = $_POST['option'];
+                
+                switch ($option) {
+                    case "delete":
+                        $sql = "DELETE FROM products WHERE id = $checkbox";
+                        $statement = $conn->query($sql);
+                        if ($statement -> execute()) {
+                            header("location: index.php?act=listProd");
+                        }
+                        break;
 
-                    $sql = "DELETE FROM products WHERE id = $checkbox";
-                    $statement = $conn->query($sql);
-                    if ($statement -> execute()) {
-                        header("location: index.php?act=listProd");
-                    }
-                    break;
-
-                default:
-
-                    echo "<script>Swal.fire('Bạn phải chọn chức năng')</script>";
-                    break;
+                    default:
+                        echo "<script>Swal.fire('Bạn phải chọn chức năng')</script>";
+                        break;
+                }
 
             }
-
         }
     }
 }
