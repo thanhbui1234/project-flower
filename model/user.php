@@ -54,7 +54,13 @@ function updateProfile()
         $sql = " UPDATE `users` SET `name`='$userName',`address`='$Address',`phone`='$Phone',`email`='$Email' , `image`='$img'  WHERE id=$id ";
         global $conn;
         $statement = $conn->prepare($sql);
-        $statement->execute();
+       
+        global $ok;
+            $ok = "false";
+           if( $statement->execute()){
+              $ok="success";
+           }
+       
     }
 
 }
@@ -71,11 +77,12 @@ function getAvtUser()
         global $avt;
         $avt = $statement->fetchAll();
 
-        foreach ($avt as $avtt) {}
+        foreach ($avt as $avtt) {
         echo empty($avtt['image'])
         ? '<img class="mr-lg-5 rounded-circle" width="25" src="/../project-flower/layout/assets/img/avtDefault.jpg" alt="">'
         : "<img class='pr-lg-5 rounded-circle' width='27' src='/../project-flower/admin/uploads/$avtt[image]' alt=''>";
-
+        }
+     
     }
 
 }   

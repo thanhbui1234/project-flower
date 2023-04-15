@@ -4,6 +4,7 @@
 
 
 
+
 <?php isset($_GET['act']) ? $act = $_GET['act'] : $act = false;?>
 
 
@@ -15,6 +16,13 @@
         include './view/register.php';
 
         break;
+
+        case 'forgotpass';
+        forgotpass();
+        include './view/forgotpass.php';
+
+        break; 
+
     default:
         login();
         include './view/home.php';

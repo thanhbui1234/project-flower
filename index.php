@@ -46,6 +46,7 @@ switch ($url) {
         include './view/profile/profile.php';
         break;
 
+
     case 'changepassword';
         changePasswrod();
         include './view/profile/changepassword.php';

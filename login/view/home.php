@@ -40,9 +40,9 @@
                     </div>
 
                     <div id="notregister" class="">
-                        <P class="text-white"> Bạn chưa có tài khoản shop-x ? <a
-                                href="/project-flower/login/login.php?act=register">Đăng ký</a>
-                        </P>
+                        <span> <a
+                                href="/project-flower/login/login.php?act=register">Đăng ký</a>  <a href="/project-flower/login/login.php?act=forgotpass">|| Quên mật khẩu</a></span>
+                      
                     </div>
 
                 </div>

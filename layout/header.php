@@ -40,6 +40,8 @@ session_start();
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="/../project-flower/layout/css/styles.css" rel="stylesheet" />
     <link href="/../project-flower/layout/css/custom.css" rel="stylesheet" />
+    <link href="/../project-flower/layout/css/fixprofiles.css" rel="stylesheet" />
+    <link href="/../project-flower/layout/css/fixchanges.css" rel="stylesheet" />
     <!-- slide show -->
 
     <link rel="stylesheet" href="/../project-flower/layout/owlcarousel/assets/owl.carousel.min.css" />
