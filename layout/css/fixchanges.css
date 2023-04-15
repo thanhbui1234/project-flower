@@ -1,0 +1,23 @@
+#div-changepw{
+    background: url("/../project-flower/layout/assets/img/asd.jpg");
+    
+}
+.btn-change{
+    border-radius: 10px;
+   
+    font-size: 13px;
+    height: 45px;
+    padding-bottom: 20px;
+}
+.h2o{
+    color: antiquewhite;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 45px;
+    margin-left: 80px;
+  }
+  .pp{
+    color: gainsboro;
+  margin-left: 80px;
+    font-size: 18px;
+    font-family:  'Arial Narrow Bold', sans-serif;
+  }
