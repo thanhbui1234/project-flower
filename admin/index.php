@@ -1,19 +1,21 @@
-<!-- <?php ob_start()?> -->
-<?php include './layout/header.php'?>
+<!-- <?php ob_start() ?> -->
+<?php include './layout/header.php' ?>
 
-<?php include './layout/sidebar.php'?>
+<?php include './layout/sidebar.php' ?>
 
-<?php include './layout/nav.php'?>
+<?php include './layout/nav.php' ?>
 
-<?php include './models/product.php'?>
+<?php include './models/product.php' ?>
 
-<?php include './models/categories.php'?>
+<?php include './models/categories.php' ?>
 
-<?php include './models/bill-controller.php'?>
+<?php include './models/bill-controller.php' ?>
 
-<?php include './models/count.php'?>
+<?php include './models/count.php' ?>
 
-<?php include './models/comment.php'?>
+<?php include './models/comment.php' ?>
+
+
 
 
 
@@ -50,13 +52,13 @@ switch ($act) {
         include '../admin/view/users/users.php';
         break;
 
-        case 'delcmt':
-            delcmt();
-            include '../admin/view/comment/comment.php';
-            break;
+    case 'delcmt':
+        delcmt();
+        include '../admin/view/comment/comment.php';
+        break;
 
     case 'comment':
-        
+
         showcmt();
         include '../admin/view/comment/comment.php';
         break;
@@ -83,6 +85,7 @@ switch ($act) {
         break;
     default:
         countAll();
+        doanhthu();
         include './view/home/home.php';
         break;
 }
@@ -97,4 +100,4 @@ switch ($act) {
 
 
 
-<?php include './layout/footer.php'?>
+<?php include './layout/footer.php' ?>
