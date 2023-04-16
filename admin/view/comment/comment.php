@@ -10,6 +10,7 @@
                 <th>Nội dung</th>
                 <th>Ngày bình luận</th>
                 <th>Trạng thái</th>
+                <th>Hình ảnh</th>
                 <th>Action</th>
             </tr>
 
@@ -43,7 +44,7 @@ foreach ($showcmt as $cmt) {
         echo '<div style="color: red">chưa duyệt</div> ';
     }?></td>
                 <td>
-                    <a class="pull-left" href="#"><img style="width:100px; margin-bottom:48px" class="media-object"
+                    <a class="pull-left" href="#"><img style="width: 50px;margin-left:40px; margin-bottom:48px" class="media-object"
                             src="/../project-flower/admin/uploads/<?php echo $cmt['img'] ?>" alt=""></a>
                 </td>
 
@@ -70,6 +71,8 @@ foreach ($showcmt as $cmt) {
     </table>
     </form>
 
+
 </div>
 
 <script src="layout/js/comment.js"></script>
+

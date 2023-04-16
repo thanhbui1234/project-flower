@@ -44,7 +44,7 @@ function addcmt()
             $statement = $conn->prepare($sqls);
 
             if ($statement->execute()) {
-                header("location: index.php?act=aboutproducts&id=$id");
+  
             }
 
         

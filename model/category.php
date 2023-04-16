@@ -22,5 +22,4 @@ function loadcategory()
     global $loadcategory;
     $loadcategory = $statement->fetchAll();
 }
-
 ?>
