@@ -54,11 +54,18 @@ function addCart()
 {
     $bill = createBill();
     global $conn;
-    // print_r($_POST['quanlity']);
-    $arr = $_POST['arrQuanlity'];
-    $newArr = [];
 
-    print_r($newArr);
+    $arr = $_POST['arrQuanlity'];
+    print_r($arr);
+
+    for ($i = 0; $i < count($arr); $i++) {
+
+        foreach ($arr[$i] as $key => $value) {
+
+        }
+
+    }
+
     die();
     $check = 0;
     foreach ($_SESSION['cart'] as $cart) {
