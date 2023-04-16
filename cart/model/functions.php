@@ -7,6 +7,7 @@ function getCart()
     }
 
     if (isset($_POST['add_cart']) && ($_POST['add_cart'])) {
+        $id = $_POST['id_prod'];
         $name = $_POST['name'];
         $image = $_POST['image'];
         $price = $_POST['price'];
@@ -21,17 +22,19 @@ function getCart()
                 $new_sum = ($price - $deal) * $new_amount;
                 $_SESSION['cart'][$i][4] = $new_amount;
                 $_SESSION['cart'][$i][5] = $new_sum;
+                $_SESSION['cart'][$i][6] = $id;
                 break;
             }
         }
         if ($check == 0) {
-            $product_added = [$name, $image, $price, $deal, $amount, $sum];
+            $product_added = [$name, $image, $price, $deal, $amount, $sum, $id];
             $_SESSION['cart'][] = $product_added;
         }
     }
 }
 function createBill()
 {
+
     session_start();
     global $conn;
     $customer = $_POST['customer'];
@@ -51,6 +54,12 @@ function addCart()
 {
     $bill = createBill();
     global $conn;
+    // print_r($_POST['quanlity']);
+    $arr = $_POST['arrQuanlity'];
+    $newArr = [];
+
+    print_r($newArr);
+    die();
     $check = 0;
     foreach ($_SESSION['cart'] as $cart) {
         $name = $cart[0];
