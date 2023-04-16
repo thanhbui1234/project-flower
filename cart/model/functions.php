@@ -29,6 +29,7 @@ function getCart()
         if ($check == 0) {
             $product_added = [$name, $image, $price, $deal, $amount, $sum, $id];
             $_SESSION['cart'][] = $product_added;
+            global $product_added;
         }
     }
 }

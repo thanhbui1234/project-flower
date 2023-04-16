@@ -1,3 +1,4 @@
+
 const swalWithBootstrapButtons = Swal.mixin({
   customClass: {
     confirmButton: "border border-white m-2 ",
@@ -13,16 +14,16 @@ btn.forEach((btnDelete) => {
   btnData = btnDelete.getAttribute("data-id");
   btnDelete.addEventListener("click", (e) => {
     return swalWithBootstrapButtons.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "Bạn có chắc chắn muốn xoá không!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText:
-        "<a class='btn btn-success' href='index.php?act=comment&delete=" +
+        "<a class='btn btn-success' href='index.php?act=delcmt&id=" +
         btnData +
-        "'>Yes delete it</a>",
-      cancelButtonText: "No, cancel!",
+        "'>Xoá</a>",
+      cancelButtonText: "Thôi!",
       reverseButtons: true,
     });
   });
 });
+

@@ -15,8 +15,8 @@ if ($success=="success") {
 ?>
 <div class="rounded shadow p-lg-4" id="div-changepw" >
 
-<h2 class="h2">Đổi mật khẩu</h2><br>
-<p class="p">Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho người khác</p>
+<h2 class="h2o">Đổi mật khẩu</h2><br>
+<p class="pp">Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho người khác</p>
 <hr>
 
 <form action="#" style="max-width:600px" id="form-changepw" method="POST">

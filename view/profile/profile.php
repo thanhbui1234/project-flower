@@ -4,14 +4,15 @@
 global $ok;
 if ($ok=="success") {
 
-    echo "<script>swal( 'Success' ,  'Cập nhật thành công' ,  'success' );</script>";
+    echo "<script>swal( 'Thành công' ,  'Cập nhật thành công' ,  'success' );</script>";
 
 }?>
 <section class="bg-light container  mt-5 p-lg-3  bg-body" id="">
     <div class="rounded shadow p-lg-4" id="formbg">
     <h2 class="h2">Hồ sơ của tôi</h2><br>
 <p class="p">Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
-<hr>
+<hr class="hr">
+
 <div class="bcsprofile">
     <div>
     <form id="formProfile"  enctype="multipart/form-data" action="#" style="max-width:500px;margin:auto" method="POST"  >
@@ -42,7 +43,7 @@ if ($ok=="success") {
     </div>
    
    <div>
-   <?php echo empty($user['image']) ? "<img style='width:600px;'  class='imgprofile'  src='/../project-flower/layout/assets/img/avtDefault.jpg' alt=''><br>" : "<img class='imgprofile'  src='/../project-flower/admin/uploads/$user[image]' alt=''><br>"; ?>
+   <?php echo empty($user['image']) ? "<img   class='imgprofile'   src='/../project-flower/layout/assets/img/avtDefault.jpg' alt=''><br>" : "<img class='imgprofile'  src='/../project-flower/admin/uploads/$user[image]' alt=''><br>"; ?>
   
     <label class="pick"  for="pickanh">Chọn ảnh</label>
     <input type="file" hidden  name="pickimg" id="pickanh">
@@ -62,7 +63,7 @@ var phone = document.querySelector('input[name="phone_profile"]');
 
 
 form.addEventListener("submit", (e) => {
-  if (user.value.length<1 || email.value.length<1 || address.value.length<1 || phone.value.length<1 ) {
+  if (user.value.length<1 || email.value.length<1 || phone.value.length<1 ) {
     e.preventDefault();
     return swal( "Lỗi rồi" ,  "Bạn không được bỏ trống bất kỳ trường nào!" ,  "error" );
   }else if(user.value.length<6 ){
@@ -71,10 +72,6 @@ form.addEventListener("submit", (e) => {
   }else if( email.value.length<10 || !email.value.includes("@") || !email.value.includes(".")){
     e.preventDefault();
     return swal( "Lỗi Email" ,  "Email không hợp lệ!" ,  "error" );
-  }
-  else if(  address.value.length<6 ){
-    e.preventDefault();
-    return swal( "Lỗi Address" ,  "Địa không hợp lệ!" ,  "error" );
   }else if(phone.value.length!=10 && phone.value.length!=11){
     e.preventDefault();
     return swal( "Lỗi PhoneNumber" ,  "Số điện thoại không hợp lệ!" ,  "error" );
