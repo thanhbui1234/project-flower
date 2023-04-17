@@ -1,65 +1,4 @@
-<style>
-.tabs {
-    display: flex;
-    position: relative;
-}
-
-.tabs .line {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 6px;
-    border-radius: 15px;
-    background-color: #4e73df;
-    transition: all 0.2s ease;
-}
-
-.tab-item {
-    min-width: 80px;
-    padding: 16px 20px 11px 20px;
-    font-size: 25px;
-    text-align: center;
-    color: #4e73df;
-    background-color: #fff;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom: 5px solid transparent;
-    opacity: 0.6;
-    cursor: pointer;
-    transition: all 0.5s ease;
-}
-
-.tab-item:hover {
-    opacity: 1;
-    background-color: rgba(194, 53, 100, 0.05);
-    border-color: rgba(194, 53, 100, 0.1);
-}
-
-.tab-item.active {
-    opacity: 1;
-}
-
-.tab-content {
-    padding: 15px 0;
-}
-
-.tab-pane {
-    color: #333;
-    display: none;
-}
-
-.tab-pane.active {
-    display: block;
-}
-</style>
 <div class="container-fluid">
-    <div class="tabs">
-        <div class="tab-item active">Thống kê</div>
-        <!-- <div class="tab-item">Doanh thu</div> -->
-        <div class="line"></div>
-    </div>
-
     <div class="tab-content">
         <div class="tab-pane active">
             <!-- Content Row -->
@@ -250,11 +189,10 @@
                                     </div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">
                                         <?php
-foreach ($dataNameBuyMax as $name) {
-    echo $name['productName'];
-}
-;
-?>
+                                        foreach ($dataNameBuyMax as $name) {
+                                            echo $name['productName'];
+                                        };
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="col-auto">
@@ -275,11 +213,10 @@ foreach ($dataNameBuyMax as $name) {
                                     </div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">
                                         <?php
-foreach ($dataNameViewMax as $name) {
-    echo $name['name'];
-}
-;
-?>
+                                        foreach ($dataNameViewMax as $name) {
+                                            echo $name['name'];
+                                        };
+                                        ?>
                                     </div>
                                 </div>
                                 <div class="col-auto">
@@ -293,53 +230,51 @@ foreach ($dataNameViewMax as $name) {
             </div>
 
             <!-- GOOGLE CHART -->
-            <h2 class="text-center text-uppercase mt-3">Biểu đồ</h2>
+            <h2 class="text-center text-uppercase mt-3">Doanh thu</h2>
             <div id="chart">
                 <canvas id="myChart"></canvas>
             </div>
 
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <script>
-            const ctx = document.getElementById('myChart');
+                const ctx = document.getElementById('myChart');
 
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Sản phẩm', 'Loại sản phẩm', 'Người dùng', 'Sản phẩm đang sale', 'Bình luận',
-                        'Bình luận chưa duyệt', 'Đơn hàng chua được xác nhận', 'Đơn hàng đã được xác nhận'
-                    ],
-                    datasets: [{
-                        label: 'Đơn vị',
-                        data: [
-                            <?php echo $countProducts ?>,
-                            <?php echo $countCategories ?>,
-                            <?php echo $countUsers ?>,
-                            <?php echo $countComments ?>,
-                            <?php echo $countComments ?>,
-                            <?php echo $CmtChuaduyet ?>,
-                            <?php echo $Produnconfimred ?>,
-                            <?php echo $Prodconfirmed ?>
-
-
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: [
+                            '1', '2',
+                            <?php foreach ($dataDoanhthu as $doanhthu) {
+                                echo $doanhthu['MONTH(date)'] . ',';
+                            } ?> '5', '6', '7', '8', '9', '10', '11', '12'
                         ],
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
+                        datasets: [{
+                            label: 'Đơn vị',
+                            data: [
+                                '0', '0',
+                                <?php foreach ($dataDoanhthu as $doanhthu) {
+                                    echo $doanhthu['sum(total)'] . ',';
+                                } ?> '0', '0', '0', '0', '0', '0', '0', '0'
+
+                            ],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
                         }
                     }
-                }
-            });
+                });
             </script>
             <!-- END GOOGLE CHART -->
         </div>
-        </div>
     </div>
+</div>
 
-    <script>
+<script>
     const $ = document.querySelector.bind(document);
     const $$ = document.querySelectorAll.bind(document);
 
@@ -367,6 +302,6 @@ foreach ($dataNameViewMax as $name) {
 
         }
     })
-    </script>
+</script>
 
 </div>

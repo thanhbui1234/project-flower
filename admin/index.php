@@ -85,7 +85,7 @@ switch ($act) {
         break;
     default:
         countAll();
-        // doanhthu();
+        doanhthu();
         include './view/home/home.php';
         break;
 }
