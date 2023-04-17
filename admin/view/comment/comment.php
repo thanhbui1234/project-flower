@@ -44,15 +44,10 @@ foreach ($showcmt as $cmt) {
         echo '<div style="color: red">chưa duyệt</div> ';
     }?></td>
                 <td>
-                    <a class="pull-left" href="#"><img style="width: 50px;margin-left:40px; margin-bottom:48px" class="media-object"
-                            src="/../project-flower/admin/uploads/<?php echo $cmt['img'] ?>" alt=""></a>
+                    <a class="pull-left" href="#"><img style="width: 50px;margin-left:40px; margin-bottom:48px"
+                            class="media-object" src="/../project-flower/admin/uploads/<?php echo $cmt['img'] ?>"
+                            alt=""></a>
                 </td>
-
-
-
-
-
-
 
                 <td class="action_prod">
 
@@ -74,5 +69,34 @@ foreach ($showcmt as $cmt) {
 
 </div>
 
-<script src="layout/js/comment.js"></script>
+<script>
+const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+        confirmButton: 'm-2 border border-white',
+        cancelButton: 'm-2 btn btn-danger'
+    },
+    buttonsStyling: false
+})
 
+const btnAll = document.querySelectorAll('.btn-delete');
+
+btnAll.forEach((btn) => {
+
+    var idData = btn.getAttribute('data-id');
+
+    btn.onclick = () => {
+        swalWithBootstrapButtons.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: "<a class='btn btn-success' href='index.php?act=comment&delete=" +
+                idData + "'>Yes deleit</a>",
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+        })
+
+    }
+
+})
+</script>
