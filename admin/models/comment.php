@@ -4,7 +4,7 @@ include 'connect.php';?>
 
 function showcmt()
 {
-    $sql = "SELECT comments.content,users.image,users.userName,comments.date,products.name,comments.id,comments.status,comments.img
+    $sql = "SELECT comments.product, comments.content,users.image,users.userName,comments.date,products.name,comments.id,comments.status,comments.img
     FROM ((comments
     INNER JOIN products ON comments.product = products.id)
     INNER JOIN users ON comments.user = users.id)";
