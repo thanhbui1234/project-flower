@@ -39,7 +39,7 @@
                     <th>Danh mục</th>
                     <th>Ngày nhập</th>
                     <th>Mô tả</th>
-                    <th>Số lượng</th>
+                    <th>Trạng thái</th>
                     <th>Lượt xem</th>
                     <th>Action</th>
                 </tr>

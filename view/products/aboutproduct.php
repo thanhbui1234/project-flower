@@ -47,7 +47,7 @@
                             <input id="amountLeft" type="text" hidden
                                 value="<?php echo $showaboutproducts['amount'] ?>">
                             <input id="button_add_cart1" type="submit" class="btn btn-outline-dark flex-shrink-0"
-                                value="Thêm vào giỏ hàng" name="add_cart">
+                                value="Thêm vào giỏ hàng" name="add_cart" onclick="return confirmAdd()">
                             <input id="button_add_cart2" type="submit" class="btn btn-outline-dark flex-shrink-0"
                                 value="Mua ngay" name="add_cart">
                         </div>
@@ -173,6 +173,13 @@ var button_add_cart1 = document.querySelector('#button_add_cart1');
 var button_add_cart2 = document.querySelector('#button_add_cart2');
 var amount = document.querySelector('#amountLeft');
 var alertBox = document.querySelector('#alertBox');
+function confirmAdd(){
+if(isNaN(inputQuantity.value)||inputQuantity.value<=0) {
+    if(confirm('Vui lòng nhập số lượng đúng!')===true)
+    return false;
+    else return false;
+}else return true;
+}
 add.addEventListener('click', (e) => {
     inputQuantity.value++;
     if (Number(inputQuantity.value) > Number(amount.value)) {
