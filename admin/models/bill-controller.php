@@ -29,11 +29,18 @@
             $stmt -> execute();
         }
     }
+    function checkStatus(){
+        global $conn;
+        $query = "UPDATE products SET status = 'Hết hàng' where amount = 0";
+        $stmt = $conn -> prepare($query);
+        $stmt -> execute();
+    }
     function confirmBill() {
         if (isset($_GET["id"])) {
             global $conn;
             $id = $_GET["id"];
             updateAmount($id);
+            checkStatus();
             $sql = "UPDATE bills SET status = 'delivering' WHERE id = $id";
             $statement = $conn-> prepare($sql);
             if ($statement -> execute()) {
