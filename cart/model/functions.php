@@ -7,7 +7,7 @@ function getCart()
     }
 
     if (isset($_POST['add_cart']) && ($_POST['add_cart'])) {
-        $id = $_POST['id_prod'];
+        $id = $_POST['idProduct'];
         $name = $_POST['name'];
         $image = $_POST['image'];
         $price = $_POST['price'];
@@ -16,13 +16,12 @@ function getCart()
         $sum = ($price - $deal) * $amount;
         $check = 0;
         for ($i = 0; $i < sizeof($_SESSION['cart']); $i++) {
-            if ($_SESSION['cart'][$i][0] == $name) {
+            if ($_SESSION['cart'][$i][6] == $id) {
                 $check = 1;
                 $new_amount = $amount + $_SESSION['cart'][$i][4];
                 $new_sum = ($price - $deal) * $new_amount;
                 $_SESSION['cart'][$i][4] = $new_amount;
                 $_SESSION['cart'][$i][5] = $new_sum;
-                $_SESSION['cart'][$i][6] = $id;
                 break;
             }
         }
@@ -57,17 +56,7 @@ function addCart()
     global $conn;
 
     $arr = $_POST['arrQuanlity'];
-    print_r($arr);
 
-    for ($i = 0; $i < count($arr); $i++) {
-
-        foreach ($arr[$i] as $key => $value) {
-
-        }
-
-    }
-
-    die();
     $check = 0;
     foreach ($_SESSION['cart'] as $cart) {
         $name = $cart[0];
@@ -76,7 +65,8 @@ function addCart()
         $deal = $cart[3];
         $amount = $cart[4];
         $sum = $cart[5];
-        $sql = "insert into bill_detail (bill,productName,image,price,deal,amount,sum) values ('$bill','$name','$image','$price','$deal','$amount','$sum')";
+        $idProduct = $cart[6];
+        $sql = "insert into bill_detail (bill,idProduct,productName,image,price,deal,amount,sum) values ('$bill','$idProduct','$name','$image','$price','$deal','$amount','$sum')";
         $statement = $conn->prepare($sql);
         if ($statement->execute()) {
             $check = 1;
