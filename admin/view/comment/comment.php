@@ -32,9 +32,11 @@ foreach ($showcmt as $cmt) {
 
             <tr>
 
+
                 <td><?php echo $cmt['id'] ?></td>
                 <td><?php echo $cmt['userName'] ?></td>
-                <td><?php echo $cmt['name'] ?></td>
+                <td> <a href="/project-flower/index.php?act=aboutproducts&id=<?php echo $cmt['product'] ?>">
+                        <?php echo $cmt['name'] ?></a></td>
                 <td><?php echo $cmt['content'] ?></td>
                 <td><?php echo $cmt['date'] ?></td>
                 <td><?php if ($cmt['status'] == "2") {
@@ -50,8 +52,12 @@ foreach ($showcmt as $cmt) {
                 </td>
 
                 <td class="action_prod">
+                    <?php echo $cmt['status'] == 1
+    ? "<a class='btn btn-success px-4 ' href='index.php?act=updatecmt&id=$cmt[id]'>Duyệt</a> "
+    : '   <button disabled class="btn btn-dark   ">Đã duyệt</button>' ?>
 
-                    <a class="btn btn-success" href="index.php?act=updatecmt&id=<?php echo $cmt['id'] ?>">Duyệt</a>
+
+
                     <button class=" btn-delete btn btn-danger" data-id='<?php echo $cmt['id'] ?>'>Xoá</button>
                 </td>
             </tr>
