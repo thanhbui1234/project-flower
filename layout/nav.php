@@ -73,7 +73,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/project-flower/index.php?act=profile">Profile</a>
                             </li>
-                            <?php echo $_SESSION['role'] == 2 ? '<li><a class="dropdown-item" href="/project-flower/admin">Admin</a>' : ''; ?>
+                            <?php echo $_SESSION['role'] == 1 ? '<li><a class="dropdown-item" href="/project-flower/admin">Admin</a>' : ''; ?>
                             <li><a class="dropdown-item" href="index.php?act=order">Đơn mua</a>
                             </li>
                             <li><a class="dropdown-item" href="index.php?act=changepassword">Đổi mật khẩu</a>
