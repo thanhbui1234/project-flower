@@ -10,6 +10,7 @@
                 <th>Nội dung</th>
                 <th>Ngày bình luận</th>
                 <th>Trạng thái</th>
+                <th>Hình ảnh</th>
                 <th>Action</th>
             </tr>
 
@@ -31,9 +32,11 @@ foreach ($showcmt as $cmt) {
 
             <tr>
 
+
                 <td><?php echo $cmt['id'] ?></td>
                 <td><?php echo $cmt['userName'] ?></td>
-                <td><?php echo $cmt['name'] ?></td>
+                <td> <a href="/project-flower/index.php?act=aboutproducts&id=<?php echo $cmt['product'] ?>">
+                        <?php echo $cmt['name'] ?></a></td>
                 <td><?php echo $cmt['content'] ?></td>
                 <td><?php echo $cmt['date'] ?></td>
                 <td><?php if ($cmt['status'] == "2") {
@@ -43,19 +46,18 @@ foreach ($showcmt as $cmt) {
         echo '<div style="color: red">chưa duyệt</div> ';
     }?></td>
                 <td>
-                    <a class="pull-left" href="#"><img style="width:100px; margin-bottom:48px" class="media-object"
-                            src="/../project-flower/admin/uploads/<?php echo $cmt['img'] ?>" alt=""></a>
+                    <a class="pull-left" href="#"><img style="width: 50px;margin-left:40px; margin-bottom:48px"
+                            class="media-object" src="/../project-flower/admin/uploads/<?php echo $cmt['img'] ?>"
+                            alt=""></a>
                 </td>
 
-
-
-
-
-
-
                 <td class="action_prod">
+                    <?php echo $cmt['status'] == 1
+    ? "<a class='btn btn-success px-4 ' href='index.php?act=updatecmt&id=$cmt[id]'>Duyệt</a> "
+    : '   <button disabled class="btn btn-dark   ">Đã duyệt</button>' ?>
 
-                    <a class="btn btn-success" href="index.php?act=updatecmt&id=<?php echo $cmt['id'] ?>">Duyệt</a>
+
+
                     <button class=" btn-delete btn btn-danger" data-id='<?php echo $cmt['id'] ?>'>Xoá</button>
                 </td>
             </tr>
@@ -70,6 +72,37 @@ foreach ($showcmt as $cmt) {
     </table>
     </form>
 
+
 </div>
 
-<script src="layout/js/comment.js"></script>
+<script>
+const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+        confirmButton: 'm-2 border border-white',
+        cancelButton: 'm-2 btn btn-danger'
+    },
+    buttonsStyling: false
+})
+
+const btnAll = document.querySelectorAll('.btn-delete');
+
+btnAll.forEach((btn) => {
+
+    var idData = btn.getAttribute('data-id');
+
+    btn.onclick = () => {
+        swalWithBootstrapButtons.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: "<a class='btn btn-success' href='index.php?act=comment&delete=" +
+                idData + "'>Yes deleit</a>",
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+        })
+
+    }
+
+})
+</script>

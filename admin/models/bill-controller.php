@@ -15,10 +15,32 @@
         global $bills;
         $bills = $statement -> fetchAll();
     }
+    function updateAmount($id){
+        global $conn;
+        $sql = "SELECT * FROM bill_detail WHERE bill = $id";
+        $statement = $conn -> prepare($sql);
+        $statement -> execute();
+        global $getProduct;
+        $getProduct = $statement -> fetchAll();
+        foreach($getProduct as $gP){
+            extract($gP);
+            $query = "UPDATE products SET amount = amount - $amount where id = $idProduct";
+            $stmt = $conn -> prepare($query);
+            $stmt -> execute();
+        }
+    }
+    function checkStatus(){
+        global $conn;
+        $query = "UPDATE products SET status = 'Hết hàng' where amount = 0";
+        $stmt = $conn -> prepare($query);
+        $stmt -> execute();
+    }
     function confirmBill() {
         if (isset($_GET["id"])) {
             global $conn;
             $id = $_GET["id"];
+            updateAmount($id);
+            checkStatus();
             $sql = "UPDATE bills SET status = 'delivering' WHERE id = $id";
             $statement = $conn-> prepare($sql);
             if ($statement -> execute()) {

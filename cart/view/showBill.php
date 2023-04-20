@@ -43,6 +43,7 @@ session_start();
 
                 <table class="table shadow p-3 mb-5 bg-body rounded  table-condensed table-bordered ">
                     <thead class="headTable">
+
                         <tr>
                             <th>ID</th>
                             <th>Tên sản phẩm</th>
@@ -66,6 +67,12 @@ $total = 0;?>
                             <td>- <?php echo $cart[3] ?>$</td>
                             <td><?php echo $cart[4] ?></td>
                             <td><?php echo $cart[5] ?>$</td>
+                            <?php
+$arrQuanlity = array("$cart[6]" => "$cart[4]");
+?>
+                            <input hidden name="arrQuanlity[]" value='<?php print_r($arrQuanlity);
+?>' type="text">
+
                         </tr>
                         <?php $total += $cart[5];?>
                         <?php endforeach?>

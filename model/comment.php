@@ -1,6 +1,5 @@
-
 <?php
-include './model/connect.php'; ?>
+include './model/connect.php';?>
 
 <?php
 include './model/connect.php';?>
@@ -33,7 +32,7 @@ function addcmt()
         move_uploaded_file($prod_image_tmp, $target_file);
 
         $erorr = [];
-        if ((($_POST['noidung']))  == '') {
+        if ((($_POST['noidung'])) == '') {
             $erorr['noidung'] = "Không được để trống";
         } else {
             $noidung = $_POST['noidung'];
@@ -44,14 +43,12 @@ function addcmt()
             $statement = $conn->prepare($sqls);
 
             if ($statement->execute()) {
-                header("location: index.php?act=aboutproducts&id=$id");
+
             }
 
-        
+        }
     }
 }
-}
-
 
 function deleteCmt()
 {
@@ -75,6 +72,4 @@ function showstatus()
     $showstatus = $statement->fetchAll();
 }
 
-
 ?>
-

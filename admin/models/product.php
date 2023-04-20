@@ -34,27 +34,6 @@ function addProducts()
     
 
     // Validate product
-        global $errProduct;
-        $errProduct = [];
-
-        if (empty($name)) {
-            $errProduct['name'] = 'Bạn thiếu tên sản phẩm';
-        }
-
-        if ($category == 'default') {
-            $errProduct['category'] = 'Bạn thiếu loại sản phẩm';
-        }
-
-        if (!is_numeric($price) || empty($price)) {
-            $errProduct['price'] = 'Giá có vấn đề';
-        }
-
-        if (empty($image)) {
-            $errProduct['image'] = 'Bạn thiếu hình ảnh';
-        }
-
-        if (empty($errProduct)) {
-            global $conn;
 
             $sql = "INSERT INTO products (name, image, price, deal, category, date, description, amount, tag) VALUES ('$name', '$image', '$price', '$deal', '$category', '$date', '$description', '$amount', '$tag')";
 
@@ -72,8 +51,6 @@ function addProducts()
         }
 
     }
-
-}
 
 function showProducts(){
     global $conn;

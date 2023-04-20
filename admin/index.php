@@ -52,14 +52,11 @@ switch ($act) {
         include '../admin/view/users/users.php';
         break;
 
-        case 'delcmt':
-            delcmt();
-            include '../admin/view/comment/comment.php';
-            break;
-
     case 'comment':
-        
+
         showcmt();
+        delcmt();
+
         include '../admin/view/comment/comment.php';
         break;
 

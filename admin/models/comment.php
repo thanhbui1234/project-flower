@@ -1,11 +1,10 @@
 <?php
-include 'connect.php'; ?>
+include 'connect.php';?>
 <?php
-
 
 function showcmt()
 {
-    $sql = "SELECT comments.content,users.image,users.userName,comments.date,products.name,comments.id,comments.status,comments.img
+    $sql = "SELECT comments.product, comments.content,users.image,users.userName,comments.date,products.name,comments.id,comments.status,comments.img
     FROM ((comments
     INNER JOIN products ON comments.product = products.id)
     INNER JOIN users ON comments.user = users.id)";
@@ -30,9 +29,9 @@ function updatecmt()
 
 function delcmt()
 {
-    if (isset($_GET['id']) && ($_GET['id']) > 0) {
+    if (isset($_GET['delete'])) {
         global $conn;
-        $id = $_GET['id'];
+        $id = $_GET['delete'];
         $sql = "DELETE FROM comments WHERE id = $id";
         $statement = $conn->prepare($sql);
         if ($statement->execute()) {
@@ -40,6 +39,3 @@ function delcmt()
         }
     }
 }
-
-?>
-
