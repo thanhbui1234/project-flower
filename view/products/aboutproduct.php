@@ -174,7 +174,7 @@ var button_add_cart2 = document.querySelector('#button_add_cart2');
 var amount = document.querySelector('#amountLeft');
 var alertBox = document.querySelector('#alertBox');
 function confirmAdd(){
-if(isNaN(inputQuantity.value)||inputQuantity.value<=0) {
+if(isNaN(inputQuantity.value)||inputQuantity.value<=0||Number(inputQuantity.value) > Number(amount.value)) {
     if(confirm('Vui lòng nhập số lượng đúng!')===true)
     return false;
     else return false;
