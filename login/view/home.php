@@ -3,7 +3,7 @@
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Đăng nhập</h2>
             <h3 class="section-subheading text-muted">
-                Shop X uy tín số 1 thế giới
+                Shop Flower uy tín số 1 thế giới
             </h3>
         </div>
 
