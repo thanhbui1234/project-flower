@@ -94,4 +94,26 @@ form.addEventListener("submit", (e) => {
   
 });
 
-</script>
+
+// if (user.value.length<1 || email.value.length<1 || phone.value.length<1 ) {
+//     e.preventDefault();
+//     return swal( "Lỗi rồi" ,  "Bạn không được bỏ trống bất kỳ trường nào!" ,  "error" );
+//   }else if(user.value.length<6 ){
+//     e.preventDefault();
+//     return swal( "Lỗi UserName" ,  "Bạn không được ghi tên quá ngắn!" ,  "error" );
+//   }else if(!isNaN(user.value) || user.value.includes("@") || user.value.includes("!") || user.value.includes("#") || user.value.includes("$") || user.value.includes("%")){
+//     e.preventDefault();
+//     return swal( "Lỗi UserName" ,  "Tên người dùng không hợp lệ" ,  "error" );
+//   }else if( email.value.length<10 || !email.value.includes("@") || !email.value.includes(".")){
+//     e.preventDefault();
+//     return swal( "Lỗi Email" ,  "Email không hợp lệ!" ,  "error" );
+//   }else if(phone.value.length!=10 && phone.value.length!=11){
+//     e.preventDefault();
+//     return swal( "Lỗi PhoneNumber" ,  "Số điện thoại không hợp lệ!" ,  "error" );
+//   }else if(isNaN(phone.value) || !phone.value.startsWith("0")){
+//     e.preventDefault();
+//     return swal( "Lỗi PhoneNumber" ,  "Số điện thoại không hợp lệ!" ,  "error" );
+//   }else if( address.value.includes("@") || address.value.includes("!") || address.value.includes("#") || address.value.includes("$") || address.value.includes("%") ){
+//     e.preventDefault();
+//     return swal( "Lỗi Địa chỉ" ,  "Địa chỉ không hợp lệ" ,  "error" );
+//   } -->
