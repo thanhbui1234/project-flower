@@ -37,7 +37,7 @@ if ($success=="success") {
    <input class="input-field" type="password" placeholder="Nhập lại mật khẩu" name="repeatpass">
  </div>
 
- <button type="submit" name="savechangepass" class="btn-change">Save Change</button>
+ <button type="submit" name="savechangepass" class="btn-change">Save Change </button>
 </form>
 
        
