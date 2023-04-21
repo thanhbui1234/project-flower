@@ -1,0 +1,80 @@
+form {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+  
+  display: flex;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 35px;
+  text-align: center;
+  
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  height: 36px;
+
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.saveupdate {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  height: 50px;
+ margin-bottom: 150px;
+}
+
+.saveupdate:hover {
+  opacity: 1;
+}
+.pick{
+    background-color: #f07b4d;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    color: rgb(238, 246, 25);
+    margin-left: 260px;
+    margin-top: 30px;
+  }
+  
+  .pick:hover {
+    background-color: #e07c7c;
+    color: #dfe994;
+  }
+ .h2{
+  
+    color: red;
+   
+ }
+ .p{
+    color: #c72f2f;
+ }
+ 
+ .buttonsavechange{
+  color: white;
+  background-color: dodgerblue;
+ }
+ 

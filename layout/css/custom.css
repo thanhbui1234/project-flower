@@ -1,0 +1,134 @@
+#product {
+  margin-top: 100px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+}
+#prod_name {
+  color: red;
+}
+#search {
+  position: relative;
+}
+
+#price_about {
+  color: #ffd028;
+}
+.err_user {
+  margin-top: 10px;
+  color: red;
+}
+
+.login {
+  color: red;
+}
+#myForm {
+  width: 600px;
+}
+#textcmt {
+  height: 100px;
+}
+#cmtUsers {
+  width: 600px;
+}
+.lable {
+  min-width: 200px;
+  opacity: calc(60%);
+}
+
+#profile {
+  display: flex;
+  justify-content: space-around;
+}
+#setAvt {
+  margin-left: 70px;
+  margin-top: 30px;
+}
+#messRequest {
+  height: 210px;
+}
+
+.pageation {
+  list-style-type: none;
+}
+#searchSumit {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  border: none;
+  color: darkslategrey;
+}
+#search:first-child {
+  overflow: hidden;
+  outline: none;
+}
+
+.bcsprofile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  margin-top: 100px;
+}
+
+.imgprofile {
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  margin-left: 210px;
+}
+
+#abcchange {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 150px;
+}
+.bcschange {
+  margin-left: 27%;
+  margin-top: 100px;
+}
+.onechange {
+  margin-right: 37px;
+  margin-bottom: 25px;
+  color: rgb(143, 130, 130);
+}
+.twochange {
+  margin-right: 20px;
+  margin-bottom: 25px;
+  color: rgb(143, 130, 130);
+}
+.threechange {
+  margin-right: 31px;
+  margin-bottom: 25px;
+  color: rgb(143, 130, 130);
+}
+#bill_field{
+  width: 260px;
+}
+#bill_input{
+  background-color: transparent;
+  border: 0px solid;
+  width: 100%;
+}
+#bill_input:focus{
+  background-color: transparent;
+  border: 0px solid;
+  outline: none;
+}
+#wrapper_cart{
+  position: relative;
+  color: white;
+  }
+#count-bill{
+  position: absolute;
+  top: -7px;
+  right: -7px; 
+  width: 17px;
+  height: 17px;
+  background: green;
+  border-radius: 50%;
+  font-size: 12px;
+  padding-left: 5px;
+}

@@ -1,0 +1,13 @@
+#categories {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+#myChart {
+  height: 850px;
+}
+
+.nameProduct {
+  width: 1000px;
+}
