@@ -13,12 +13,8 @@ include './model/order.php';
 include './layout/nav.php';
 ?>
 
-
-
     <?php isset($_GET['act']) ? $url = $_GET['act'] : $url = false;
-
 switch ($url) {
-
     case 'aboutproducts';
         view();
         showaboutproducts();
