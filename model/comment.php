@@ -1,8 +1,5 @@
 <?php
 include './model/connect.php';?>
-
-<?php
-include './model/connect.php';?>
 <?php
 
 function showcmt()
